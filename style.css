@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Biryani:300);
+
+/* Generic tags */
+body {
+  font-family: Biryani, sans-serif;
+  background-color: #efeff2;
+  max-width: 1000px;
+  margin: auto;
+  color: #23232D;
+  word-wrap: break-word;
+}
+
+a {
+  color: #23232D;
+}
+
+img {
+  vertical-align: middle;
+}
+
+article {
+  padding: 10px 20px;
+  margin: 10px 5px;
+}
+
+footer {
+  margin: 50px;
+}
+
+h1 {
+  margin-left: 5px;
+}
+
+/* Images auto-sizing */
+.center {
+  text-align: center;
+}
+
+.center img {
+  max-width: 80%;
+  padding: 10px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 10px 5px;
+}
+
+header h1 img {
+  vertical-align: baseline;
+}
+
+header h1, header p {
+  margin: 10px 0;
+}
+
+/* Tools */
+#tools {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+#tools div {
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+#tools div ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#tools h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Boxes */
+article, #tools div {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+  background-color: white;
+}
