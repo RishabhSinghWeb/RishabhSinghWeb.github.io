@@ -16,6 +16,7 @@ var startAnimation = function(){
           default: return; break;
         }
   }
+
   function randomArrayItem(arr){ return arr[Math.floor(Math.random() * arr.length)];}
 
   function randomNumFrom(min, max){ return Math.random()*(max - min) + min;}
@@ -33,21 +34,17 @@ var startAnimation = function(){
 
 
   function renderBalls(){
-      Array.prototype.forEach.call(balls, function(b){
-                                              ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
-                                              ctx.beginPath();ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
-                                              ctx.closePath();
-                                              ctx.fill();
-                                          });
+      Array.prototype.forEach.call(balls, function(b){ctx.fillStyle = 'rgba('+ball_color.r+','+ball_color.g+','+ball_color.b+','+b.alpha+')';
+                                                      ctx.beginPath();ctx.arc(b.x, b.y, R, 0, Math.PI*2, true);
+                                                      ctx.closePath();
+                                                      ctx.fill();});
   }
 
   function updateBalls(){
       var new_balls = [];
-      Array.prototype.forEach.call(balls, function(b){ 
-                                              b.x += b.vx; b.y += b.vy;
-                                              if(b.x > -(50) && b.x < (can_w+50) && b.y > -(50) && b.y < (can_h+50))
-                                                new_balls.push(b);
-                                          });
+      Array.prototype.forEach.call(balls, function(b){b.x += b.vx; b.y += b.vy;
+                                                      if(b.x > -(50) && b.x < (can_w+50) && b.y > -(50) && b.y < (can_h+50))
+                                                        new_balls.push(b);});
       balls = new_balls.slice(0);
   }
 
@@ -119,31 +116,29 @@ var startAnimation = function(){
   function startCanvasAnimation(){initCanvas(); window.requestAnimationFrame(render);}
 
 
-  canvas.addEventListener('mouseenter', function(){
-                                            mouse_in = true;
-                                            balls.push(mouse_ball);
-                                        });
-  canvas.addEventListener('mouseleave', function(){
-      mouse_in = false;
-      var new_balls = [];
-      Array.prototype.forEach.call(balls, function(b){if(!b.hasOwnProperty('type')){new_balls.push(b);}});
-      balls = new_balls.slice(0);
-  });
-  canvas.addEventListener('mousemove', function(e){
-      var e = e || window.event;
-  	  var rect = canvas.getBoundingClientRect();
-      mouse_ball.x = e.clientX - rect.left;
-      mouse_ball.y = e.clientY - rect.top;
-  });
+  canvas.addEventListener('mouseenter', function(){mouse_in = true;balls.push(mouse_ball);});
+
+  canvas.addEventListener('mouseleave', function(){mouse_in = false;
+                                                   var new_balls = [];
+                                                   Array.prototype.forEach.call(balls, function(b){if(!b.hasOwnProperty('type')){new_balls.push(b);}});
+                                                   balls = new_balls.slice(0);});
+  
+  canvas.addEventListener('mousemove', function(e){var e = e || window.event;
+                                                	 var rect = canvas.getBoundingClientRect();
+                                                   mouse_ball.x = e.clientX - rect.left;
+                                                   mouse_ball.y = e.clientY - rect.top;});
 
   function startAnimation() {window.addEventListener('DOMContentLoaded', startCanvasAnimation);}
-
+  
   return startAnimation;
-
 }();
 
-// Taken from https://codepen.io/jkiss/pen/OVEeqK, Licence
+//Taken from https://codepen.io/jkiss/pen/OVEeqK, Licence
 //Copyright (c) 2020 by Nokey (https://codepen.io/jkiss/pen/OVEeqK)
-//Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
+//to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+//and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 //The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-//THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+//FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
+//WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
