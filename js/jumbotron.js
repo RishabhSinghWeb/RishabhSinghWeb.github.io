@@ -3,7 +3,7 @@ var startAnimation = function(){
   var canvas = document.getElementById('jumbotron-anim'), can_w = parseInt(canvas.getAttribute('width')),
                can_h = parseInt(canvas.getAttribute('height')), ctx = canvas.getContext('2d');
 
-  var ball = { x: 0, y: 0, vx: 0, vy: 0, r: 0, alpha: 1, phase: 0 }, ball_color = { r: 52, g: 58, b: 64 }, R = 4, balls = [], 
+  var ball = { x: 0, y: 0, vx: 0, vy: 0, r: 0, alpha: 1, phase: 0 }, ball_color = { r: 255, g: 0, b: 255 }, R = 4, balls = [], 
              link_line_width = 0.8, dis_limit = 260, add_mouse_point = true, mouse_in = false, mouse_ball = {x: 0, y: 0, vx: 0, vy: 0, r: R, type: 'mouse'};
 
   function getRandomSpeed(pos){
@@ -141,3 +141,9 @@ var startAnimation = function(){
   return startAnimation;
 
 }();
+
+// Taken from https://codepen.io/jkiss/pen/OVEeqK, Licence
+//Copyright (c) 2020 by Nokey (https://codepen.io/jkiss/pen/OVEeqK)
+//Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
