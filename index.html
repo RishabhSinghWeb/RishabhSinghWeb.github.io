@@ -1,134 +1,130 @@
-<!DOCTYPE html>
-<html>
-  <head>   <!--  -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="dailylifesking">
-    <meta name="author" content="Rishabh">
-    <title>dailylifesking</title>
-    <link rel="icon" href="img/favicon.ico">
+<!doctype html>
+<html lang="en">
+<head>
+	<title>A3</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style type="text/css">
+body{
+	margin:0;
+	font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",
+	monospace;
+	font-size:1em
+}
+.badge{
+	display:inline-block;
+	padding:.25em .4em;
+	font-size:75%;
+ 	font-weight:700;
+ 	line-height:1;
+ 	text-align:center;
+ 	border-radius:.25rem;
+ 	text-decoration:none;
+ }
+.bg-day {background-color: #dc3545;}
+.bg-time {background-color: #ffc107;}
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/clock.css" />
+.badge-primary {
+    color: #fff;
+    background-color: #007bff;
+}
+</style>
+</head>
+<body>	
+<br>
+<div class="table-responsive">
+<div style="font-size:27px ; color:#00FF00FF ; text-shadow: 1px 0px 13px ;" align="center">
+	<script type="text/javascript"> 
+        var myDate = new Date(); 
+        var minutes = myDate.getMinutes(); 
+        
+        document.write(
+        	myDate.getMonth(), ".", 
+        	myDate.getDate(), " ", 
+        	['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT' ][myDate.getDay()], " ", 
+        	myDate.getHours(), ":" , 
+        	minutes < 10 ? '0' + minutes : minutes
+		); 
+    </script> 
+</div>
+<br>
+<table style="border-collapse:collapse" border="1"  width="100%">
+<tr>
+	<td style="color: #fff;background-color: #343a40;"align="center">From<br>To</td>
+	<td class="bg-time">9:00<br>9:45</td>
+	<td class="bg-time">10:00<br>10:45</td>
+	<td class="bg-time">11:00<br>11:45</td>
+	<td class="bg-time">12:00<br>12:45</td>
+	<td class="bg-time"></td>
+	<td class="bg-time">13:45<br>14:30</td>
+	<td class="bg-time">14:45<br>15:30</td>
+</tr>
 
-    <!--  offline    -->
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+<tr>
+	<td class="bg-day"align="center">MON</td>
+	<td align="center"><font color="red">Quiz</font></td>
+	<td align="center"><font color="blue">TOL</font><br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="green">Math</font><br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+ 	<td align="center"><font color="brown">COA</font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09" class="badge badge-primary">Zoom</a></td>
+ 	<td class="bg-secondary" rowspan="6"align="center"></td>
+ 	<td align="center"><font color="brown">L-COA</font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09" class="badge badge-primary">Zoom</a></td>
+ 	<td align="center"><font color="blue">L-TOL</font><br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
+</tr>   
+<tr>
+	<td class="bg-day"align="center">TUE</td>
+	<td align="center"><font color="brown">COA</font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="green">Math</font><br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="orange">DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center">PY<br><a href="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="pink">UHV</font> <br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="maroon">---</td>
+</tr>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+<tr>
+	<td class="bg-day"align="center">WED</td>
+	<td align="center"><font color="blue">TOL</font><br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="orange">DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="green">Math</font><br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="brown">COA</font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="brown">---</td>
+	<td align="center"><font color="brown">---</td>
+</tr>
 
-    <!-- online
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<tr>
+	<td class="bg-day"align="center">THU</td>
+	<td align="center"><font color="blue">TOL</font><br> <a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="pink">UHV</font><br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="orange">DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td><td align="center">PY<br><a href="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="green">T-Math</font><br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="orange">L-DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
+</tr>
+ 
+<tr>
+	<td class="bg-day"align="center">FRI</td>
+	<td align="center"><font color="red">Quiz</font></td>
+	<td align="center"><font color="maroon">COA </font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="green">Math</font><br> <a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="blue">T-TOL</font><br> <a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="pink">UHV</font><br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09" class="badge badge-primary">Zoom</a></td>
+	<td align="center"><font color="orange">T-DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
+</tr>
+ 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    -->
-
-    <script type="text/javascript" src="js/clock.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
-  </head>
-  <body>
-    <section>
-      <div id="wrap">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-          <a class="navbar-brand" href="index.html">
-            <img src="img/face.png" width="35"> dailylifesking
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <h1>
-                <a href="mailto:dailylifesking@gmail.com"><img src="img/gmail.jpg" alt=""></a>
-                <a href="https://github.com/dailylifesking"><img src="img/github.png" alt=""></a>
-              </h1>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
-                <div class="dropdown-menu" aria-labelledby="productsDropdown">
-                  <a class="dropdown-item" href="https://wa.me/917394996979">whatsapp</a>
-                  <a class="dropdown-item" href="resume.html">resume</a>
-                  <a class="dropdown-item" href="contact.html">a</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="https://github.com/dailylifeskings">dailylifeskings <i class="fa fa-github"></i></a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html"><i class="fa fa-rss"></i> Login</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <div class="jumbotron">
-          <div class="container">
-            <h1 class="display-4"><img src="img/face.png" width="100"> dailylifesking &ndash; Rishabh Singh<small></small></h1>
-            <p class="lead">
-              Hi! I'm a <strong>Rishabh Singh</strong> a Software Developer living in Lucknow, India, currently studying as a Btech CS student in SRMCEM, Lucknow. 
-              I'm interested in learning Artificial Intelligence and Machine Learning. I also enjoy Android Development and deploying servers.
-              dailylifesking is a collection of analysis tools with the emphasis on <strong>efficiency</strong>,
-              <strong> portability</strong> and ease of use. It is
-              <strong>open source</strong> and free. It is
-              programmed in  <strong>Python</strong>, and&nbsp;<strong>C/C++</strong>.
-            </p>
-            <a href="eye.html"   class="btn btn-lg btn-dark">eye</a>
-            <a href="login.html" class="btn btn-lg btn-dark">login</a>
-            <a href="profile.html" class="btn btn-lg btn-dark">profile</a>
-            <a href="index.html" class="btn btn-lg btn-dark">$</a>
-            <a href="index.html" class="btn btn-lg btn-dark">$</a>
-          </div>
-          <canvas id="jumbotron-anim"></canvas>
-        </div>
-      </div>
-    </section>  
-    
-    <section>
-      <div id="fancyClock"></div>
-    </section> 
+<P></p>
 
 
-    <section>
+<p style="
+	-webkit-text-shadow: 12px 11px 2px #f1c, 28px -3px 2px #fa0, 8px -10px 2px #8e3;
+	-moz-text-shadow: 12px 11px 2px #f1c, 28px -3px 2px #fa0, 8px -10px 2px #8e3;
+	text-shadow: 12px 11px 2px #f1c, 28px -3px 2px #fa0, 8px -10px 2px #8e3;
+	position: absolute;
+	bottom: 8px;
+	right: 30px;
+	font-size: 18px;">
+	- Prashant Singh
+</p>
 
-    </section> 
 
-
-    <section class="r">
-      <h1>Favorite tools, frameworks, etc.</h1>
-      <div id="tools">
-        <div><h3>OS</h3><ul><li>Puppy Linux</li><li>Windows 10</li><li>Android</li><li>#Debian</li></ul></div>
-        <div><h3>Languages</h3><ul><li>Python</li><li>Java</li><li>C</li><li>#Scala</li><li>#Javascript</li></ul></div>
-        <div><h3>Build</h3><ul><li>Maven</li><li>Gradle</li></ul></div>
-        <div><h3>Web</h3><ul><li>HTML5</li><li>CSS3</li><li>#Bootstrap</li></ul></div>
-        <div><h3>Java</h3><ul><li>#jOOQ</li><li>#Spring</li><li>#Spark</li></ul></div>
-        <div><h3>3D</h3><ul><li>Blender</li></ul></div>
-        <div><h3>Office</h3><ul><li>OpenOffice</li><li>LibreOffice</li><li>#LaTeX</li></ul></div>
-        <div><h3>IDE / Text editors</h3><ul><li>VS Code</li><li>#IntelliJ IDEA</li><li>#Emacs</li></ul></div>
-        <div><h3>Text editors</h3><ul><li>Sublime Text</li><li>Notepad</li><li>#Vim</li></ul></div>
-        <div><h3>CI</h3><ul><li>#Travis CI</li><li>#Jenkins</li></ul></div>
-        <div><h3>Ops</h3><ul><li>#Docker</li><li>#Vagrant</li><li>#Puppet</li><li>#Ansible</li></ul></div>
-        <div><h3>VCS</h3><ul><li>Github Desktop</li><li>Github</li><li>Git</li></ul></div>
-        <div><h3>Graphic design</h3><ul><li>Paint.net</li><li>Gimp</li><li>Inkscape</li></ul></div>
-        <div><h3>Python</h3><ul><li>PyQt5</li><li>#Panda3D</li></ul></div>
-        <div><h3>Video Editing</h3><ul><li>Flimora</li><li>#Sony Vegas Pro</li></ul></div>
-        <div><h3>Video Player</h3><ul><li>VLC</li><li>MX Player</li></ul></div>
-      </div>
-    </section>
-
-    <script src="js/jumbotron.js"></script>
-    <script>startAnimation();</script>
-
-  </body>
+</div>
+</body>
 </html>
-<!--
-
-
-
-
-
-
-
-
-clock http://tutorialzine.com/2009/12/colorful-clock-jquery-css/
-
--->
