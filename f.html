@@ -1,13 +1,24 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<title>A3</title>
+  <head>
+	<title>CS33</title>
 	<meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1">
-        <style type="text/css">
-body{
-	margin:0;
-}
+	<meta name="viewport" content="initial-scale=1">
+
+<style type="text/css">
+body{margin:0;}
+table{text-align:center;font-weight:800}
+.bg-day {background-color: #dc3545;}
+.bg-time {background-color: #ffc107;text-align: center;}
+
+
+.DS{color:#00cc00;}
+.COA{color:#00ffff;}
+.TOL{color:#ff00ff;}
+.Math{color:#ff0000;}
+.PY{color:#0000ff;}
+.UHV{color:#ffaa22;}
+.quiz{color:#aa0000}
 .badge{
 	display:inline-block;
 	padding:.25em .4em;
@@ -18,110 +29,95 @@ body{
  	border-radius:.25rem;
  	text-decoration:none;
  }
-.bg-day {background-color: #dc3545;}
-.bg-time {background-color: #ffc107;}
-
 .badge-primary {
     color: #fff;
     background-color: #007bff;
 }
 </style>
-</head>
-<body>	
-<br>
-<div class="table-responsive">
-<div style="font-size:27px ; color:#00FF00FF ; text-shadow: 1px 0px 13px ;" align="center">
-	<script type="text/javascript"> 
+  </head>
+  <body>	
+     <script type="text/javascript"> 
         var myDate = new Date(); 
-        var minutes = myDate.getMinutes(); 
-        
-        document.write(
-        	myDate.getMonth(), ".", 
-        	myDate.getDate(), " ", 
-        	['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT' ][myDate.getDay()], " ", 
-        	myDate.getHours(), ":" , 
-        	minutes < 10 ? '0' + minutes : minutes
-		); 
-    </script> 
-</div>
-<br>
-<table style="border-collapse:collapse" border="1"  width="100%">
-<tr>
-	<td style="color: #fff;background-color: #343a40;"align="center">From<br>To</td>
-	<td class="bg-time">9:00<br>9:45</td>
-	<td class="bg-time">10:00<br>10:45</td>
-	<td class="bg-time">11:00<br>11:45</td>
-	<td class="bg-time">12:00<br>12:45</td>
-	<td class="bg-time"></td>
-	<td class="bg-time">13:45<br>14:30</td>
-	<td class="bg-time">14:45<br>15:30</td>
-</tr>
+        var minutes = myDate.getMinutes();
+		var hours = myDate.getHours();
+		var time = hours*60+ minutes;
+		var celld;
+		var cellr = myDate.getDay()+1;
+		
+		if(time<585){celld=2;}
+		else if(time<645){celld=3;}
+		else if(time<705){celld=4;}
+		else if(time<765){celld=5;}
+		else if(time<870){celld=7;}
+		else if(time<930){celld=8;}
+		else {celld = 2;
+		    cellr = cellr+1;
+			if (cellr>6){cellr=2}}
+		
+		var newStyles = document.createElement('style')
+		document.head.append(newStyles);
+		newStyles.innerHTML = "tr:nth-child("+cellr+") td:nth-child("+celld+") {background-color: #ffff00}";
+    </script>
 
-<tr>
-	<td class="bg-day"align="center">MON</td>
-	<td align="center"><font color="red">Quiz</font></td>
-	<td align="center"><font color="blue">TOL</font><br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="green">Math</font><br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
- 	<td align="center"><font color="brown">COA</font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09" class="badge badge-primary">Zoom</a></td>
- 	<td class="bg-secondary" rowspan="6"align="center"></td>
- 	<td align="center"><font color="brown">L-COA</font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09" class="badge badge-primary">Zoom</a></td>
- 	<td align="center"><font color="blue">L-TOL</font><br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
-</tr>   
-<tr>
-	<td class="bg-day"align="center">TUE</td>
-	<td align="center"><font color="brown">COA</font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="green">Math</font><br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="orange">DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center">PY<br><a href="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="pink">UHV</font> <br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="maroon">---</td>
-</tr>
-
-<tr>
-	<td class="bg-day"align="center">WED</td>
-	<td align="center"><font color="blue">TOL</font><br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="orange">DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="green">Math</font><br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="brown">COA</font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="brown">---</td>
-	<td align="center"><font color="brown">---</td>
-</tr>
-
-<tr>
-	<td class="bg-day"align="center">THU</td>
-	<td align="center"><font color="blue">TOL</font><br> <a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="pink">UHV</font><br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="orange">DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td><td align="center">PY<br><a href="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="green">T-Math</font><br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="orange">L-DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
-</tr>
- 
-<tr>
-	<td class="bg-day"align="center">FRI</td>
-	<td align="center"><font color="red">Quiz</font></td>
-	<td align="center"><font color="maroon">COA </font><br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="green">Math</font><br> <a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="blue">T-TOL</font><br> <a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="pink">UHV</font><br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09" class="badge badge-primary">Zoom</a></td>
-	<td align="center"><font color="orange">T-DS</font><br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
-</tr>
- 
-
-<P></p>
-
-
-<p style="
-	-webkit-text-shadow: 12px 11px 2px #f1c, 28px -3px 2px #fa0, 8px -10px 2px #8e3;
-	-moz-text-shadow: 12px 11px 2px #f1c, 28px -3px 2px #fa0, 8px -10px 2px #8e3;
-	text-shadow: 12px 11px 2px #f1c, 28px -3px 2px #fa0, 8px -10px 2px #8e3;
-	position: absolute;
-	bottom: 8px;
-	right: 30px;
-	font-size: 18px;">
-	- CS 33
-</p>
-
-
-</div>
-</body>
+	<br><br><br>
+	<table id="table" style="border-collapse:collapse" border="1" width="100%">
+	  <tr class="bg-time">
+		<td style="color: #fff;background-color: #343a40;">From<br>To</td>
+		<td>9:00<br>9:45</td>
+		<td>10:00<br>10:45</td>
+		<td>11:00<br>11:45</td>
+		<td>12:00<br>12:45</td>
+		<td></td>
+		<td>13:45<br>14:30</td>
+		<td>14:45<br>15:30</td>
+	  </tr>
+	  <tr>
+		<td class="bg-day"align="center">MON</td>
+		<td class="quiz">Quiz</td>
+		<td class="TOL">TOL<br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
+		<td class="Math">Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+		<td class="COA">COA<br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
+		<td rowspan="6"></td>
+		<td class="COA">L-COA<br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
+		<td class="TOL">L-TOL<br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
+	  </tr>   
+	  <tr>
+		<td class="bg-day"align="center">TUE</td>
+		<td class="COA">COA<br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
+		<td class="Math">Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+		<td class="DS">DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
+		<td class="PY">PY<br><a href="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"class="badge badge-primary">Zoom</a></td>
+		<td class="UHV">UHV<br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
+		<td>---</td>
+	  </tr>
+	  <tr>
+		<td class="bg-day"align="center">WED</td>
+		<td class="TOL">TOL<br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
+		<td class="DS">DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
+		<td class="Math">Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+		<td class="COA">COA<br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
+		<td>---</td>
+		<td>---</td>
+	  </tr>
+	  <tr>
+		<td class="bg-day"align="center">THU</td>
+		<td class="TOL">TOL<br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
+		<td class="UHV">UHV<br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
+		<td class="DS">DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
+		<td class="PY">PY<br><a href="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"class="badge badge-primary">Zoom</a></td>
+		<td class="Math">T-Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+		<td class="DS">L-DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
+	  </tr>
+	  <tr>
+		<td class="bg-day"align="center">FRI</td>
+		<td class="quiz">Quiz</td>
+		<td class="COA">COA<br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
+		<td class="Math">Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
+		<td class="TOL">T-TOL<br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
+		<td class="UHV">UHV<br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
+		<td class="DS">T-DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
+	  </tr>
+	</table>
+	<br><br>
+  </body>
 </html>
