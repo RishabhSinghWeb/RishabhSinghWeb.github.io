@@ -11,7 +11,6 @@ table{text-align:center;font-weight:800}
 .bg-day {background-color: #dc3545;}
 .bg-time {background-color: #ffc107;text-align: center;}
 
-
 .DS{color:#00cc00;}
 .COA{color:#00ffff;}
 .TOL{color:#ff00ff;}
@@ -39,24 +38,29 @@ table{text-align:center;font-weight:800}
      <script type="text/javascript"> 
         var myDate = new Date(); 
         var minutes = myDate.getMinutes();
-		var hours = myDate.getHours();
-		var time = hours*60+ minutes;
-		var celld;
-		var cellr = myDate.getDay()+1;
+        var hours = myDate.getHours();
+	var time = hours*60+ minutes;
+	var celld;
+	var cellr = myDate.getDay()+1;
 		
-		if(time<585){celld=2;}
-		else if(time<645){celld=3;}
-		else if(time<705){celld=4;}
-		else if(time<765){celld=5;}
-		else if(time<870){celld=7;}
-		else if(time<930){celld=8;}
-		else {celld = 2;
-		    cellr = cellr+1;
-			if (cellr>6){cellr=2}}
-		
-		var newStyles = document.createElement('style')
-		document.head.append(newStyles);
-		newStyles.innerHTML = "tr:nth-child("+cellr+") td:nth-child("+celld+") {background-color: #ffff00}";
+	if(time<585){celld=2;}
+	else if(time<645){celld=3;}
+	else if(time<705){celld=4;}
+	else if(time<765){celld=5;}
+	else if(time<870){celld=6;}
+	else if(time<930){celld=7;}
+	else {celld = 2;
+	    cellr = cellr+1;
+	    if (cellr>6){cellr=2}}
+	
+        if(cellr==7 && celld==3){cellr=2;celld=4}
+        if(cellr==7 && celld==4){cellr=2;celld=5}
+        if(cellr==6 && celld==4){cellr=2;celld=5}
+
+
+	var newStyles = document.createElement('style')
+	document.head.append(newStyles);
+	newStyles.innerHTML = "tr:nth-child("+cellr+") td:nth-child("+celld+") {background-color: #ffff00}";
     </script>
 
 	<br><br><br>
