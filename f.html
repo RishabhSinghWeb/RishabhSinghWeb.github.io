@@ -49,21 +49,18 @@ table{text-align:center;font-weight:800}
 	else if(time<765){celld=5;}
 	else if(time<870){celld=6;}
 	else if(time<930){celld=7;}
-	else {celld = 2;
-	    cellr = cellr+1;
-	    if (cellr>6){cellr=2}}
+	else {celld = 2;cellr = cellr+1;if(cellr>6){cellr=2}}
 	
         if(cellr==7 && celld==3){cellr=2;celld=4}
         if(cellr==7 && celld==4){cellr=2;celld=5}
         if(cellr==6 && celld==4){cellr=2;celld=5}
-
 
 	var newStyles = document.createElement('style')
 	document.head.append(newStyles);
 	newStyles.innerHTML = "tr:nth-child("+cellr+") td:nth-child("+celld+") {background-color: #ffff00}";
     </script>
 
-	<br><br><br>
+      <br><br><br>
 	<table id="table" style="border-collapse:collapse" border="1" width="100%">
 	  <tr class="bg-time">
 		<td style="color: #fff;background-color: #343a40;">From<br>To</td>
