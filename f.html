@@ -39,7 +39,7 @@ table{text-align:center;font-weight:800}
         var myDate = new Date(); 
         var minutes = myDate.getMinutes();
         var hours = myDate.getHours();
-	var time = hours*60+ minutes;
+	var time = hours*60 + minutes;
 	var celld;
 	var cellr = myDate.getDay()+1;
 		
@@ -47,13 +47,13 @@ table{text-align:center;font-weight:800}
 	else if(time<645){celld=3;}
 	else if(time<705){celld=4;}
 	else if(time<765){celld=5;}
-	else if(time<870){celld=6;}
-	else if(time<930){celld=7;}
+	else if(time<870){celld=7;}
+	else if(time<930){celld=8;}
 	else {celld = 2;cellr = cellr+1;if(cellr>6){cellr=2}}
 	
-        if(cellr==7 && celld==3){cellr=2;celld=4}
+        if(cellr==8 && celld==3){cellr=2;celld=4}
+        if(cellr==8 && celld==4){cellr=2;celld=5}
         if(cellr==7 && celld==4){cellr=2;celld=5}
-        if(cellr==6 && celld==4){cellr=2;celld=5}
 
 	var newStyles = document.createElement('style')
 	document.head.append(newStyles);
@@ -78,7 +78,7 @@ table{text-align:center;font-weight:800}
 		<td class="TOL">TOL<br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
 		<td class="Math">Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
 		<td class="COA">COA<br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
-		<td rowspan="6"></td>
+		<td></td>
 		<td class="COA">L-COA<br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
 		<td class="TOL">L-TOL<br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
 	  </tr>   
@@ -88,6 +88,7 @@ table{text-align:center;font-weight:800}
 		<td class="Math">Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
 		<td class="DS">DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
 		<td class="PY">PY<br><a href="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"class="badge badge-primary">Zoom</a></td>
+		<td></td>
 		<td class="UHV">UHV<br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
 		<td>---</td>
 	  </tr>
@@ -97,6 +98,7 @@ table{text-align:center;font-weight:800}
 		<td class="DS">DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
 		<td class="Math">Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
 		<td class="COA">COA<br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
+		<td></td>
 		<td>---</td>
 		<td>---</td>
 	  </tr>
@@ -106,6 +108,7 @@ table{text-align:center;font-weight:800}
 		<td class="UHV">UHV<br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
 		<td class="DS">DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
 		<td class="PY">PY<br><a href="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"class="badge badge-primary">Zoom</a></td>
+		<td></td>
 		<td class="Math">T-Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
 		<td class="DS">L-DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
 	  </tr>
@@ -115,6 +118,7 @@ table{text-align:center;font-weight:800}
 		<td class="COA">COA<br><a href="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"class="badge badge-primary">Zoom</a></td>
 		<td class="Math">Math<br><a href="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09" class="badge badge-primary">Zoom</a></td>
 		<td class="TOL">T-TOL<br><a href="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"class="badge badge-primary">Zoom</a></td>
+		<td></td>
 		<td class="UHV">UHV<br><a href="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"class="badge badge-primary">Zoom</a></td>
 		<td class="DS">T-DS<br><a href="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09" class="badge badge-primary">Zoom</a></td>
 	  </tr>
