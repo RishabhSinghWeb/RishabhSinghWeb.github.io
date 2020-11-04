@@ -14,9 +14,9 @@ else if(time<930)celld=6
 else{celld=1;cellr=cellr+1;if(cellr>3){cellr=1}}
 
 if(cellr==0){cellr=1;celld=1}
-if(cellr==2 && celld==6){cellr=1;celld=3}
-if(cellr==3 && celld==6){cellr=1;celld=4}
-if(cellr==3 && celld==5){cellr=1;celld=4}
+if(cellr==2 && celld==6){cellr=3;celld=1}
+if(cellr==3 && celld==6){cellr=4;celld=1}
+if(cellr==3 && celld==5){cellr=4;celld=1}
 
 var newStyles = document.createElement('style')
 document.head.append(newStyles);
