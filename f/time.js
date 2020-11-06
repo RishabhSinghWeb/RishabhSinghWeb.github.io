@@ -24,4 +24,4 @@ newStyles.innerHTML = "tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){b
 
 var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
 for(i=0; i<4; i++) {t.appendChild(document.createElement('span'))}
-document.getElementById("t").children[0].children[1].children[celld].scrollIntoView(true)
+document.getElementById("t").children[0].children[cellr-1].children[celld].scrollIntoView(true)
