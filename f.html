@@ -59,17 +59,18 @@
 <td class="QUIZ">Quiz<br><a class="button box" onclick="QUIZ()">Todo</a></td>
 <td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a><br><a class="button box" onclick="COA2()">New</a></td>
 <td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
-<td class="TOL">T-TOL<br><a class="button box" onclick="T_TOL()">Zoom</a></td>
+<td class="TOL">T-TOL<br><a class="button box" onclick="TOL()">Zoom</a></td>
 <td class="UHV">UHV<br><a class="button box" onclick="UHV()">Zoom</a></td>
-<td class="DS">T-DS<br><a class="button box" onclick="T_DS()">Zoom</a></td>
+<td class="DS">T-DS<br><a class="button box" onclick="DS()">Zoom</a></td>
 </tr>
 </table>
 <script src="f/time.js"></script>
 <script>
 setInterval(function(){window.location=window.location}, 60 * 1000);
-</script><script>
-setInterval(function(){window.top.location=window.top.location}, 60 * 1000);
 </script>
+<!--<script>
+setInterval(function(){window.top.location=window.top.location}, 60 * 1000);
+</script>-->
 <script>
 _DS = "https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
 _COA = "https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
@@ -82,7 +83,6 @@ _QUIZ = "https://classroom.google.com/a/not-turned-in/all"
 _L_DS = "https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
 _L_COA = "https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
 _L_TOL = "https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
-
 function DS(){window.open(_DS, "_top");}
 function COA(){window.open(_COA, "_top");}
 function COA2(){window.open(_COA2, "_top");}
@@ -93,7 +93,6 @@ function UHV(){window.open(_UHV, "_top");}
 function QUIZ(){window.open(_QUIZ);}
 function L_DS(){window.open(_L_DS, "_top");}
 function L_COA(){window.open(_L_COA, "_top");}
-function L_COA2(){window.open(_L_COA2, "_top");}
 function L_TOL(){window.open(_L_TOL, "_top");}
 </script>
 </body>
