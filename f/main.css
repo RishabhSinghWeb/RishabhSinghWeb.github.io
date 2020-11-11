@@ -1,3 +1,7 @@
+button.btn{
+  font-size: 20px;
+  cursor: pointer;
+  margin: 15px 30px;}
 .bg-day {background-color: #dc3545;}
 .DS{color:#00cc00;}
 .COA{color:#00ffff;}
