@@ -6,10 +6,14 @@
 <meta name="viewport" content="initial-scale=1">
 <link rel="stylesheet" href="f/main.css">
 </head>
-<body style="margin:auto">	
+<body style="margin:auto;">
+<div class="container" style="align:center;margin:auto;">
+<button class="btn" onclick="CS33()">CS33</button>
+<button class="btn" onclick="CS34()">CS34</button>
+</div>
 <table id="t" style="border-collapse:collapse;margin:auto;text-align:center;font-weight:800;" border="1">
 <tr style="background-color:#ffc107;">
-<td style="color:#fff;background-color:#343a40;">From<br>To</td>
+<td style="color:#fff;background-color:#343a40;">33</td>
 <td>9:00<br>9:45</td>
 <td>10:00<br>10:45</td>
 <td>11:00<br>11:45</td>
@@ -23,13 +27,13 @@
 <td class="QUIZ">Quiz<br><a class="button box" onclick="QUIZ()">Todo</a></td>
 <td class="TOL">TOL<br><a class="button box" onclick="TOL()">Zoom</a></td>
 <td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
-<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a><br><a class="button box" onclick="COA2()">New</a></td>
+<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a></td>
 <td class="COA">L-COA<br><a class="button box" onclick="L_COA()">Zoom</a></td>
 <td class="TOL">L-TOL<br><a class="button box" onclick="L_TOL()">Zoom</a></td>
 </tr>   
 <tr>
 <td class="bg-day"align="center">TUE</td>
-<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a><br><a class="button box" onclick="COA2()">New</a></td>
+<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a></td>
 <td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
 <td class="DS">DS<br><a class="button box" onclick="DS()">Zoom</a></td>
 <td class="PY">PY<br><a class="button box" onclick="PY()">Zoom</a></td>
@@ -41,7 +45,7 @@
 <td class="TOL">TOL<br><a class="button box" onclick="TOL()">Zoom</a></td>
 <td class="DS">DS<br><a class="button box" onclick="DS()">Zoom</a></td>
 <td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
-<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a><br><a class="button box" onclick="COA2()">New</a></td>
+<td class="COA">T-COA<br><a class="button box" onclick="COA()">Zoom</a></td>
 <td>---</td>
 <td>---</td>
 </tr>
@@ -57,30 +61,89 @@
 <tr>
 <td class="bg-day"align="center">FRI</td>
 <td class="QUIZ">Quiz<br><a class="button box" onclick="QUIZ()">Todo</a></td>
-<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a><br><a class="button box" onclick="COA2()">New</a></td>
+<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a></td>
 <td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
-<td class="TOL">T-TOL<br><a class="button box" onclick="TOL()">Zoom</a></td>
+<td class="TOL">T-TOL<br><a class="button box" onclick="T_TOL()">Zoom</a></td>
 <td class="UHV">UHV<br><a class="button box" onclick="UHV()">Zoom</a></td>
-<td class="DS">T-DS<br><a class="button box" onclick="DS()">Zoom</a></td>
+<td class="DS">T-DS<br><a class="button box" onclick="T_DS()">Zoom</a></td>
+</tr>
+</table>
+<table id="t2" style="border-collapse:collapse;margin:auto;text-align:center;font-weight:800;" border="1">
+<tr style="background-color:#ffc107;">
+<td style="color:#fff;background-color:#343a40;">34</td>
+<td>9:00<br>9:45</td>
+<td>10:00<br>10:45</td>
+<td>11:00<br>11:45</td>
+<td>12:00<br>12:45</td>
+<td bgcolor="white" rowspan="6"></td>
+<td>13:45<br>14:30</td>
+<td>14:45<br>15:30</td>
+</tr>
+<tr>
+<td class="bg-day"align="center">MON</td>
+<td class="QUIZ">Quiz<br><a class="button box" onclick="QUIZ()">Todo</a></td>
+<td class="TOL">TOL<br><a class="button box" onclick="TOL()">Zoom</a></td>
+<td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
+<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a></td>
+<td class="DS">L-DS<br><a class="button box" onclick="L_DS()">Zoom</a></td>
+<td>---</td>
+</tr>   
+<tr>
+<td class="bg-day"align="center">TUE</td>
+<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a></td>
+<td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
+<td class="DS">DS<br><a class="button box" onclick="DS()">Zoom</a></td>
+<td class="PY">PY<br><a class="button box" onclick="PY()">Zoom</a></td>
+<td class="UHV">UHV<br><a class="button box" onclick="UHV()">Zoom</a></td>
+<td class="TOL">T-TOL<br><a class="button box" onclick="T_TOL()">Zoom</a></td>
+</tr>
+<tr>
+<td class="bg-day"align="center">WED</td>
+<td class="TOL">TOL<br><a class="button box" onclick="TOL()">Zoom</a></td>
+<td class="DS">DS<br><a class="button box" onclick="DS()">Zoom</a></td>
+<td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
+<td class="TOL">L-TOL<br><a class="button box" onclick="L_TOL()">Zoom</a></td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td class="bg-day"align="center">THU</td>
+<td class="TOL">TOL<br><a class="button box" onclick="TOL()">Zoom</a></td>
+<td class="UHV">UHV<br><a class="button box" onclick="UHV()">Zoom</a></td>
+<td class="DS">DS<br><a class="button box" onclick="DS()">Zoom</a></td>
+<td class="PY">PY<br><a class="button box" onclick="PY()">Zoom</a></td>
+<td class="COA">T-COA<br><a class="button box" onclick="COA()">Zoom</a></td>
+<td class="MATH">T-Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
+</tr>
+<tr>
+<td class="bg-day"align="center">FRI</td>
+<td class="QUIZ">Quiz<br><a class="button box" onclick="QUIZ()">Todo</a></td>
+<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a></td>
+<td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
+<td class="DS">T-DS<br><a class="button box" onclick="T_DS()">Zoom</a></td>
+<td class="UHV">UHV<br><a class="button box" onclick="UHV()">Zoom</a></td>
+<td class="COA">L-COA<br><a class="button box" onclick="L_COA()">Zoom</a></td>
 </tr>
 </table>
 <script src="f/time.js"></script>
-<script>setInterval(function(){window.location=window.location}, 60 * 1000);</script>
+<scri pt>
+setInterval(function(){window.location=window.location}, 60 * 1000);
+</scri pt>
 <script>
 _DS = "https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
-_COA = "https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
-_COA2 = "https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
+//_COA = "https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
+_COA = "https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
 _TOL = "https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
 _MATH = "https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09"
 _PY = "https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
 _UHV = "https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"
 _QUIZ = "https://classroom.google.com/a/not-turned-in/all"
 _L_DS = "https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
-_L_COA = "https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
+_L_COA = "https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
 _L_TOL = "https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
+
 function DS(){window.open(_DS, "_top");}
 function COA(){window.open(_COA, "_top");}
-function COA2(){window.open(_COA2, "_top");}
 function TOL(){window.open(_TOL, "_top");}
 function MATH(){window.open(_MATH, "_top");}
 function PY(){window.open(_PY, "_top");}
