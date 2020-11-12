@@ -13,6 +13,8 @@ else{celld=1;cellr=cellr+1;if(cellr>5)cellr=1;}
 if(cellr==0){cellr=1;celld=1}
 if(cellr==3 && (celld==5 || celld==6)){cellr=4;celld=1}
 
+if(myDate.getDate()<17){cellr=3;celld=1;}
+
 document.getElementById("highlight").innerHTML = "tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background-color: #ffff00}";
 
 var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
