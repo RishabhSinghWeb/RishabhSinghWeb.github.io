@@ -2,11 +2,10 @@ var myDate = new Date();
 var minutes = myDate.getMinutes();
 var hours = myDate.getHours();
 var time = hours*60 + minutes;
-var celld;
+var celld=1;
 var cellr = myDate.getDay();
 
-if(time<585)celld=1
-else if(time<645)celld=2
+if(time<645)celld=2
 else if(time<705)celld=3
 else if(time<765)celld=4
 else if(time<870)celld=5
@@ -27,8 +26,6 @@ for(i=0; i<4; i++) {
 	t.appendChild(document.createElement('span'));
 	t2.appendChild(document.createElement('span'))}
 
-document.getElementById("t").style.display = "table";
-document.getElementById("t2").style.display = "none";
 function CS33(){
 	document.getElementById("t2").style.display = "none";
 	document.getElementById("t").style.display = "table";
@@ -39,4 +36,6 @@ function CS34(){
 	document.getElementById("t2").style.display = "table";
 	localStorage.setItem("c",'4');
 	document.getElementById("t2").children[0].children[1].children[celld].scrollIntoView(true)}
-if(localStorage.getItem("c")=="4"){CS34()}
+
+if(localStorage.getItem("c")=="4")CS34();
+else CS33();
