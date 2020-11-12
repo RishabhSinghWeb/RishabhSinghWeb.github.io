@@ -1,5 +1,5 @@
 var myDate = new Date();
-var time = (myDate.getHours())*60 + myDate.getMinutes;
+var time = myDate.getHours()*60 + myDate.getMinutes();
 var celld=1;
 var cellr = myDate.getDay();
 
