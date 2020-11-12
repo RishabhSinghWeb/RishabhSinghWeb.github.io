@@ -21,15 +21,15 @@ var t2=document.getElementById("t2").children[0].children[cellr].children[celld]
 for(i=0; i<4; i++) {t.appendChild(document.createElement('span'));t2.appendChild(document.createElement('span'))}
 
 function CS33(){
-	document.getElementById("t").style.display = "table";
 	document.getElementById("t2").style.display = "none";
+	document.getElementById("t").style.display = "table";
 	document.getElementById('b3').style.color="blue"
 	document.getElementById('b4').style.color="gray"
 	localStorage.setItem("c",'3');
 	document.getElementById("t").children[0].children[1].children[celld].scrollIntoView(true)}
 function CS34(){
-	document.getElementById("t2").style.display = "table";
 	document.getElementById("t").style.display = "none";
+	document.getElementById("t2").style.display = "table";
 	document.getElementById('b4').style.color="blue"
 	document.getElementById('b3').style.color="gray"
 	localStorage.setItem("c",'4');
