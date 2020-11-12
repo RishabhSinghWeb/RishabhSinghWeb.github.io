@@ -2,6 +2,11 @@ button.btn{
   font-size: 20px;
   cursor: pointer;
   margin: 15px 30px;}
+table{
+  border-collapse:collapse;
+  margin:auto;
+  text-align:center;
+  font-weight:800;}
 .bg-day {background-color: #dc3545;}
 .DS{color:#00cc00;}
 .COA{color:#00ffff;}
