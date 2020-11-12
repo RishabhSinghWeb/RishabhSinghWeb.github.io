@@ -6,9 +6,9 @@ var cellr = myDate.getDay();
 if(time<645)celld=2
 else if(time<705)celld=3
 else if(time<765)celld=4
-else if(time<870)celld=5
-else if(time<930)celld=6
-else{celld=1;cellr=cellr+1;if(cellr>5)cellr=1;}
+else if(time<855)celld=5
+else if(time<915)celld=6
+else{celld=1;cellr=cellr+1;if(cellr>6)cellr=1;}
 
 if(cellr==0){cellr=1;celld=1}
 if(cellr==3 && (celld==5 || celld==6)){cellr=4;celld=1}
