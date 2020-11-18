@@ -21,7 +21,7 @@ table{
   border-radius:.25rem;
   text-decoration:none;
   color:#fff;
-  background:linear-gradient(90deg,#007CFF 0%,#5E31FF 100%)}
+  background:linear-gradient(90deg,#007CFF 100%,#5E31FF 0%)}
 .box  form, td{
   position: relative;
   overflow: hidden;
