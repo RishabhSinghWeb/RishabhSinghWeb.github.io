@@ -1,9 +1,10 @@
 var myDate = new Date();
 var time = myDate.getHours()*60 + myDate.getMinutes();
-var celld=1;
+var celld;
 var cellr = myDate.getDay();
 
-if(time<645)celld=2
+if(time<590)celld=1
+else if(time<645)celld=2
 else if(time<705)celld=3
 else if(time<765)celld=4
 else if(time<855)celld=5
