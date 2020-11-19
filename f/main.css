@@ -3,6 +3,9 @@ table{
   margin:auto;
   text-align:center;
   font-weight:800;}
+img{
+  max-width:100%;
+  max-height:100%;}
 .bg-day {background-color: #dc3545;}
 .DS{color:#00cc00;}
 .COA{color:#00ffff;}
