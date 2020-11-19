@@ -35,19 +35,6 @@ function CS34(){
 	document.getElementById('b3').style.color="gray"
 	localStorage.setItem("c",'4');
 	document.getElementById("t2").children[0].children[1].children[celld].scrollIntoView(true)}
- function() transpose{
-    $("table").each(function() {
-        var $this = $(this);
-        var newrows = [];
-        $this.find("tr").each(function(){
-            var i = 0;
-            $(this).find("td").each(function(){
-                i++;
-                if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
-                newrows[i].append($(this));});});
-        $this.find("tr").remove();
-        $.each(newrows, function(){$this.append(this);});});
-    return false;}
-
+ 
 if(localStorage.getItem("c")=="4")CS34();
 else CS33();
