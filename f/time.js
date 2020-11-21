@@ -9,8 +9,9 @@ else if(time<705)celld=3
 else if(time<765)celld=4
 else if(time<855)celld=5
 else if(time<915)celld=6
-else{celld=1;cellr=cellr+1;if(cellr>5)cellr=1;}
+else{celld=1;cellr=cellr+1;}
 
+if(cellr>5){cellr=1;celld=1}
 if(cellr==0){cellr=1;celld=1}
 if(cellr==3 && (celld==5 || celld==6)){cellr=4;celld=1}
 if(myDate.getDate()<25 && cellr==1 && celld==1){celld=2;}
