@@ -149,26 +149,6 @@ document.getElementById("timeline").appendChild(img)}
 <script src="f/time.js"></script>
 <script>setInterval(function(){window.location=window.location}, 60*1000);</script>
 <script>
-function() T{
-  $("table").each(function() {
-      var $this = $(this);
-      var newrows = [];
-      $this.find("tr").each(function(){
-          var i = 0;
-          $(this).find("td").each(function(){
-              i++;
-              if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
-              newrows[i].append($(this));
-          });
-      });
-      $this.find("tr").remove();
-      $.each(newrows, function(){
-          $this.append(this);
-      });
-  });
-}
-</script>
-<script>
 _DS = "https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
 //_COA = "https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
 _COA = "https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
@@ -177,9 +157,9 @@ _MATH = "https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz
 _PY = "https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
 _UHV = "https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"
 _QUIZ = "https://classroom.google.com/a/not-turned-in/all"
-//_L_DS = "https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
-//_L_COA = "https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
-//_L_TOL = "https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
+_L_DS = "https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
+_L_COA = "https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
+_L_TOL = "https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
 
 function DS(){window.open(_DS, "_top");}
 function COA(){window.open(_COA, "_top");}
@@ -192,8 +172,5 @@ function L_DS(){window.open(_DS, "_top");}
 function L_COA(){window.open(_COA, "_top");}
 function L_TOL(){window.open(_TOL, "_top");}
 </script>
-Users < 
-<b class="hitCounter" data-name="4eab87e9b7309329d34152dffff10ccd|1|ip|1|#ffffff|#000000|small|s-hit"></b>
-<script>document.write("<script src='https://visitorshitcounter.com/js/hitCounter.js'><\/script>");</script>
 </body>
 </html>
