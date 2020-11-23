@@ -1,9 +1,5 @@
 *{
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  
   user-select: none;}
 table{
   border-collapse:collapse;
@@ -11,8 +7,7 @@ table{
   text-align:center;
   font-weight:800;}
 img{
-  max-width:100%;
-  max-height:100%;}
+  max-width:100%;}
 .bg-day {background-color: #dc3545;}
 .DS{color:#00cc00;}
 .COA{color:#00ffff;}
