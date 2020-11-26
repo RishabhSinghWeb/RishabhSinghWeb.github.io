@@ -14,7 +14,7 @@ else{celld=1;cellr=cellr+1;}
 if(cellr>4){cellr=1;celld=1}
 if(cellr==0){cellr=1;celld=1}
 if(cellr==3 && (celld==5 || celld==6)){cellr=4;celld=1}
-if(myDate.getDate()<25 && cellr==1 && celld==1){celld=2;}
+//if(myDate.getDate()<25 && cellr==1 && celld==1){celld=2;}
 
 document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background-color: #ffff00}";
 
