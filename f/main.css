@@ -1,6 +1,4 @@
-*{
-  
-  user-select: none;}
+*{user-select: none;}
 table{
   border-collapse:collapse;
   margin:auto;
@@ -60,3 +58,27 @@ img{
   animation: btn-anim4 1s linear infinite;
   animation-delay: .75s
 }@keyframes btn-anim4{0%{bottom:-100%;}50%,100%{bottom:100%;}}
+
+
+.anim{
+background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+background-size: 400% 400%;
+-webkit-animation: Gradient 15s ease infinite;
+-moz-animation: Gradient 15s ease infinite;
+animation: Gradient 5s ease infinite;
+}@keyframes Gradient{
+0%{background-position: 0% 50%}
+50%{background-position: 100% 50%}
+100%{background-position: 0% 50%}}
+
+.anim2{
+	background: 
+linear-gradient(130deg, rgba(255, 0, 89, 1) 0%, rgba(0, 179, 255, 1) 33%, rgba(255, 0, 89, 1) 66%, rgba(0, 179, 255, 1) 100%);
+animation: slide 5s linear infinite;}
+@keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: 400px 0; }
+@keyframes slide2 {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
