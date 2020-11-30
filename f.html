@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="f/main.css">
 <style id="highlight"></style>
 <style>
-
 .anim{
 background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 background-size: 400% 400%;
@@ -112,7 +111,7 @@ animation: Gradient 5s ease infinite;
 </tr>   
 <tr>
 <td class="bg-day"align="center">TUE</td>
-<td class="COA">COA<br><a class="button anim box" onclick="COA()">Zoom</a></td>
+<td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a></td>
 <td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
 <td class="DS">DS<br><a class="button box" onclick="DS()">Zoom</a></td>
 <td class="PY">PY<br><a class="button box" onclick="PY()">Zoom</a></td>
@@ -151,7 +150,7 @@ animation: Gradient 5s ease infinite;
 <td class="COA">L-COA<br><a class="button box" onclick="L_COA()">Zoom</a></td>
 </tr>
 </table>
-<a style="display:table;margin:auto;margin-top:15px;" href="https://dailylifesking.github.io/f/timeline.png" class="button">Quiz Schedule</a>
+<a style="display:table;margin:auto;margin-top:15px;" href="https://dailylifesking.github.io/f/timeline.png" class="anim">Quiz Schedule</a>
 <script>
 var myDate = new Date();
 var time = myDate.getHours()*60 + myDate.getMinutes();
@@ -176,6 +175,7 @@ var t=document.getElementById("t").children[0].children[cellr].children[celld].c
 var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
 for(i=0; i<4; i++) {t.appendChild(document.createElement('span'));t2.appendChild(document.createElement('span'))}
 t.style.background= " linear-gradient(45deg, rgba(255, 0, 89, 1) 0%, rgba(0, 179, 255, 1) 33%, rgba(255, 0, 89, 1) 66%, rgba(0, 179, 255, 1) 100%)"
+t2.style.background= " linear-gradient(45deg, rgba(255, 0, 89, 1) 0%, rgba(0, 179, 255, 1) 33%, rgba(255, 0, 89, 1) 66%, rgba(0, 179, 255, 1) 100%)"
 
 function CS33(){
 	document.getElementById("t2").style.display = "none";
