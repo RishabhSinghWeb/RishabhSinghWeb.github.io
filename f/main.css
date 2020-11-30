@@ -73,7 +73,7 @@ animation: Gradient 5s ease infinite;
 
 .anim2{
 	background: 
-linear-gradient(130deg, rgba(255, 0, 89, 1) 0%, rgba(0, 179, 255, 1) 33%, rgba(255, 0, 89, 1) 66%, rgba(0, 179, 255, 1) 100%);
+linear-gradient(135deg, rgba(255, 0, 89, 1) 0%, rgba(0, 179, 255, 1) 33%, rgba(255, 0, 89, 1) 66%, rgba(0, 179, 255, 1) 100%);
 animation: slide 5s linear infinite;}
 @keyframes slide {
     from { background-position: 0 0; }
