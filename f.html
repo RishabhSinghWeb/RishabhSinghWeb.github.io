@@ -184,13 +184,13 @@ else CS33();
 </script>
 <script>
 var myDate2 = new Date();
-var time2 = myDate.getHours()*60 + myDate.getMinutes();
+var time2 = myDate2.getHours()*60 + myDate2.getMinutes();
 
 if(localStorage.getItem("cock")!="done" && time2<541 && time2>539){
   url="https://dailylifesking.github.io/f/cock.mp3"
   const audio = new Audio(url);
   audio.play();
-  localStorage.getItem("cock")=="done")
+  localStorage.setItem("cock","done")
 }
 </script>
 <script>
