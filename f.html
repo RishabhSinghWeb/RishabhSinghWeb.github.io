@@ -142,34 +142,36 @@
 <script>
 
 function highlight(){
-var myDate = new Date();
-var time = myDate.getHours()*60 + myDate.getMinutes();
-var celld;
-var cellr = myDate.getDay()
+  var myDate = new Date();
+  var time = myDate.getHours()*60 + myDate.getMinutes();
+  var celld;
+  var cellr = myDate.getDay()
 
-if(time<590)celld=1
-else if(time<645)celld=2
-else if(time<705)celld=3
-else if(time<765)celld=4
-else if(time<855)celld=6
-else if(time<915)celld=7
-else{celld=1;cellr=cellr+1;}
+  if(time<590)celld=1
+  else if(time<645)celld=2
+  else if(time<705)celld=3
+  else if(time<765)celld=4
+  else if(time<855)celld=6
+  else if(time<915)celld=7
+  else{celld=1;cellr=cellr+1;}
 
-if(cellr>5 || cellr==0){cellr=1;celld=1}
-if(cellr==3 && (celld==5 || celld==6)){cellr=4;celld=1}
-//if(cellr==5 && celld==1)celld=2
+  if(cellr>5 || cellr==0){cellr=1;celld=1}
+  if(cellr==3 && (celld==5 || celld==6)){cellr=4;celld=1}
+  //if(cellr==5 && celld==1)celld=2
 
-document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background:linear-gradient(180deg, #FFFF73, #ffff96, #FF0, #FF0);text-shadow: 0 0 2px #FFF;}";
-var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
-var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
-for(i=0; i<4; i++) {t.appendChild(document.createElement('span'));t2.appendChild(document.createElement('span'))}
-t.classList.add("anim2")
-t2.classList.add("anim2")
+  document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background:linear-gradient(180deg, #FFFF73, #ffff96, #FF0, #FF0);text-shadow: 0 0 2px #FFF;}";
+  var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
+  var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
+  for(i=0; i<4; i++){
+   t.appendChild(document.createElement('span'));
+   t2.appendChild(document.createElement('span'))}
+  t.classList.add("anim2")
+  t2.classList.add("anim2")
 
-
-if(localStorage.getItem("c")=="4")CS34();
-else CS33();
-}
+  if(localStorage.getItem("c")=="4")
+    CS34();
+  else 
+    CS33();}
 
 function CS33(){
 	document.getElementById("t2").style.display = "none";
