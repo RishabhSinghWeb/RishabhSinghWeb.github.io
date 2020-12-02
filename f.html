@@ -140,6 +140,8 @@
 </table>
 <a style="display:table;margin:auto;margin-top:15px;" href="https://dailylifesking.github.io/f/timeline.png" class="button anim">Schedule</a>
 <script>
+
+function highlight(){
 var myDate = new Date();
 var time = myDate.getHours()*60 + myDate.getMinutes();
 var celld;
@@ -164,6 +166,11 @@ for(i=0; i<4; i++) {t.appendChild(document.createElement('span'));t2.appendChild
 t.classList.add("anim2")
 t2.classList.add("anim2")
 
+
+if(localStorage.getItem("c")=="4")CS34();
+else CS33();
+}
+
 function CS33(){
 	document.getElementById("t2").style.display = "none";
 	document.getElementById("t").style.display = "table";
@@ -179,8 +186,7 @@ function CS34(){
 	localStorage.setItem("c",'4');
 	document.getElementById("t2").children[0].children[1].children[celld].scrollIntoView(true)}
 
-if(localStorage.getItem("c")=="4")CS34();
-else CS33();
+setInterval( highlight() , 6*1000); 
 </script>
 <script>
 //_DS = "https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
