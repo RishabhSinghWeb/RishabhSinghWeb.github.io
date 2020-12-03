@@ -140,9 +140,7 @@
 </table>
 <a style="display:table;margin:auto;margin-top:15px;" href="https://dailylifesking.github.io/f/timeline.png" class="button anim">Schedule</a>
 <script>
-var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
-var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
-  
+
 function CS33(){
 	document.getElementById("t2").style.display = "none";
 	document.getElementById("t").style.display = "table";
@@ -177,12 +175,15 @@ function highlight(){
   //if(cellr==5 && celld==1)celld=2
 
   document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background:linear-gradient(180deg, #FFFF73, #ffff96, #FF0, #FF0);text-shadow: 0 0 2px #FFF;}";
-  for(i=0; i<4; i++){
+  
+var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
+var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
+for(i=0; i<4; i++){
    t.appendChild(document.createElement('span'));
    t2.appendChild(document.createElement('span'))}
   t.classList.add("anim2")
   t2.classList.add("anim2")
-
+  
   if(localStorage.getItem("c")=="4")
     CS34();
   else 
