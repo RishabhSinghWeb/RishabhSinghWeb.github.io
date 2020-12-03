@@ -140,6 +140,23 @@
 </table>
 <a style="display:table;margin:auto;margin-top:15px;" href="https://dailylifesking.github.io/f/timeline.png" class="button anim">Schedule</a>
 <script>
+var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
+var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
+  
+function CS33(){
+	document.getElementById("t2").style.display = "none";
+	document.getElementById("t").style.display = "table";
+	document.getElementById('b3').style.color="blue"
+	document.getElementById('b4').style.color="gray"
+	localStorage.setItem("c",'3');
+	document.getElementById("t").children[0].children[1].children[celld].scrollIntoView(true)}
+function CS34(){
+	document.getElementById("t").style.display = "none";
+	document.getElementById("t2").style.display = "table";
+	document.getElementById('b4').style.color="blue"
+	document.getElementById('b3').style.color="gray"
+	localStorage.setItem("c",'4');
+	document.getElementById("t2").children[0].children[1].children[celld].scrollIntoView(true)}
 
 function highlight(){
   var myDate = new Date();
@@ -160,8 +177,6 @@ function highlight(){
   //if(cellr==5 && celld==1)celld=2
 
   document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background:linear-gradient(180deg, #FFFF73, #ffff96, #FF0, #FF0);text-shadow: 0 0 2px #FFF;}";
-  var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
-  var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
   for(i=0; i<4; i++){
    t.appendChild(document.createElement('span'));
    t2.appendChild(document.createElement('span'))}
@@ -172,21 +187,6 @@ function highlight(){
     CS34();
   else 
     CS33();}
-
-function CS33(){
-	document.getElementById("t2").style.display = "none";
-	document.getElementById("t").style.display = "table";
-	document.getElementById('b3').style.color="blue"
-	document.getElementById('b4').style.color="gray"
-	localStorage.setItem("c",'3');
-	document.getElementById("t").children[0].children[1].children[celld].scrollIntoView(true)}
-function CS34(){
-	document.getElementById("t").style.display = "none";
-	document.getElementById("t2").style.display = "table";
-	document.getElementById('b4').style.color="blue"
-	document.getElementById('b3').style.color="gray"
-	localStorage.setItem("c",'4');
-	document.getElementById("t2").children[0].children[1].children[celld].scrollIntoView(true)}
 
 setInterval( highlight() , 6*1000); 
 </script>
