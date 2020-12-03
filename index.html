@@ -140,22 +140,6 @@
 </table>
 <a style="display:table;margin:auto;margin-top:15px;" href="https://dailylifesking.github.io/f/timeline.png" class="button anim">Schedule</a>
 <script>
-
-function CS33(){
-	document.getElementById("t2").style.display = "none";
-	document.getElementById("t").style.display = "table";
-	document.getElementById('b3').style.color="blue"
-	document.getElementById('b4').style.color="gray"
-	localStorage.setItem("c",'3');
-	document.getElementById("t").children[0].children[1].children[celld].scrollIntoView(true)}
-function CS34(){
-	document.getElementById("t").style.display = "none";
-	document.getElementById("t2").style.display = "table";
-	document.getElementById('b4').style.color="blue"
-	document.getElementById('b3').style.color="gray"
-	localStorage.setItem("c",'4');
-	document.getElementById("t2").children[0].children[1].children[celld].scrollIntoView(true)}
-
 function highlight(){
   var myDate = new Date();
   var time = myDate.getHours()*60 + myDate.getMinutes();
@@ -176,18 +160,32 @@ function highlight(){
 
   document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background:linear-gradient(180deg, #FFFF73, #ffff96, #FF0, #FF0);text-shadow: 0 0 2px #FFF;}";
   
-var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
-var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
-for(i=0; i<4; i++){
+  var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
+  var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
+  for(i=0; i<4; i++){
    t.appendChild(document.createElement('span'));
    t2.appendChild(document.createElement('span'))}
   t.classList.add("anim2")
-  t2.classList.add("anim2")
-  
-  if(localStorage.getItem("c")=="4")
-    CS34();
-  else 
-    CS33();}
+  t2.classList.add("anim2")}
+highlight()
+
+function CS33(){
+	document.getElementById("t2").style.display = "none";
+	document.getElementById("t").style.display = "table";
+	document.getElementById('b3').style.color="blue"
+	document.getElementById('b4').style.color="gray"
+	localStorage.setItem("c",'3');
+	document.getElementById("t").children[0].children[1].children[celld].scrollIntoView(true)}
+function CS34(){
+	document.getElementById("t").style.display = "none";
+	document.getElementById("t2").style.display = "table";
+	document.getElementById('b4').style.color="blue"
+	document.getElementById('b3').style.color="gray"
+	localStorage.setItem("c",'4');
+	document.getElementById("t2").children[0].children[1].children[celld].scrollIntoView(true)}
+
+if(localStorage.getItem("c")=="4") CS34();
+else CS33();
 
 setInterval( highlight() , 6*1000); 
 </script>
