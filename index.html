@@ -67,7 +67,7 @@
 </tr>
 <tr>
 <td class="bg-day"align="center">FRI</td>
-<td class="QUIZ">Quiz<br><a class="button box" onclick="QUIZ()">Todo</a></td>
+<td>---<br><a></td>
 <td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a></td>
 <td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
 <td class="TOL">T-TOL<br><a class="button box" onclick="TOL()">Zoom</a></td>
@@ -129,7 +129,7 @@
 </tr>
 <tr>
 <td class="bg-day"align="center">FRI</td>
-<td class="QUIZ">Quiz<br><a class="button box" onclick="QUIZ()">Todo</a></td>
+<td>---<br><a></td>
 <td class="COA">COA<br><a class="button box" onclick="COA()">Zoom</a></td>
 <td class="MATH">Math<br><a class="button box" onclick="MATH()">Zoom</a></td>
 <td class="DS">T-DS<br><a class="button box" onclick="DS()">Zoom</a></td>
@@ -156,7 +156,7 @@ function highlight(){
 
   if(cellr>5 || cellr==0){cellr=1;celld=1}
   if(cellr==3 && (celld==5 || celld==6)){cellr=4;celld=1}
-  //if(cellr==5 && celld==1)celld=2
+  if(cellr==5 && celld==1)celld=2
 
   document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background:linear-gradient(180deg, #FFFF73, #ffff96, #FF0, #FF0);text-shadow: 0 0 2px #FFF;}";
   
