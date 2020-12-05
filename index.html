@@ -158,7 +158,7 @@ function highlight(){
   if(cellr==3 && (celld==5 || celld==6)){cellr=4;celld=1}
   if(cellr==5 && celld==1)celld=2
 
-  document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background:linear-gradient(180deg, #FFFF73, #ffff96, #FF0, #FF0);text-shadow: 0 0 2px #FFF;}";
+  document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background:linear-gradient(180deg, #FFFF73, #ffff96, #FF0, #FF0);/*text-shadow: 0 0 2px #FFF;*/}";
   
   var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
   var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
