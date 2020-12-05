@@ -162,11 +162,12 @@ function highlight(){
   
   var t=document.getElementById("t").children[0].children[cellr].children[celld].children[1]
   var t2=document.getElementById("t2").children[0].children[cellr].children[celld].children[1]
-  for(i=0; i<4; i++){
-   t.appendChild(document.createElement('span'));
-   t2.appendChild(document.createElement('span'))}
-  t.classList.add("anim2")
-  t2.classList.add("anim2")}
+  //for(i=0; i<4; i++){
+  // t.appendChild(document.createElement('span'));
+  // t2.appendChild(document.createElement('span'))}
+  //t.classList.add("anim2")
+  //t2.classList.add("anim2")
+}
 highlight()
 
 function CS33(){
@@ -175,14 +176,14 @@ function CS33(){
 	document.getElementById('b3').style.color="blue"
 	document.getElementById('b4').style.color="gray"
 	localStorage.setItem("c",'3');
-	document.getElementById("t").children[0].children[1].children[celld].scrollIntoView(true)}
+	//document.getElementById("t").children[0].children[1].children[celld].scrollIntoView(true)}
 function CS34(){
 	document.getElementById("t").style.display = "none";
 	document.getElementById("t2").style.display = "table";
 	document.getElementById('b4').style.color="blue"
 	document.getElementById('b3').style.color="gray"
 	localStorage.setItem("c",'4');
-	document.getElementById("t2").children[0].children[1].children[celld].scrollIntoView(true)}
+	//document.getElementById("t2").children[0].children[1].children[celld].scrollIntoView(true)}
 
 </script><script>
 var c = localStorage.getItem("c")
@@ -190,7 +191,7 @@ var c = localStorage.getItem("c")
 if(c=="4") CS34();
 else CS33();
 </script><script>
-setInterval( highlight() , 6*1000); 
+//setInterval( highlight() , 6*1000); 
 </script><script>
 //_DS = "https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
 _DS = "https://us04web.zoom.us/j/6197662772?pwd=YjJpWEJVaDhhOXA1WHZyTGFKKzZGdz09"
