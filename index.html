@@ -454,31 +454,24 @@ function CS32(){
 function CS33(){
 	neutralise()
 	if(r=="true") {
-		rr.innerHTML='I am not Rishabh Singh'
-		t5.style.display="table";}
+		rr.innerHTML="I am not Rishabh Singh"
+		t5.style.display="table"}
 	else {
-		rr.innerHTML="I am Rishabh Singh"
-		t3.style.display="table";}
+		rr.innerHTML='I am Rishabh Singh'
+		t3.style.display="table"}
 	b3.style.color="blue"
-	rr.style.display="table"
 	localStorage.setItem("c",'3');}
 function CS34(){
 	neutralise()
 	t4.style.display="table";
 	b4.style.color="blue"
 	localStorage.setItem("c",'4');}
-function rrupdate(){
-	if(r=="false") {rr.innerHTML='I am Rishabh Singh'}
-	else {rr.innerHTML="I am not Rishabh Singh"}}
 function rrChange(){
-	if(r=="true") {
-		r="false"
-		localStorage.setItem("r","false")}
-	else {
-		r="true"
-		localStorage.setItem("r","true")}
+	if(r=="true") r="false"
+	else r="true"
+	
 	CS33()
-	rrupdate()}
+	localStorage.setItem("r",r)}
 
 </script><script>
 var c=localStorage.getItem("c")
@@ -490,7 +483,6 @@ else if (c=="2") CS32();
 else if (c=="3") CS33();
 else CS34();
 
-rrupdate()
 //setInterval( highlight() , 6*1000); 
 </script><script>
 //_DS="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
