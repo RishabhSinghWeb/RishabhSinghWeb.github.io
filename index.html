@@ -15,6 +15,7 @@ table{
   text-align:center;
   font-weight:800;}
 .bg-day {background-color: #dc3545;}
+.bg-time {background-color:#ffc107}
 .DS{color:#00cc00;}
 .COA{color:#00ffff;}
 .TOL{color:#ff00ff;}
@@ -329,6 +330,81 @@ table{
 
 
 <table id="t5" style="margin-bottom:15px;" border="1">
+<tr>
+<td style="color:#fff;background-color:#343a40;">rr</td>
+<td class="bg-time">MON</td>
+<td class="bg-time">TUE</td>
+<td class="bg-time">WED</td>
+<td class="bg-time">THU</td>
+<td class="bg-time">FRI</td>
+</tr>
+<tr>
+<td class="bg-day">9:00</td>
+<td class="QUIZ" onclick="QUIZ()">Quiz</td>
+<td class="COA" onclick="COA()">COA</td>
+<td class="TOL" onclick="TOL()">TOL</td>
+<td class="TOL" onclick="TOL()">TOL</td>
+<td>---</td>
+</tr>
+<tr>
+<td class="bg-day">10:00</td>
+<td class="TOL" onclick="TOL()">TOL</td>
+<td class="MATH" onclick="MATH()">Math</td>
+<td class="DS" onclick="DS()">DS</td>
+<td class="UHV" onclick="UHV()">UHV</td>
+<td class="COA" onclick="COA()">COA</td>
+</tr>
+<tr>
+<td class="bg-day">11:00</td>
+<td class="MATH" onclick="MATH()">Math</td>
+<td class="DS" onclick="DS()">DS</td>
+<td class="MATH" onclick="MATH()">Math</td>
+<td class="DS" onclick="DS()">DS</td>
+<td class="MATH" onclick="MATH()">Math</td>
+</tr>
+<tr>
+<td class="bg-day">12:00</td>
+<td class="COA" onclick="COA()">COA</td>
+<td class="PY" onclick="PY()">PY</td>
+<td class="COA" onclick="COA()">T-COA</td>
+<td class="PY" onclick="PY()">PY</td>
+<td class="TOL" onclick="TOL()">T-TOL</td>
+</tr>
+<tr>
+<td class="bg-day"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="bg-day">13:45</td>
+<td class="COA" onclick="COA()">L-COA</td>
+<td class="UHV" onclick="UHV()">UHV</td>
+<td>---</td>
+<td class="MATH" onclick="MATH()">T-Math</td>
+<td class="UHV" onclick="UHV()">UHV</td>
+</tr>
+<tr>
+<td class="bg-day">14:45</td>
+<td class="TOL" onclick="TOL()">L-TOL</td>
+<td>---</td>
+<td>---</td>
+<td class="DS" onclick="DS()">T-DS</td>
+<td class="DS" onclick="DS()">L-DS</td>
+</tr>
+<tr>
+<td class="bg-day">15:45</td>
+<td class="TOL" onclick="TOL()">L-TOL</td>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+<td class="DS" onclick="DS()">L-DS</td>
+</tr>
+</table>
+
+<table id="t6" style="display:none;margin-bottom:15px;" border="1">
 <tr style="background-color:#ffc107;">
 <td style="color:#fff;background-color:#343a40;">rr</td>
 <td>9:00<br>9:45</td>
@@ -401,26 +477,6 @@ table{
 <a href="/f/timeline.png" class="button center info">Schedule</a>
 <a id="rr" onclick="rrChange()" class="button center info">Error</a>
 <script>
-var myDate=new Date();
-var time=myDate.getHours()*60 + myDate.getMinutes();
-var celld;
-var cellr=myDate.getDay()
-
-if(time<590)celld=1
-else if(time<645)celld=2
-else if(time<705)celld=3
-else if(time<765)celld=4
-else if(time<855)celld=6
-else if(time<915)celld=7
-else if(time<975)celld=8
-else{celld=1;cellr=cellr+1;}
-
-if(cellr>5 || cellr==0){cellr=1;celld=1}
-if(cellr==2 && celld==8){cellr=3;celld=1}
-if(cellr==5 && celld==1)celld=2
-
-document.getElementById("highlight").innerHTML="tr:nth-child("+(cellr+1)+") td:nth-child("+(celld+1)+"){background:#ff0}";
-
 t1=document.getElementById("t1")
 t2=document.getElementById("t2")
 t3=document.getElementById("t3")
@@ -442,7 +498,7 @@ function neutralise(){
 	b1.style.color="gray"
 	b2.style.color="gray"
 	b3.style.color="gray"
-	b4.style.color="gray"}
+	b4.style.color="gray";}
 
 function CS31(){
 	neutralise()
@@ -487,12 +543,48 @@ else if (c=="2") CS32();
 else if (c=="3") CS33();
 else CS34();
 
+</script><script>
+var myDate=new Date();
+var time=myDate.getHours()*60 + myDate.getMinutes();
+var d;var r=myDate.getDay()
+if(time<590)d=1
+else if(time<645)d=2
+else if(time<705)d=3
+else if(time<765)d=4
+else if(time<855)d=6
+else if(time<915)d=7
+else if(time<975)d=8
+else{d=1;r=r+1;}
+r1=r;r2=r;r3=r;r4=r
+d1=d;d2=d;d3=d;d4=d
+if(r1==2&&(d1==7||d1==8)){r1=3;d1=1}
+if(r1==3&&(d1==7||d1==8)){r1=4;d1=1}
+if(r1==5&&d1==1)d1=2
+if(r1==5&&(d1==7||d1==8)){r1=6;d1=1}
+if(r1>5||r1==0){r1=1;d1=1}
+if(r2==2&&d2==4)d2=6
+if(d2==8){d2=1;r2++}
+if(r2==5&&d2==1)d2=2
+if(r2>5||r2==0){r2=1;d2=1}
+if(r3==2&&(d3==7||d3==8)){r3=3;d3=1}
+if(r3==3&&(d3==6||d3==7||d3==8)){r3=4;d3=1}
+if(r3==4&&(d3==8)){r3=5;d3=1}
+if(r3==5&&d3==1)d3=2
+if(r3>5||r3==0){r3=1;d3=1}
+if(r4==2&&(d4==7||d4==8)){r4=3;d4=1}
+if(r4==3&&(d4==4||d4==6||d4==7||d4==8)){r4=4;d4=1}
+if(r4==5&&d4==1)d4=2
+if(r4>5||r4==0){r4=1;d4=1}
+document.getElementById('t1').children[0].children[r1].children[d1].style.background="#ff0";
+document.getElementById('t2').children[0].children[r2].children[d2].style.background="#ff0";
+document.getElementById('t3').children[0].children[r3].children[d3].style.background="#ff0";
+document.getElementById('t4').children[0].children[r4].children[d4].style.background="#ff0";
+document.getElementById('t5').children[0].children[d3].children[r3].style.background="#ff0";
 //setInterval( highlight() , 6*1000); 
 </script><script>
 //_DS="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
 //_DS="https://us04web.zoom.us/j/6197662772?pwd=YjJpWEJVaDhhOXA1WHZyTGFKKzZGdz09"
 _DS="https://us04web.zoom.us/j/6197662772?pwd=YjJpWEJVaDhhOXA1WHZyTGFKKzZGdz09"
-
 //_COA="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
 _COA="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
 _TOL="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
@@ -505,7 +597,6 @@ _QUIZ="https://classroom.google.com/a/not-turned-in/all"
 //_L_DS="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
 //_L_COA="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
 //_L_TOL="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
-
 function DS(){window.open(_DS, "_top");}
 function COA(){window.open(_COA, "_top");}
 function TOL(){window.open(_TOL, "_top");}
