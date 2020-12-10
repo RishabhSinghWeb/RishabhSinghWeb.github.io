@@ -33,12 +33,14 @@ table{
   text-decoration:none;
   color:#fff;
   background:linear-gradient(90deg,#5E31FF 0%,#007CFF 100%)}
+.center{display:table;margin:auto;}
+.info{margin-bottom:15px;background:#EE7752}
 </style>
 </head>
-<body style="margin:auto;">
+<body class="center">
 <!--<h3 style="display:table;margin:auto;"><a href="https://dailylifes.github.io/old">old murr.ga here</a></h3>-->
-<div style="display:table;margin:auto;margin-top:4px">
-<div style="display:table;margin:auto;font-size:170%;font-weight:800;color:#44f;">CS<br></div>
+<div class="center" style="margin-top:4px">
+<div class="center" style="font-size:170%;font-weight:800;color:#44f;">CS<br></div>
 <button id="b1" onclick="CS31()">31</button>
 <button id="b2" onclick="CS32()">32</button>
 <button id="b3" onclick="CS33()">33</button>
@@ -396,8 +398,8 @@ table{
 </table>
 
 
-<a style="display:table;margin:auto;margin-bottom:15px;background:#EE7752" href="/f/timeline.png" class="button">Schedule</a>
-<a id="rr" style="display:table;margin:auto;margin-bottom:15px;background:#EE7752" onclick="rrChange()" class="button">Error: Cookies turned off, Please turn on the Cookies</a>
+<a href="/f/timeline.png" class="button center info">Schedule</a>
+<a id="rr" onclick="rrChange()" class="button center info">Error</a>
 <script>
 var myDate=new Date();
 var time=myDate.getHours()*60 + myDate.getMinutes();
