@@ -143,13 +143,6 @@ if(r4==3&&(d4==4||d4==6||d4==7||d4==8)){r4=4;d4=1}
 if(r4==5&&d4==1)d4=2
 if(r4==6&&d4==8)r4=7
 if(r4>6||r4==0){r4=1;d4=1}
-
-// if(r1==5){r1=1;d1=1}
-// if(r2==5){r2=1;d2=1}
-// if(r3==5){r3=1;d3=1}
-// if(r4==5){r4=6}
-
-if (transpose) {tmp=r1;r1=d1;d1=tmp;}
 document.getElementById('t').children[0].children[r1].children[d1].style.background="#ff0";
 }
 //setInterval( highlight() , 6*1000); 
