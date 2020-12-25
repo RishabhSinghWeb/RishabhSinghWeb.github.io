@@ -502,6 +502,14 @@ else if(time<915)d=7
 else if(time<975)d=8
 else{d=1;r=r+1;}
 r1=r;r2=r;r3=r;r4=r
+
+
+if(r1==5){r1=1;d1=1}
+if(r2==5){r2=1;d1=1}
+if(r3==5){r3=1;d1=1}
+if(r4==5){r4=6;d1=1}
+
+
 d1=d;d2=d;d3=d;d4=d
 if(r1==2&&(d1==7||d1==8)){r1=3;d1=1}
 if(r1==3&&(d1==7||d1==8)){r1=4;d1=1}
@@ -523,10 +531,6 @@ if(r4==5&&d4==1)d4=2
 if(r4==6&&d4==8)r4=7
 if(r4>6||r4==0){r4=1;d4=1}
 
-if(r1==5){r1=1;d1=1}
-if(r2==5){r2=1;d1=1}
-if(r3==5){r3=1;d1=1}
-if(r4==5){r4=6;d1=1}
 
 document.getElementById('t1').children[0].children[r1].children[d1].style.background="#ff0";
 document.getElementById('t2').children[0].children[r2].children[d2].style.background="#ff0";
