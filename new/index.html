@@ -243,33 +243,6 @@ function rrChange(){
 
 </script><script>
 
-let span = document.querySelector("span");
-let classes = span.classList;
-
-span.addEventListener('click', function() {
-  let result = classes.toggle("c");
-
-  if (result) {
-    span.textContent = `'c' added; classList is now "${classes}".`;
-  } else {
-    span.textContent = `'c' removed; classList is now "${classes}".`;
-  }
-})
-let span = document.querySelector("span");
-let classes = span.classList;
-
-span.addEventListener('click', function() {
-  let result = classes.toggle("c");
-
-  if (result) {
-    span.textContent = `'c' added; classList is now "${classes}".`;
-  } else {
-    span.textContent = `'c' removed; classList is now "${classes}".`;
-  }
-})
-
-
-
 ss={
 '1':"DS",
 '2':"COA",
@@ -325,25 +298,6 @@ for (var i = 0; i < arr[c].length; i++) {
 	q+='</tr>'}
 q+='</tbody>'
 document.getElementById("t").innerHTML=q}
-
-transpose=false
-// const transposeTable = (tbody, newContainerType = "tbody") => {
-//   const rows = Array.from(tbody.querySelectorAll("tr"))
-//   const newTbody = document.createElement(newContainerType)
-//   for (let rowIdx = 0; rowIdx < rows.length; rowIdx++) {
-//     const row = rows[rowIdx]
-//     const cells = Array.from(row.querySelectorAll("td, th"))
-//     for (let cellIdx = 0; cellIdx < cells.length; cellIdx++ ) {
-//       const cell = cells[cellIdx]
-//       const newRow = newTbody.children[cellIdx] || document.createElement("tr")
-//       if (!newTbody.children[cellIdx]) {
-//         newTbody.appendChild(newRow)}
-//       newRow.appendChild(cell.cloneNode(true))}}
-//   tbody.parentElement.appendChild(newTbody)
-//   tbody.parentElement.removeChild(tbody)}
-
-
-// if(transpose)transposeTable(t3.children[0])
 
 
 </script><script>
