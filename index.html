@@ -232,9 +232,9 @@ else if(c==3){b3.classList.add("stage");b3.style.color="blue"}
 else if(c==4){b4.classList.add("stage");b4.style.color="blue"}
 else if(c==5){b5.classList.add("stage");b5.style.color="blue"}
 else{c=3;b5.classList.add("stage");b5.style.color="blue"}
-q=`<tbody><tr"><td style="color:#fff;background-color:#343a40;">3`+c+`</td>
-<td>9:00<br>9:45</td><td>10:00<br>10:45</td><td>11:00<br>11:45</td><td>12:00<br>12:45</td>
-<td></td><td>1:45<br>2:30</td><td>2:45<br>3:30</td><td>3:45<br>4:30</td></tr>`
+q=`<tbody><tr"><td style="color:#fff;background-color:#343a40;">3`+c
+if(cbqc!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:45</td><td>2:45</td><td>3:45</td></tr>`
+else q+=`</td><td>9:00<br>9:45</td><td>10:00<br>10:45</td><td>11:00<br>11:45</td><td>12:00<br>12:45</td><td></td><td>1:45<br>2:30</td><td>2:45<br>3:30</td><td>3:45<br>4:30</td></tr>`
 for (var i = 0; i < arr[c].length; i++) {
 	q+='<tr><td>'+day[i]+'</td>'
 	for (var j = 0; j < arr[c][i].length; j++) {		
