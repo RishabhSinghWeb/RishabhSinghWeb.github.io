@@ -177,7 +177,8 @@ _L_DS ="https://us02web.zoom.us/j/9025097650?pwd=WGlLV09zZHFkMHJ3Tm5GK2JCNnNGUT0
 _COA="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
 _TOL="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
 _Math="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09"
-_PY="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
+_PY2="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
+_PY1="https://us04web.zoom.us/j/72184396380?pwd=NWZnTUJaNnd1Y3F6amV1eFhmWC9iUT09"
 _UHV ="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"
 _Quiz="https://classroom.google.com/a/not-turned-in/all"
 function DS(){window.open(_DS, "_top");}
@@ -187,7 +188,8 @@ function T_DS(){window.open(_DS, "_top");}
 function T_COA(){window.open(_COA, "_top");}
 function T_TOL(){window.open(_TOL, "_top");}
 function Math(){window.open(_Math, "_top");}
-function PY(){window.open(_PY, "_top");}
+function PY1(){window.open(_PY1, "_top");}
+function PY2(){window.open(_PY2, "_top");}
 function UHV(){window.open(_UHV, "_top");}
 function T_Math(){window.open(_Math, "_top");}
 function T_PY(){window.open(_PY, "_top");}
@@ -201,12 +203,12 @@ day=["MON","TUE","WED","THU","FRI","SAT"]
 ss={'1':"DS",'2':"COA",'3':"TOL",
 'x':"T-DS",'y':"T-COA",'z':"T-TOL",
 '4':"L_DS",'5':"L_COA",'6':"L_TOL",
-'a':'Math','p':'PY','v':'UHV',
-'m':'T-Math','n':'T-PY','o':'T-UHV',
+'a':'Math','p':'PY2','v':'UHV',
+'m':'T-Math','n':'T-PY','o':'T-UHV','P':'PY1',
 'q':'Quiz',' ':' ','-':'---'}
 arr=[[],
-["qa1p v--","132m ---","2ap3 vx4","1a3y 664","-azv ---"],
-["qa1p v--","132z 66-","2ap3 v--","1a3x 44-","-a5v m--"],
+["qa1P v--","132m ---","2aP3 vx4","1a35 664","-azv ---"],
+["qa1P v--","132z 66-","2aP3 v--","1a3x 44-","-a5v m--"],
 ["q3a6 56-","2a1p v--","31a- ---","3v1p mx-","-2az v44"],
 ["q3a5 z44","2a1p v--","31a- ---","3v1p -m6","-2ax v6-"],
 ["q3a5 z44","2a1p v--","31a- ---","3v1p -m6","-2ax v6-","31a2 vp-"]]
@@ -222,16 +224,11 @@ function cbqf(){if(cbq.checked)cbqc="true";else cbqc="false";build()}
 function cbtf(){if(cbt.checked)transpose="true";else transpose="false";build()}
 function cbbf(){if(cbb.checked)cbbc="true";else cbbc="false";build()}
 function build(){
-b1.style.color='gray'
-b2.style.color='gray'
-b3.style.color='gray'
-b4.style.color='gray'
-b5.style.color='gray'
-b1.classList.remove("stage");
-b2.classList.remove("stage");
-b3.classList.remove("stage");
-b4.classList.remove("stage");
-b5.classList.remove("stage");
+b1.classList.remove("stage");b1.style.color='gray'
+b2.classList.remove("stage");b2.style.color='gray'
+b3.classList.remove("stage");b3.style.color='gray'
+b4.classList.remove("stage");b4.style.color='gray'
+b5.classList.remove("stage");b5.style.color='gray'
 c=parseInt(c)
 if (c==1){b1.classList.add("stage");b1.style.color="blue"}
 else if(c==2){b2.classList.add("stage");b2.style.color="blue"}
