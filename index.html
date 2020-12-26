@@ -68,7 +68,7 @@ tr:nth-child(1){background-color:#ffc107}
 .T-DS{color:#00cc00;}.T-COA{color:#00ffff;}.T-TOL{color:#ff00ff;}
 .L_DS{color:#00cc00;}.L_COA{color:#00ffff;}.L_TOL{color:#ff00ff;}
 .Math{color:#ff0000;}
-.PY1{color:#0000ff;}.PY2{color:#0000ff;}
+.PY1{color:#0000ff;}.PY{color:#0000ff;}
 .UHV{color:#ffaa22;}
 .T-Math{color:#ff0000;}.T-PY{color:#0000ff;}.T-UHV{color:#ffaa22;}
 .Quiz{color:#aa0000}
@@ -179,7 +179,7 @@ _L_DS ="https://us02web.zoom.us/j/9025097650?pwd=WGlLV09zZHFkMHJ3Tm5GK2JCNnNGUT0
 _COA="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
 _TOL="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
 _Math="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09"
-_PY2="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
+_PY="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
 _PY1="https://us04web.zoom.us/j/72184396380?pwd=NWZnTUJaNnd1Y3F6amV1eFhmWC9iUT09"
 _UHV ="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"
 _Quiz="https://classroom.google.com/a/not-turned-in/all"
@@ -191,7 +191,7 @@ function T_COA(){window.open(_COA, "_top");}
 function T_TOL(){window.open(_TOL, "_top");}
 function Math(){window.open(_Math, "_top");}
 function PY1(){window.open(_PY1, "_top");}
-function PY2(){window.open(_PY2, "_top");}
+function PY2(){window.open(_PY, "_top");}
 function UHV(){window.open(_UHV, "_top");}
 function T_Math(){window.open(_Math, "_top");}
 function T_PY(){window.open(_PY, "_top");}
@@ -205,7 +205,7 @@ day=["MON","TUE","WED","THU","FRI","SAT"]
 ss={'1':"DS",'2':"COA",'3':"TOL",
 'x':"T-DS",'y':"T-COA",'z':"T-TOL",
 '4':"L_DS",'5':"L_COA",'6':"L_TOL",
-'a':'Math','p':'PY2','v':'UHV',
+'a':'Math','p':'PY','v':'UHV',
 'm':'T-Math','n':'T-PY','o':'T-UHV','P':'PY1',
 'q':'Quiz',' ':' ','-':'---'}
 arr=[[],
@@ -234,7 +234,6 @@ b5.classList.remove("stage");b5.style.color='gray'
 c=parseInt(c)
 if (c==1){b1.classList.add("stage");b1.style.color="blue"}
 else if(c==2){b2.classList.add("stage");b2.style.color="blue"}
-else if(c==3){b3.classList.add("stage");b3.style.color="blue"}
 else if(c==4){b4.classList.add("stage");b4.style.color="blue"}
 else if(c==5){b5.classList.add("stage");b5.style.color="blue"}
 else{c=3;b5.classList.add("stage");b5.style.color="blue"}
@@ -252,8 +251,7 @@ for (var i = 0; i < arr[c].length; i++) {
 			if(cbbc!="false"){q+='<a class="button" onclick="'+tt+'()">Zoom</a>';cbbc="true"}
 			q+='</td>'}}
 	q+='</tr>'}
-q+='</tbody>'
-document.getElementById("t").innerHTML=q
+document.getElementById("t").innerHTML=q+'</tbody>'
 const transposeTable = (tbody, newContainerType = "tbody") => {
 	const rows = Array.from(tbody.querySelectorAll("tr"))
 	const newTbody = document.createElement(newContainerType)
@@ -281,7 +279,7 @@ localStorage.setItem("transpose",transpose)
 localStorage.setItem("cbbc",cbbc)
 localStorage.setItem("c",c.toString());
 }
-setInterval( build() , 60*1000); 
+setInterval(build(), 60*1000); 
 </script>
 </body>
 </html>
