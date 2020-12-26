@@ -214,7 +214,6 @@ const transposeTable = (tbody, newContainerType = "tbody") => {
 	tbody.parentElement.appendChild(newTbody)
 	tbody.parentElement.removeChild(tbody)}
 if(transpose=="true"){transposeTable(t.children[0]);t.children[0].style.display="none"}
-else {t.children[0].style.display="initial"}
 
 var myDate=new Date();
 var time=myDate.getHours()*60 + myDate.getMinutes();
