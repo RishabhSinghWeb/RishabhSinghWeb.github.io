@@ -123,7 +123,99 @@ var cbqc=localStorage.getItem("cbqc")
 var transpose=localStorage.getItem("transpose")
 var cbbc=localStorage.getItem("cbbc")
 </script><script>
-function highlight(){
+//_DS="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
+_DS="https://us04web.zoom.us/j/6197662772?pwd=YjJpWEJVaDhhOXA1WHZyTGFKKzZGdz09"
+_L_DS ="https://us02web.zoom.us/j/9025097650?pwd=WGlLV09zZHFkMHJ3Tm5GK2JCNnNGUT09"
+//_COA="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
+_COA="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
+_TOL="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
+_Math="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09"
+_py="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
+_PY="https://us04web.zoom.us/j/72184396380?pwd=NWZnTUJaNnd1Y3F6amV1eFhmWC9iUT09"
+_UHV ="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"
+_Quiz="https://classroom.google.com/a/not-turned-in/all"
+function DS(){window.open(_DS, "_top");}
+function COA(){window.open(_COA, "_top");}
+function TOL(){window.open(_TOL, "_top");}
+function T_DS(){window.open(_DS, "_top");}
+function T_COA(){window.open(_COA, "_top");}
+function T_TOL(){window.open(_TOL, "_top");}
+function Math(){window.open(_Math, "_top");}
+function py(){window.open(_py, "_top");}
+function PY(){window.open(_PY, "_top");}
+function UHV(){window.open(_UHV, "_top");}
+function T_Math(){window.open(_Math, "_top");}
+function T_PY(){window.open(_PY, "_top");}
+function T_UHV(){window.open(_UHV, "_top");}
+function Quiz(){window.open(_Quiz);}
+function L_DS(){window.open(_L_DS, "_top");}
+function L_COA(){window.open(_COA, "_top");}
+function L_TOL(){window.open(_TOL, "_top");}
+</script><script>
+cbq=document.getElementById('cbq')
+cbt=document.getElementById('cbt')
+cbb=document.getElementById('cbb')
+function cbqf(){if(cbq.checked)cbqc="true";else cbqc="false";build()}
+function cbtf(){if(cbt.checked)transpose="true";else transpose="false";build()}
+function cbbf(){if(cbb.checked)cbbc="true";else cbbc="false";build()}
+function build(){
+b1=document.getElementById('b1');b1.classList.remove("stage");b1.style.color='gray'
+b2=document.getElementById('b2');b2.classList.remove("stage");b2.style.color='gray'
+b3=document.getElementById('b3');b3.classList.remove("stage");b3.style.color='gray'
+b4=document.getElementById('b4');b4.classList.remove("stage");b4.style.color='gray'
+b5=document.getElementById('b5');b5.classList.remove("stage");b5.style.color='gray'
+c=parseInt(c)
+if (c==1){b1.classList.add("stage");b1.style.color="blue"}
+else if(c==2){b2.classList.add("stage");b2.style.color="blue"}
+else if(c==4){b4.classList.add("stage");b4.style.color="blue"}
+else if(c==5){b5.classList.add("stage");b5.style.color="blue"}
+else{c=3;b3.classList.add("stage");b3.style.color="blue"}
+
+day=["MON","TUE","WED","THU","FRI","SAT"]
+ss={'1':"DS",'2':"COA",'3':"TOL",
+'x':"T-DS",'y':"T-COA",'z':"T-TOL",
+'4':"L_DS",'5':"L_COA",'6':"L_TOL",
+'a':'Math','p':'py','v':'UHV',
+'m':'T-Math','n':'T-PY','o':'T-UHV','P':'PY',
+'q':'Quiz',' ':' ','-':'---'}
+arr=[[],
+["qa1P v--","132m ---","2aP3 vx4","1a35 664","-azv ---"],
+["qa1P v--","132z 66-","2aP3 v--","1a3x 44-","-a5v m--"],
+["q3a6 56-","2a1p v--","31a- ---","3v1p mx-","-2az v44"],
+["q3a5 z44","2a1p v--","31a- ---","3v1p -m6","-2ax v6-"],
+["q3a5 z44","2a1p v--","31a- ---","3v1p -m6","-2ax v6-","31a2 vp-"]]
+
+q=`<tbody><tr"><td style="color:#fff;background-color:#343a40;">3`+c
+if(cbqc!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:45</td><td>2:45</td><td>3:45</td></tr>`
+else q+=`</td><td>9:00<br>9:45</td><td>10:00<br>10:45</td><td>11:00<br>11:45</td><td>12:00<br>12:45</td><td></td><td>1:45<br>2:30</td><td>2:45<br>3:30</td><td>3:45<br>4:30</td></tr>`
+for (var i = 0; i < arr[c].length; i++) {
+	q+='<tr><td>'+day[i]+'</td>'
+	for (var j = 0; j < arr[c][i].length; j++) {		
+		tt=ss[arr[c][i][j]]
+		if(tt==" ")q+='<td>'
+		else if (tt =='---')q+='<td>---'
+		else {
+			q+= '<td  onclick="'+tt+'()" class="'+tt+'">'+tt+'<br>'
+			if(cbbc!="false"){q+='<a class="button" onclick="'+tt+'()">Zoom</a>';cbbc="true"}
+			q+='</td>'}}
+	q+='</tr>'}
+document.getElementById("t").innerHTML=q+'</tbody>'
+const transposeTable = (tbody, newContainerType = "tbody") => {
+	const rows = Array.from(tbody.querySelectorAll("tr"))
+	const newTbody = document.createElement(newContainerType)
+	for (let rowIdx = 0; rowIdx < rows.length; rowIdx++) {
+		const row = rows[rowIdx]
+		const cells = Array.from(row.querySelectorAll("td, th"))
+		for (let cellIdx = 0; cellIdx < cells.length; cellIdx++ ) {
+			const cell = cells[cellIdx]
+			const newRow = newTbody.children[cellIdx] || document.createElement("tr")
+			if (!newTbody.children[cellIdx]){newTbody.appendChild(newRow)}
+			newRow.appendChild(cell.cloneNode(true))}}
+	tbody.parentElement.appendChild(newTbody)
+	tbody.parentElement.removeChild(tbody)}
+if(transpose=="true"){transposeTable(t.children[0]);t.children[0].style.display="none"}
+else {t.children[0].style.display="initial"}
+
 var myDate=new Date();
 var time=myDate.getHours()*60 + myDate.getMinutes();
 var d;var r=myDate.getDay()
@@ -170,110 +262,10 @@ else{if(r>6||r==0){r=1;d=1} }}
 // if(r==5){r=6}
 
 if(transpose=="true")document.getElementById('t').children[1].children[d].children[r].style.background="#ff0";
-else document.getElementById('t').children[0].children[r].children[d].style.background="#ff0";}
-</script><script>
-//_DS="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
-_DS="https://us04web.zoom.us/j/6197662772?pwd=YjJpWEJVaDhhOXA1WHZyTGFKKzZGdz09"
-_L_DS ="https://us02web.zoom.us/j/9025097650?pwd=WGlLV09zZHFkMHJ3Tm5GK2JCNnNGUT09"
-//_COA="https://us04web.zoom.us/j/75073751702?pwd=eGNray9PeThjclorNFBBMUdrM3BRdz09"
-_COA="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
-_TOL="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
-_Math="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09"
-_py="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
-_PY="https://us04web.zoom.us/j/72184396380?pwd=NWZnTUJaNnd1Y3F6amV1eFhmWC9iUT09"
-_UHV ="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09"
-_Quiz="https://classroom.google.com/a/not-turned-in/all"
-function DS(){window.open(_DS, "_top");}
-function COA(){window.open(_COA, "_top");}
-function TOL(){window.open(_TOL, "_top");}
-function T_DS(){window.open(_DS, "_top");}
-function T_COA(){window.open(_COA, "_top");}
-function T_TOL(){window.open(_TOL, "_top");}
-function Math(){window.open(_Math, "_top");}
-function py(){window.open(_py, "_top");}
-function PY(){window.open(_PY, "_top");}
-function UHV(){window.open(_UHV, "_top");}
-function T_Math(){window.open(_Math, "_top");}
-function T_PY(){window.open(_PY, "_top");}
-function T_UHV(){window.open(_UHV, "_top");}
-function Quiz(){window.open(_Quiz);}
-function L_DS(){window.open(_L_DS, "_top");}
-function L_COA(){window.open(_COA, "_top");}
-function L_TOL(){window.open(_TOL, "_top");}
-</script><script>
-day=["MON","TUE","WED","THU","FRI","SAT"]
-ss={'1':"DS",'2':"COA",'3':"TOL",
-'x':"T-DS",'y':"T-COA",'z':"T-TOL",
-'4':"L_DS",'5':"L_COA",'6':"L_TOL",
-'a':'Math','p':'py','v':'UHV',
-'m':'T-Math','n':'T-PY','o':'T-UHV','P':'PY',
-'q':'Quiz',' ':' ','-':'---'}
-arr=[[],
-["qa1P v--","132m ---","2aP3 vx4","1a35 664","-azv ---"],
-["qa1P v--","132z 66-","2aP3 v--","1a3x 44-","-a5v m--"],
-["q3a6 56-","2a1p v--","31a- ---","3v1p mx-","-2az v44"],
-["q3a5 z44","2a1p v--","31a- ---","3v1p -m6","-2ax v6-"],
-["q3a5 z44","2a1p v--","31a- ---","3v1p -m6","-2ax v6-","31a2 vp-"]]
-b1=document.getElementById('b1')
-b2=document.getElementById('b2')
-b3=document.getElementById('b3')
-b4=document.getElementById('b4')
-b5=document.getElementById('b5')
-cbq=document.getElementById('cbq')
-cbt=document.getElementById('cbt')
-cbb=document.getElementById('cbb')
-function cbqf(){if(cbq.checked)cbqc="true";else cbqc="false";build()}
-function cbtf(){if(cbt.checked)transpose="true";else transpose="false";build()}
-function cbbf(){if(cbb.checked)cbbc="true";else cbbc="false";build()}
-function build(){
-b1.classList.remove("stage");b1.style.color='gray'
-b2.classList.remove("stage");b2.style.color='gray'
-b3.classList.remove("stage");b3.style.color='gray'
-b4.classList.remove("stage");b4.style.color='gray'
-b5.classList.remove("stage");b5.style.color='gray'
-c=parseInt(c)
-if (c==1){b1.classList.add("stage");b1.style.color="blue"}
-else if(c==2){b2.classList.add("stage");b2.style.color="blue"}
-else if(c==4){b4.classList.add("stage");b4.style.color="blue"}
-else if(c==5){b5.classList.add("stage");b5.style.color="blue"}
-else{c=3;b5.classList.add("stage");b5.style.color="blue"}
-q=`<tbody><tr"><td style="color:#fff;background-color:#343a40;">3`+c
-if(cbqc!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:45</td><td>2:45</td><td>3:45</td></tr>`
-else q+=`</td><td>9:00<br>9:45</td><td>10:00<br>10:45</td><td>11:00<br>11:45</td><td>12:00<br>12:45</td><td></td><td>1:45<br>2:30</td><td>2:45<br>3:30</td><td>3:45<br>4:30</td></tr>`
-for (var i = 0; i < arr[c].length; i++) {
-	q+='<tr><td>'+day[i]+'</td>'
-	for (var j = 0; j < arr[c][i].length; j++) {		
-		tt=ss[arr[c][i][j]]
-		if(tt==" ")q+='<td>'
-		else if (tt =='---')q+='<td>---'
-		else {
-			q+= '<td  onclick="'+tt+'()" class="'+tt+'">'+tt+'<br>'
-			if(cbbc!="false"){q+='<a class="button" onclick="'+tt+'()">Zoom</a>';cbbc="true"}
-			q+='</td>'}}
-	q+='</tr>'}
-document.getElementById("t").innerHTML=q+'</tbody>'
-const transposeTable = (tbody, newContainerType = "tbody") => {
-	const rows = Array.from(tbody.querySelectorAll("tr"))
-	const newTbody = document.createElement(newContainerType)
-	for (let rowIdx = 0; rowIdx < rows.length; rowIdx++) {
-		const row = rows[rowIdx]
-		const cells = Array.from(row.querySelectorAll("td, th"))
-		for (let cellIdx = 0; cellIdx < cells.length; cellIdx++ ) {
-			const cell = cells[cellIdx]
-			const newRow = newTbody.children[cellIdx] || document.createElement("tr")
-			if (!newTbody.children[cellIdx]){newTbody.appendChild(newRow)}
-			newRow.appendChild(cell.cloneNode(true))}}
-	tbody.parentElement.appendChild(newTbody)
-	tbody.parentElement.removeChild(tbody)}
-if(transpose=="true"){transposeTable(t.children[0]);t.children[0].style.display="none"}
-else {t.children[0].style.display="initial"}
-highlight()
-if(transpose=="true")cbt.checked=true
-else cbt.checked=false
-if(cbqc=="false")cbq.checked=false
-else cbq.checked=true
-if(cbbc=="false")cbb.checked=false
-else cbb.checked=true
+else document.getElementById('t').children[0].children[r].children[d].style.background="#ff0";
+if(transpose=="true")cbt.checked=true;else cbt.checked=false
+if(cbqc=="false")cbq.checked=false;else cbq.checked=true
+if(cbbc=="false")cbb.checked=false;else cbb.checked=true
 localStorage.setItem("cbqc",cbqc)
 localStorage.setItem("transpose",transpose)
 localStorage.setItem("cbbc",cbbc)
