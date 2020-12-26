@@ -261,7 +261,8 @@ const transposeTable = (tbody, newContainerType = "tbody") => {
 			newRow.appendChild(cell.cloneNode(true))}}
 	tbody.parentElement.appendChild(newTbody)
 	tbody.parentElement.removeChild(tbody)}
-if(transpose=="true")transposeTable(t.children[0])
+if(transpose=="true"){transposeTable(t.children[0]);t.children[0].style.display="none"}
+else {t.children[0].style.display="initial"}
 highlight()
 if(transpose=="true")cbt.checked=true
 else cbt.checked=false
