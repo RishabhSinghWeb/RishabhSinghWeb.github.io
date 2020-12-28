@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<style>body,html{margin: auto;}canvas{display: block;margin: auto;}</style>
+<script src="../src/lib/p5.min.js"></script>
+<script src="../src/lib/dat.gui.min.js"></script>
+<script src="../src/lib/p5.svg.js"></script>
+</head>
+<body>
+<script>
+/** 
+ * will you Inspired by dailylifes's Github code "CollatzSunrise"
+ * which is Inspired by anuraghazra's Github code "collatzSunrise"
+ * which is Inspired by Daniel Shiffman's Youtube video "Coding in the Cabana 2: Collatz Conjecture"
+ * which is Inspired by Numberphile's Youtube video "UNCRACKABLE? The Collatz Conjecture"
+ * which is Inspired by Jeffrey C. Lagarias's book "The 3x+1 Problem"
+ * which is Inspired by Mathematics
+ * @author <https://github.com/dailylifes>
+ * @demo <https://dailylifes.github.io/CollatzPortal/>
+
+ddd00
+m=100
+q=i%(3*m)
+if(q<1*m){config.b=q-0*m;config.r=q-1*m;config.g=0}
+if(q<2*m){config.r=q-1*m;config.g=q-2*m;config.b=0}
+if(q<3*m){config.g=q-2*m;config.b=q-0*m;config.r=0}
+
+
+
+
+
+
+
+
+
+ */
+
+let i=0;
+let a=0;
+let canvas;
+const config={
+  len:2,
+  angle:1,
+  innerRadius:10,
+  rollX:100,
+  rollY:100,
+  x:0,y:0,r:100,g:100,b:100,
+  OverlayBlend:false}
+
+let gui = new dat.GUI();
+gui.add(config,'len', 0, 50, 0.01);
+gui.add(config,'angle', 0, 50, 0.01);
+gui.add(config,'innerRadius', 0, 50, 1);
+gui.add(config,'rollX', 0, 100, 1);
+gui.add(config,'rollY', 0, 100, 1);
+gui.add(config,'r', 0, 100, 1);
+gui.add(config,'g', 0, 100, 1);
+gui.add(config,'b', 0, 100, 1);
+gui.add(config,'OverlayBlend');
+
+function setup() {
+  canvas = createCanvas(3000,3000 ); // ,SVG (3000,3000 );  (windowWidth, windowHeight ); 
+  background(0,0,0);
+  config.x = width/2;
+  config.y = height/2;
+  canvas.elt.addEventListener('click', e=>{i=0;a=0;})}
+
+function draw() {
+  i++;
+  m=100
+  q=i%(3*m)
+       if(q<1*m){config.b=q-0*m;config.r=1*m-q;config.g=0}
+  else if(q<2*m){config.r=q-1*m;config.g=2*m-q;config.b=0}
+  else if(q<3*m){config.g=q-2*m;config.b=0*m-q;config.r=0}
+  // console.log(i+' '+config.r+' '+config.g+' '+config.b)
+  a+=0.1
+  let n = i;  // push();
+  config.OverlayBlend && blendMode(OVERLAY);
+  resetMatrix();
+  translate(config.x, config.y);
+  while (n !== 1) {
+    if(n%2==0)n=n/2;
+    else n=(n*3+1)/2
+    if (n%2==0)rotate(config.angle)
+    else rotate(-config.angle*a)
+    strokeWeight(0.5);
+    stroke(a*config.r, a*config.g, a*config.b, constrain(a*5, 0, 255));
+    line(a*config.rollX, a*config.rollY, a*config.innerRadius, -config.len);
+    translate(0, -config.len);}}  // pop();
+</script>
+</body>
+</html>
