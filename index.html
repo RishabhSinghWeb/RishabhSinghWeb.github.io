@@ -192,8 +192,8 @@ for (var i = 0; i < arr[c].length; i++) {
 		else if (tt =='---')q+='<td>---'
 		else {
 			q+= '<td  onclick="'+tt+'()" class="'+tt+'">'+tt+'<br>'
-			if(cbbc!="false"){q+='<a class="button" onclick="'+tt+'()">Zoom</a>';cbbc="true"}
-			q+='</td>'}}
+			if(cbbc!="false"){q+='<a class="button" onclick="'+tt+'()">Zoom</a>';cbbc="true"}}
+		q+='</td>'}
 	q+='</tr>'}
 document.getElementById("t").innerHTML=q+'</tbody>'
 const transposeTable = (tbody, newContainerType = "tbody") => {
