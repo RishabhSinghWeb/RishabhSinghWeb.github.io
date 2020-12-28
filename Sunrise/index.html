@@ -53,8 +53,8 @@ function setup() {
 function draw() {
   i++;
   m=200
-  q=i%(12*m)
-  if(q==0)save((((new Date()).getTime()).toString()).substring(3,9)+".png")
+  q=i%(6*m)
+  if(q==0)save()
        if(q<1*m){config.b=0;  config.r=100; config.g=0}
   else if(q<2*m){config.b=100;config.r=100; config.g=0}
   else if(q<3*m){config.g=0;  config.r=0;   config.b=100}
