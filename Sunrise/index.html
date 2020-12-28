@@ -12,30 +12,19 @@
 <body>
 <script>
 /** 
- * will you Inspired by dailylifes's Github code "CollatzSunrise"
+ * will you Inspired by jokingcross's Github code "MoodCollatzifier"
  * which is Inspired by anuraghazra's Github code "collatzSunrise"
- * which is Inspired by Daniel Shiffman's Youtube video "Coding in the Cabana 2: Collatz Conjecture"
+ * which is Inspired by Daniel Shiffman's Youtube video "Collatz Conjecture"
  * which is Inspired by Numberphile's Youtube video "UNCRACKABLE? The Collatz Conjecture"
  * which is Inspired by Jeffrey C. Lagarias's book "The 3x+1 Problem"
  * which is Inspired by Mathematics
- * @author <https://github.com/dailylifes>
- * @demo <https://dailylifes.github.io/CollatzPortal/>
+ * @demo <https://dailylifes.github.io/MoodCollatzifier/>
 
 ddd00
-m=100
 q=i%(3*m)
 if(q<1*m){config.b=q-0*m;config.r=q-1*m;config.g=0}
 if(q<2*m){config.r=q-1*m;config.g=q-2*m;config.b=0}
 if(q<3*m){config.g=q-2*m;config.b=q-0*m;config.r=0}
-
-
-
-
-
-
-
-
-
  */
 
 let i=0;
@@ -62,7 +51,7 @@ gui.add(config,'b', 0, 100, 1);
 gui.add(config,'OverlayBlend');
 
 function setup() {
-  canvas = createCanvas(3000,3000 ); // ,SVG (3000,3000 );  (windowWidth, windowHeight ); 
+  canvas = createCanvas(windowWidth, windowHeight );  // ,SVG (3000,3000 );  (windowWidth, windowHeight ); 
   background(0,0,0);
   config.x = width/2;
   config.y = height/2;
@@ -71,11 +60,17 @@ function setup() {
 function draw() {
   i++;
   m=100
-  q=i%(3*m)
-       if(q<1*m){config.b=q-0*m;config.r=1*m-q;config.g=0}
-  else if(q<2*m){config.r=q-1*m;config.g=2*m-q;config.b=0}
-  else if(q<3*m){config.g=q-2*m;config.b=0*m-q;config.r=0}
-  // console.log(i+' '+config.r+' '+config.g+' '+config.b)
+  q=i%(12*m)
+       if(q<1*m){config.b=q-0;  config.r=1*m;   config.g=0}
+  else if(q<2*m){config.b=1*m;  config.r=2*m-q; config.g=0}
+  else if(q<4*m){config.b=1*m;  config.r=0;     config.g=0}
+  else if(q<5*m){config.g=q-4*m;config.b=1*m;   config.r=0}
+  else if(q<6*m){config.g=1*m;  config.b=6*m-q; config.r=0}
+  else if(q<8*m){config.g=1*m;  config.b=0;     config.r=0}
+  else if(q<9*m){config.r=q-8*m;config.g=1*m;   config.b=0}
+  else if(q<10*m){config.r=1*m; config.g=10*m-q;config.b=0}
+  else if(q<12*m){config.r=1*m; config.g=0;     config.b=0}
+  //console.log(i+' '+config.r+' '+config.g+' '+config.b)
   a+=0.1
   let n = i;  // push();
   config.OverlayBlend && blendMode(OVERLAY);
