@@ -108,9 +108,9 @@ tr:nth-child(1){background-color:#ffc107}
 <a href="https://prutor.ai/welcome/?type=allQuizzes" class="button center info">jan 29 prutor.ai CSS Quiz</a>
 </div>
 <div id="tools">
-<a class="button center info">Hide EndTime<label class="switch"><input id="cbq" type="checkbox" onclick="cbqf()"><span class="slider round"></span></label></a>
-<a class="button center info">Transpose Timetable<label class="switch"><input id="cbt" type="checkbox" onclick="cbtf()"><span class="slider round"></span></label></a>
-<a class="button center info">Zoom Buttons<label class="switch"><input id="cbb" type="checkbox" checked onclick="cbbf()"><span class="slider round"></span></label></a>
+<a class="button center info">Hide EndTime<label class="switch"><input id="cbq" type="checkbox" onclick="build()"><span class="slider round"></span></label></a>
+<a class="button center info">Transpose Timetable<label class="switch"><input id="cbt" type="checkbox" onclick="build()"><span class="slider round"></span></label></a>
+<a class="button center info">Zoom Buttons<label class="switch"><input id="cbb" type="checkbox" checked onclick="build()"><span class="slider round"></span></label></a>
 </div>
 <h3 style="display:table;margin:auto;"><a href="https://dailylifes.github.io/old">use old murr.ga here</a></h3>
 <!--<h3 style="display:table;margin:auto;margin-top:10px;"><a href="https://dailylifes.github.io/Sunrise">use Sunrise here</a></h3>-->
@@ -149,13 +149,10 @@ function L_DS(){window.open(_L_DS, "_top");}
 function L_COA(){window.open(_COA, "_top");}
 function L_TOL(){window.open(_TOL, "_top");}
 </script><script>
-cbq=document.getElementById('cbq')
-cbt=document.getElementById('cbt')
-cbb=document.getElementById('cbb')
-function cbqf(){if(cbq.checked)cbqc="true";else cbqc="false";build()}
-function cbtf(){if(cbt.checked)transpose="true";else transpose="false";build()}
-function cbbf(){if(cbb.checked)cbbc="true";else cbbc="false";build()}
 function build(){
+cbt=document.getElementById('cbt');if(cbt.checked)transpose="true";else transpose="false";
+cbq=document.getElementById('cbq');if(cbq.checked)cbqc="true";else cbqc="false";
+cbb=document.getElementById('cbb');if(cbb.checked)cbbc="true";else cbbc="false";
 b1=document.getElementById('b1');b1.classList.remove("stage")
 b2=document.getElementById('b2');b2.classList.remove("stage")
 b3=document.getElementById('b3');b3.classList.remove("stage")
