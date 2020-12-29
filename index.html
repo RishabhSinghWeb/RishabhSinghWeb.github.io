@@ -69,10 +69,13 @@ function L_DS(){window.open(_L_DS, "_top");}
 function L_COA(){window.open(_COA, "_top");}
 function L_TOL(){window.open(_TOL, "_top");}
 </script><script>
+bt=document.getElementById('bt');if(btc=="true")bt.checked=true;else bt.checked=false
+bq=document.getElementById('bq');if(bqc=="false")bq.checked=false;else bq.checked=true
+bb=document.getElementById('bb');if(bbc=="false")bb.checked=false;else bb.checked=true
 function build(){
-bt=document.getElementById('bt');if(bt.checked)btc="true";else btc="false";
-bq=document.getElementById('bq');if(bq.checked)bqc="true";else bqc="false";
-bb=document.getElementById('bb');if(bb.checked)bbc="true";else bbc="false";
+if(bt.checked)btc="true";else btc="false";
+if(bq.checked)bqc="true";else bqc="false";
+if(bb.checked)bbc="true";else bbc="false";
 b1=document.getElementById('b1');b1.classList.remove("stage")
 b2=document.getElementById('b2');b2.classList.remove("stage")
 b3=document.getElementById('b3');b3.classList.remove("stage")
@@ -191,9 +194,6 @@ else{if(r>6||r==0){r=1;d=1} }}
 
 if(btc=="true")document.getElementById('t').children[0].children[d].children[r].style.background="#ff0";
 else document.getElementById('t').children[0].children[r].children[d].style.background="#ff0";
-if(btc=="true")bt.checked=true;else bt.checked=false
-if(bqc=="false")bq.checked=false;else bq.checked=true
-if(bbc=="false")bb.checked=false;else bb.checked=true
 localStorage.setItem("bqc",bqc)
 localStorage.setItem("btc",btc)
 localStorage.setItem("bbc",bbc)
