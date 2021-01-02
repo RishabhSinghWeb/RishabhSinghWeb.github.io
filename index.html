@@ -88,7 +88,7 @@ else if(c==4)b4.classList.add("stage")
 else if(c==5)b5.classList.add("stage")
 else	{c=3;b3.classList.add("stage")}
 
-day=["MON","TUE","WED","THU","jan2","SAT"]
+day=["MON","TUE","WED","THU","FRI","SAT"]
 ss={'1':"DS",'2':"COA",'3':"TOL",
 'x':"T_DS",'y':"T_COA",'z':"T_TOL",
 '4':"L_DS",'5':"L_COA",'6':"L_TOL",
@@ -149,7 +149,7 @@ if(btc=="true"){
 
 var myDate=new Date();
 var time=myDate.getHours()*60 + myDate.getMinutes();
-var d;var r=5//myDate.getDay()
+var d;var r=myDate.getDay()
 if(time<590)d=1
 else if(time<645)d=2
 else if(time<705)d=3
