@@ -1,4 +1,5 @@
 #tools{display:flex;align-items:flex-start;flex-flow: row wrap;justify-content:space-around;}
+#tools a{margin:4px}
 .switch{position: relative;display: inline-block;width: 30px;height: 15px;}
 .switch input{opacity:0;width:0;height:0;}
 .slider{position: absolute;	top:0;left:0;right:0;bottom:0;	background-color:#ccc;}
