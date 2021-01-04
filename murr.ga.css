@@ -14,6 +14,7 @@ input:checked + .slider:before{transform:translateX(13px);}
 .stage:after{border-top-width:0.25rem;border-top-style:solid;border-radius:0.25rem 0.25rem 0 0;bottom:-0.125rem;content:"";height:0;left:0;position:absolute;right:0}
 .button{display:inline-block;padding:.25em .4em;font-size:75%;font-weight:700;line-height:1;text-align:center;border-radius:.25rem;text-decoration:none;color:#fff;background:linear-gradient(90deg,#5E31FF 0%,#007CFF 100%)}
 .center{display:table;margin:auto;}
+.fo{margin-bottom:15px;background:#EE7752;}
 .info{margin-bottom:15px;background:#EE7752;max-inline-size: 10px;}
 *{user-select: none;}
 table{border-collapse:collapse;margin:auto;text-align:center;font-weight:800;}
