@@ -1,13 +1,13 @@
 #tools{display:flex;align-items:flex-start;flex-flow: row wrap;justify-content:space-around;}
 #tools a{margin-right:4px;margin-left:4px;}
-.switch{position: relative;display: inline-block;width: 30px;height: 15px;}
+.switch{position:relative;display:inline-block;width:30px;height:15px;}
 .switch input{opacity:0;width:0;height:0;}
-.slider{position: absolute;	top:0;left:0;right:0;bottom:0;	background-color:#ccc;}
+.slider{position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;}
 .slider:before{position:absolute;content: "";height:13px;width:13px;left:2px;bottom:2px;background-color:white;transition:.4s;top:1px;}
 input:checked + .slider{background-color:#2196F3;}
 input:checked + .slider:before{transform:translateX(13px);}
 .slider.round{border-radius:17px;}
-.slider.round:before {  border-radius: 50%;}
+.slider.round:before{border-radius:50%;}
 .bt {display:flex;justify-content:center;height:2rem;white-space:nowrap}
 .classNum {color:gray;align-items:center;display:flex;border-bottom:solid 0.125rem transparent;box-sizing:border-box;height:100%;padding-right: 1rem;padding-left: 1rem;position:relative;text-decoration:none;}
 .stage{color:blue}
