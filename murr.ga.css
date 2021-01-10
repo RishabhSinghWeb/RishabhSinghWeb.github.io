@@ -19,6 +19,7 @@ input:checked + .slider:before{transform:translateX(13px);}
 *{user-select: none;}
 table{border-collapse:collapse;margin:auto;text-align:center;font-weight:800;}
 td:nth-child(1){background-color: #dc3545;}
+td {border-color: black;}
 tr:nth-child(1){background-color:#ffc107}
 .DS{color:#00cc00;}.COA{color:#00ffff;}.TOL{color:#ff00ff;}
 .T_DS{color:#00cc00;}.T_COA{color:#00ffff;}.T_TOL{color:#ff00ff;}
