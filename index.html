@@ -36,7 +36,7 @@ timedata=[
 ]
 innerdata=""
 for(i=0;i<timedata.length;i++){
-	innerdata+='<a href="'+(timedata[i][1] == undefined)?'https://classroom.google.com/a/not-turned-in/all':datelinks[timedata[i][1]]+'" class="button center fo">'+timedata[i][0]+</a>'
+	innerdata+='<a href="'+(timedata[i][1] == undefined)?'https://classroom.google.com/a/not-turned-in/all':datelinks[timedata[i][1]]+'" class="button center fo">'+timedata[i][0]+'</a>'
 }
 document.getElementById('tool').innerHTML=innerdata
 </script>
