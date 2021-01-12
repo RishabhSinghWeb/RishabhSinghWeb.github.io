@@ -20,9 +20,8 @@
 <table id="t" style="margin-bottom:15px;" border="1"></table>
 <div id="tool">
 <script>
-datelinks={"prutor":"https://classroom.google.com/a/not-turned-in/all"}
+datelinks={"prutor":"https://prutor.ai/welcome/?type=allQuizzes"}
 timedata=[
-["jan 11 Mon Math Quiz"],
 ["jan 11 prutor.ai python Quiz","prutor"],
 ["jan 18 Mon UHV Quiz"],
 ["jan 25 Mon DS Quiz"],
@@ -32,26 +31,18 @@ timedata=[
 ["feb 8 Mon py Quiz"],
 ["feb 12 Fri Math Quiz"],
 ["feb 15-26 Pre End Quizes"],
-["Mar 8 Final Exams"],["testing"]
+["1:30PM-2:00PM-5:00PM"],
+["Mar 9 KAS302 Math Exam"],
+["Mar 12 KCS301 DS Exam"],
+["Mar 13 KCS303 TOL Exam"],
+["Mar 15 KCS302 COA Exam"],
+["Mar 16 KVE301 UHV Exam"],
+["Mar 10 KNC302 PY Exam"],
 ]
 innerdata=""
-for(i=0;i<timedata.length;i++){
-	innerdata+='<a href="'+(timedata[i][1] == undefined)?'https://classroom.google.com/a/not-turned-in/all':datelinks[timedata[i][1]]+'" class="button center fo">'+timedata[i][0]+'</a>'
-}
-document.getElementById('tool').innerHTML=innerdata
+for(i=0;i<timedata.length;i++)innerdata+='<a href="'+((timedata[i][1] == undefined)?'https://classroom.google.com/a/not-turned-in/all':datelinks[timedata[i][1]])+'" class="button center fo">'+timedata[i][0]+'</a>';
+document.getElementById('tool').innerHTML=innerdata//document.write(innerdata)
 </script>
-<a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">jan 11 Mon Math Quiz</a>
-<a href="https://prutor.ai/welcome/?type=allQuizzes" class="button center fo">jan 11 prutor.ai python Quiz</a>
-<a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">jan 18 Mon UHV Quiz</a>
-<a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">jan 25 Mon DS Quiz</a>
-<a href="https://prutor.ai/welcome/?type=allQuizzes" class="button center fo">jan 27 prutor.ai python Quiz</a>
-<a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">jan 29 Fri COA Quiz</a>
-<a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">feb 1 Mon TOL Quiz</a>
-<a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">feb 8 Mon py Quiz</a>
-<a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">feb 12 Fri Math Quiz</a>
-<a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">feb 15-26 Pre End Quizes</a>
-<a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">Mar 8 Final Exams</a>
-</div>
 <div id="tools">
 <a class="button center info">Hide EndTime<label class="switch"><input id="bq" type="checkbox" onclick="build()"><span class="slider round"></span></label></a>
 <a class="button center info">Transpose Timetable<label class="switch"><input id="bt" type="checkbox" onclick="build()"><span class="slider round"></span></label></a>
