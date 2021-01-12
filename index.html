@@ -19,6 +19,27 @@
 </div>
 <table id="t" style="margin-bottom:15px;" border="1"></table>
 <div id="tool">
+<script>
+datelinks={"prutor":"https://classroom.google.com/a/not-turned-in/all"}
+timedata=[
+["jan 11 Mon Math Quiz"],
+["jan 11 prutor.ai python Quiz","prutor"],
+["jan 18 Mon UHV Quiz"],
+["jan 25 Mon DS Quiz"],
+["jan 27 prutor.ai python Quiz","prutor"],
+["jan 29 Fri COA Quiz"],
+["feb 1 Mon TOL Quiz"],
+["feb 8 Mon py Quiz"],
+["feb 12 Fri Math Quiz"],
+["feb 15-26 Pre End Quizes"],
+["Mar 8 Final Exams"],["testing"]
+]
+innerdata=""
+for(i=0;i<timedata.length;i++){
+	innerdata+='<a href="'+(timedata[i][1] == undefined)?'https://classroom.google.com/a/not-turned-in/all':datelinks[timedata[i][1]]+'" class="button center fo">'+timedata[i][0]+</a>'
+}
+document.getElementById('tool').innerHTML=innerdata
+</script>
 <a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">jan 11 Mon Math Quiz</a>
 <a href="https://prutor.ai/welcome/?type=allQuizzes" class="button center fo">jan 11 prutor.ai python Quiz</a>
 <a href="https://classroom.google.com/a/not-turned-in/all" class="button center fo">jan 18 Mon UHV Quiz</a>
