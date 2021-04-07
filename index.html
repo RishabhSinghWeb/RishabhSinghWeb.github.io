@@ -32,7 +32,7 @@ tr:nth-child(1){background-color:#ffc107}
 .OS{color:#00cc00;}.TOA{color:#00ffff;}.Proc{color:#ff00ff;}
 .T_OS{color:#00cc00;}.T_TOA{color:#00ffff;}.T_Proc{color:#ff00ff;}
 .L_OS{color:#00cc00;}.L_TOA{color:#00ffff;}.L_Proc{color:#ff00ff;}.L_Ds{color:#00cc00;}
-.Os{color:#00cc00;}.T_Os{color:#00cc00;}.os{color:#00cc00;}.T_os{color:#00cc00;}
+.Os{color:#00cc00;}.T_Os{color:#00cc00;}.os{color:#00cc00;}.T_os{color:#00cc00;}.proc{color:#ff00ff;}.T_proc{color:#ff00ff;}
 .Comm{color:#ff0000;}.CSS{color:#0000ff;}.PY{color:#0000ff;}.KOE{color:#ffaa22;}
 .T_Com{color:#ff0000;}.T_PY{color:#0000ff;}.T_KOE{color:#ffaa22;}
 .Quiz{color:#aa0000}
@@ -96,26 +96,6 @@ _L_OS=''
 _L_TOA=''
 _L_Proc=''
 _Quiz="https://classroom.google.com/a/not-turned-in/all"
-</script><script>
-bt=document.getElementById('bt');if(btc=="true")bt.checked=true;else bt.checked=false
-bq=document.getElementById('bq');if(bqc=="false")bq.checked=false;else bq.checked=true
-bb=document.getElementById('bb');if(bbc=="false")bb.checked=false;else bb.checked=true
-function build(){
-if(bt.checked)btc="true";else btc="false";
-if(bq.checked)bqc="true";else bqc="false";
-if(bb.checked)bbc="true";else bbc="false";
-b1=document.getElementById('b1');b1.classList.remove("stage")
-b2=document.getElementById('b2');b2.classList.remove("stage")
-b3=document.getElementById('b3');b3.classList.remove("stage")
-b4=document.getElementById('b4');b4.classList.remove("stage")
-b5=document.getElementById('b5');b5.classList.remove("stage")
-c=parseInt(c)
-     if(c==1)b1.classList.add("stage")
-else if(c==2)b2.classList.add("stage")
-else if(c==4)b4.classList.add("stage")
-else if(c==5)b5.classList.add("stage")
-else	{c=3;b3.classList.add("stage")}
-
 function OS(){window.open(_OS_umesh, "_top");}
 function Os(){window.open(_OS_atul, "_top");}
 function os(){window.open(_OS_pankaj, "_top");}
@@ -139,6 +119,26 @@ function Quiz(){window.open(_Quiz);}
 function L_OS(){window.open(_L_OS, "_top");}
 function L_TOA(){window.open(_L_TOA, "_top");}
 function L_Proc(){window.open(_L_Proc, "_top");}
+</script><script>
+bt=document.getElementById('bt');if(btc=="true")bt.checked=true;else bt.checked=false
+bq=document.getElementById('bq');if(bqc=="false")bq.checked=false;else bq.checked=true
+bb=document.getElementById('bb');if(bbc=="false")bb.checked=false;else bb.checked=true
+function build(){
+if(bt.checked)btc="true";else btc="false";
+if(bq.checked)bqc="true";else bqc="false";
+if(bb.checked)bbc="true";else bbc="false";
+b1=document.getElementById('b1');b1.classList.remove("stage")
+b2=document.getElementById('b2');b2.classList.remove("stage")
+b3=document.getElementById('b3');b3.classList.remove("stage")
+b4=document.getElementById('b4');b4.classList.remove("stage")
+b5=document.getElementById('b5');b5.classList.remove("stage")
+c=parseInt(c)
+     if(c==1)b1.classList.add("stage")
+else if(c==2)b2.classList.add("stage")
+else if(c==4)b4.classList.add("stage")
+else if(c==5)b5.classList.add("stage")
+else	{c=3;b3.classList.add("stage")}
+
 day=["MON","TUE","WED","THU","FRI","SAT"]
 ss={'1':"OS",'2':"TOA",'3':"Proc",
 '4':"T_OS",'5':"T_TOA",'6':"T_Proc",
@@ -155,7 +155,7 @@ arr=[[],
 ["q1e3 88--","23sa 5f99","12e3 c6--","1s3a 4f--","q2e1 77--"],
 ["qyea 995-","y23s af77","23ea ----","2ys3 -f--","q3ez c688"],
 ["qyea 77z-","y23s af5-","23ea 9988","2ys3 cf--","q3e6 ----"],
-["q2em wa--","3wa2 cf--","3cew 2a77","88an xf--","q3e2 99--"]]
+["q2em wa--","3wa2 cf--","mcew 2a77","88an xf--","q3e2 99--"]]
 q='<tbody><tr><td style="color:#fff;background-color:#343a40;">3'+c
 if(bqc!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:35</td><td>2:25</td><td>3:15</td><td>4:05</td></tr>`
 else q+=`</td><td>9:00<br>10:00</td><td>10:00<br>11:00</td><td>11:00<br>12:00</td><td>12:00<br>12:55</td><td></td><td>1:35<br>2:25</td><td>2:25<br>3:15</td><td>3:15<br>4:05</td><td>4:05<br>4:55</td></tr>`
