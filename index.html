@@ -36,6 +36,7 @@ tr:nth-child(1){background-color:#ffc107}
 .Comm{color:#ff0000;}.CSS{color:#0000ff;}.PY{color:#0000ff;}.KOE{color:#ffaa22;}
 .T_Com{color:#ff0000;}.T_PY{color:#0000ff;}.T_KOE{color:#ffaa22;}
 .Quiz{color:#aa0000}
+.showKOE{display: initial !important;}
 </style></head>
 <body class="center">
 <svg width="24" height="24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
@@ -48,6 +49,14 @@ tr:nth-child(1){background-color:#ffc107}
 <div id="b5" onclick="javascript:c=5;build()" class="classNum">45</div>
 </div>
 <table id="t" style="margin-bottom:15px;" border="1"></table>
+
+<div id='KOE' class="" onclick='hideKOE()' style="display: none;align-content: center;z-index:50;background: #00000047;;position:fixed;top: 0;bottom: 0;left: 0;right: 0;">
+	<div style="background:#fff;position: fixed;top: 25%;left: 25%; width:50%;height: 50%;border-radius: 10px;">
+		<h3 style="display:table;margin:auto;margin-top:10px;"><a href="javascript:KOET('alok')">Alok KOE</a></h3>
+		<h3 style="display:table;margin:auto;margin-top:10px;"><a href="javascript:KOET('sunil')">Sunil KOE</a></h3>
+	</div>
+</div>
+
 <div id="tool">
 <script>
 datelinks={"prutor":"https://prutor.ai/welcome/?type=allQuizzes"}
@@ -88,6 +97,7 @@ _Proc_sonam='https://us04web.zoom.us/j/4234459260?pwd=N1ZsUGdXYmFWZnVCTzIvUmVnbD
 _KOE_sunil=''
 _KOE_alok=''
 _Com_bhagwati=''
+_CSS=''
 //shiv charan_Math="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09"
 //_py="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
 //nidhi_PY="https://us04web.zoom.us/j/72184396380?pwd=NWZnTUJaNnd1Y3F6amV1eFhmWC9iUT09"
@@ -96,25 +106,27 @@ _L_OS=''
 _L_TOA=''
 _L_Proc=''
 _Quiz="https://classroom.google.com/a/not-turned-in/all"
-function OS(){window.open(_OS_umesh, "_top");}
-function Os(){window.open(_OS_atul, "_top");}
-function os(){window.open(_OS_pankaj, "_top");}
-function T_OS(){window.open(_OS_umesh, "_top");}
-function T_Os(){window.open(_OS_atul, "_top");}
-function T_os(){window.open(_OS_pankaj, "_top");}
-function TOA(){window.open(_TOA_sandeep, "_top");}
-function T_TOA(){window.open(_TOA_sandeep, "_top");}
-function Proc(){window.open(_Proc_sanjay, "_top");}
-function proc(){window.open(_Proc_sonam, "_top");}
-function T_Proc(){window.open(_Proc_sanjay, "_top");}
-function T_proc(){window.open(_Proc_sonam, "_top");}
-function Comm(){window.open(_Com, "_top");}
-function T_Com(){window.open(_Com, "_top");}
-function py(){window.open(_py, "_top");}
-function PY(){window.open(_PY, "_top");}
-function UHV(){window.open(_UHV, "_top");}
-function T_PY(){window.open(_PY, "_top");}
-function T_UHV(){window.open(_UHV, "_top");}
+function OS(){window.open(_OS_umesh, "_top");}function T_OS(){OS()}
+function Os(){window.open(_OS_atul, "_top");}function T_Os(){Os()}
+function os(){window.open(_OS_pankaj, "_top");}function T_os(){os()}
+
+function TOA(){window.open(_TOA_sandeep, "_top");}function T_TOA(){TOA()}
+function Proc(){window.open(_Proc_sanjay, "_top");}function T_Proc(){Proc()}
+function proc(){window.open(_Proc_sonam, "_top");}function T_proc(){proc()}
+
+function Comm(){window.open(_Com_bhagwati, "_top");}
+function T_Com(){Comm()}
+
+function hideKOE(){document.getElementById("KOE").classList=''}
+function KOET(t){
+	if(t=='alok') window.open(_KOE_alok, "_top");
+	else window.open(_KOE_sunil, "_top");
+}
+
+function CSS(){window.open(_CSS, "_top");}
+function KOE(){
+	document.getElementById('KOE').classList.add("showKOE")
+}function T_KOE(){KOE()}
 function Quiz(){window.open(_Quiz);}
 function L_OS(){window.open(_L_OS, "_top");}
 function L_TOA(){window.open(_L_TOA, "_top");}
@@ -155,7 +167,7 @@ arr=[[],
 ["q1e3 88--","23sa 5f99","12e3 c6--","1s3a 4f--","q2e1 77--"],
 ["qyea 995-","y23s af77","23ea ----","2ys3 -f--","q3ez c688"],
 ["qyea 77z-","y23s af5-","23ea 9988","2ys3 cf--","q3e6 ----"],
-["q2em wa--","3wa2 cf--","mcew 2a77","88an xf--","q3e2 99--"]]
+["q2em wa--","mwa2 cf--","mcew 2a77","88an xf--","q3e2 99--"]]
 q='<tbody><tr><td style="color:#fff;background-color:#343a40;">3'+c
 if(bqc!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:35</td><td>2:25</td><td>3:15</td><td>4:05</td></tr>`
 else q+=`</td><td>9:00<br>10:00</td><td>10:00<br>11:00</td><td>11:00<br>12:00</td><td>12:00<br>12:55</td><td></td><td>1:35<br>2:25</td><td>2:25<br>3:15</td><td>3:15<br>4:05</td><td>4:05<br>4:55</td></tr>`
