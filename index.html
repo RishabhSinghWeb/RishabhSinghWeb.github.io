@@ -5,8 +5,38 @@
 <meta charset="utf-8">
 <meta http-equiv="refresh" content="200">
 <meta name="viewport" content="initial-scale=1">
-<link rel="stylesheet" type="text/css" href="murr.ga.css">
-</head>
+<style>
+#tools{display:flex;align-items:flex-start;flex-flow: row wrap;justify-content:space-around;max-width:100vw;}
+#tools a{margin-right:4px;margin-left:4px;}
+.switch{position:relative;display:inline-block;width:30px;height:15px;}
+.switch input{opacity:0;width:0;height:0;}
+.slider{position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;}
+.slider:before{position:absolute;content: "";height:13px;width:13px;left:2px;bottom:2px;background-color:white;transition:.4s;top:1px;}
+input:checked + .slider{background-color:#2196F3;}
+input:checked + .slider:before{transform:translateX(13px);}
+.slider.round{border-radius:17px;}
+.slider.round:before{border-radius:50%;}
+.bt {display:flex;justify-content:center;height:2rem;white-space:nowrap}
+.classNum {color:gray;align-items:center;display:flex;border-bottom:solid 0.125rem transparent;box-sizing:border-box;height:100%;padding-right: 1rem;padding-left: 1rem;position:relative;text-decoration:none;}
+.stage{color:blue}
+.stage:after{border-top-width:0.25rem;border-top-style:solid;border-radius:0.25rem 0.25rem 0 0;bottom:-0.125rem;content:"";height:0;left:0;position:absolute;right:0}
+.button{display:inline-block;padding:.25em .4em;font-size:75%;font-weight:700;line-height:1;text-align:center;border-radius:.25rem;text-decoration:none;color:#fff;background:linear-gradient(90deg,#5E31FF 0%,#007CFF 100%)}
+.center{display:table;margin:auto;}
+.fo{margin-bottom:15px;background:#EE7752;}
+.info{margin-bottom:15px;background:#EE7752;max-inline-size: 10px;}
+*{user-select: none;}
+table{border-collapse:collapse;margin:auto;text-align:center;font-weight:800;}
+td:nth-child(1){background-color: #dc3545;}
+td {border-color: black;}
+tr:nth-child(1){background-color:#ffc107}
+.OS{color:#00cc00;}.TOA{color:#00ffff;}.Proc{color:#ff00ff;}
+.T_OS{color:#00cc00;}.T_TOA{color:#00ffff;}.T_Proc{color:#ff00ff;}
+.L_OS{color:#00cc00;}.L_TOA{color:#00ffff;}.L_Proc{color:#ff00ff;}.L_Ds{color:#00cc00;}
+.Os{color:#00cc00;}.T_Os{color:#00cc00;}.os{color:#00cc00;}.T_os{color:#00cc00;}
+.Comm{color:#ff0000;}.CSS{color:#0000ff;}.PY{color:#0000ff;}.KOE{color:#ffaa22;}
+.T_Com{color:#ff0000;}.T_PY{color:#0000ff;}.T_KOE{color:#ffaa22;}
+.Quiz{color:#aa0000}
+</style></head>
 <body class="center">
 <svg width="24" height="24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
 <div class="center" style="font-size:170%;font-weight:800;color:#44f;">CS<br></div>
@@ -22,13 +52,6 @@
 <script>
 datelinks={"prutor":"https://prutor.ai/welcome/?type=allQuizzes"}
 timedata=[
-["Mar 9 KAS302 Math Exam"],
-["Mar 12 KNC302 PY Exam"],
-["Mar 15 KCS302 COA Exam"],
-["Mar 17 KVE301 UHV Exam"],
-["Mar 19 KCS303 TOL Exam"],
-["Mar 22 KCS301 DS Exam"],
-["April 29 Exam Results"],
 ]
 innerdata=""
 for(i=0;i<timedata.length;i++)innerdata+='<a href="'+((timedata[i][1] == undefined)?'https://classroom.google.com/a/not-turned-in/all':datelinks[timedata[i][1]])+'" class="button center fo">'+timedata[i][0]+'</a>';
@@ -51,34 +74,28 @@ var btc=localStorage.getItem("btc")
 var bbc=localStorage.getItem("bbc")
 </script><script>
 //avadh_DS="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
-_DS="https://us04web.zoom.us/j/6197662772?pwd=YjJpWEJVaDhhOXA1WHZyTGFKKzZGdz09"
-_L_Ds ="https://us02web.zoom.us/j/7111925460?pwd=MmZSNXZHYmFYaGdIVU9HK05qSHZnQT09"
-_L_DS ="https://us02web.zoom.us/j/9025097650?pwd=WGlLV09zZHFkMHJ3Tm5GK2JCNnNGUT09"
-_COA="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
-_TOL="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
-_Math="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09"
-_py="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
-_PY="https://us04web.zoom.us/j/72184396380?pwd=NWZnTUJaNnd1Y3F6amV1eFhmWC9iUT09"
-_UHV="https://zoom.us/j/6438418533?pwd=R3FtS2NtQzhDbC93ZU10S0FNYUEyUT09"
+//raj_DS="https://us04web.zoom.us/j/6197662772?pwd=YjJpWEJVaDhhOXA1WHZyTGFKKzZGdz09"
+//_L_Ds ="https://us02web.zoom.us/j/7111925460?pwd=MmZSNXZHYmFYaGdIVU9HK05qSHZnQT09"
+//raghvendra_L_DS ="https://us02web.zoom.us/j/9025097650?pwd=WGlLV09zZHFkMHJ3Tm5GK2JCNnNGUT09"
+_OS_umesh="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09"
+_Os_atul=''
+_os_pankaj=''
+_TOA_sandeep="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09"
+
+_Proc_sanjay=''
+_Proc_sonam='https://us04web.zoom.us/j/4234459260?pwd=N1ZsUGdXYmFWZnVCTzIvUmVnbDBSdz09'
+
+_KOE_sunil=''
+_KOE_alok=''
+_Com_bhagwati=''
+//shiv charan_Math="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09"
+//_py="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09"
+//nidhi_PY="https://us04web.zoom.us/j/72184396380?pwd=NWZnTUJaNnd1Y3F6amV1eFhmWC9iUT09"
+//vinod_UHV="https://zoom.us/j/6438418533?pwd=R3FtS2NtQzhDbC93ZU10S0FNYUEyUT09"
+_L_OS=''
+_L_TOA=''
+_L_Proc=''
 _Quiz="https://classroom.google.com/a/not-turned-in/all"
-function DS(){window.open(_DS, "_top");}
-function COA(){window.open(_COA, "_top");}
-function TOL(){window.open(_TOL, "_top");}
-function T_DS(){window.open(_DS, "_top");}
-function T_COA(){window.open(_COA, "_top");}
-function T_TOL(){window.open(_TOL, "_top");}
-function Math(){window.open(_Math, "_top");}
-function py(){window.open(_py, "_top");}
-function PY(){window.open(_PY, "_top");}
-function UHV(){window.open(_UHV, "_top");}
-function T_Math(){window.open(_Math, "_top");}
-function T_PY(){window.open(_PY, "_top");}
-function T_UHV(){window.open(_UHV, "_top");}
-function Quiz(){window.open(_Quiz);}
-function L_DS(){window.open(_L_DS, "_top");}
-function L_Ds(){window.open(_L_Ds, "_top");}
-function L_COA(){window.open(_COA, "_top");}
-function L_TOL(){window.open(_TOL, "_top");}
 </script><script>
 bt=document.getElementById('bt');if(btc=="true")bt.checked=true;else bt.checked=false
 bq=document.getElementById('bq');if(bqc=="false")bq.checked=false;else bq.checked=true
@@ -99,22 +116,49 @@ else if(c==4)b4.classList.add("stage")
 else if(c==5)b5.classList.add("stage")
 else	{c=3;b3.classList.add("stage")}
 
+function OS(){window.open(_OS_umesh, "_top");}
+function Os(){window.open(_OS_atul, "_top");}
+function os(){window.open(_OS_pankaj, "_top");}
+function T_OS(){window.open(_OS_umesh, "_top");}
+function T_Os(){window.open(_OS_atul, "_top");}
+function T_os(){window.open(_OS_pankaj, "_top");}
+function TOA(){window.open(_TOA_sandeep, "_top");}
+function T_TOA(){window.open(_TOA_sandeep, "_top");}
+function Proc(){window.open(_Proc_sanjay, "_top");}
+function proc(){window.open(_Proc_sonam, "_top");}
+function T_Proc(){window.open(_Proc_sanjay, "_top");}
+function T_proc(){window.open(_Proc_sonam, "_top");}
+function Comm(){window.open(_Com, "_top");}
+function T_Com(){window.open(_Com, "_top");}
+function py(){window.open(_py, "_top");}
+function PY(){window.open(_PY, "_top");}
+function UHV(){window.open(_UHV, "_top");}
+function T_PY(){window.open(_PY, "_top");}
+function T_UHV(){window.open(_UHV, "_top");}
+function Quiz(){window.open(_Quiz);}
+function L_OS(){window.open(_L_OS, "_top");}
+function L_TOA(){window.open(_L_TOA, "_top");}
+function L_Proc(){window.open(_L_Proc, "_top");}
 day=["MON","TUE","WED","THU","FRI","SAT"]
-ss={'1':"DS",'2':"COA",'3':"TOL",
-'x':"T_DS",'y':"T_COA",'z':"T_TOL",
-'4':"L_DS",'5':"L_COA",'6':"L_TOL",'7':"L_Ds",
-'a':'Math','p':'py','v':'UHV',
-'m':'T_Math','n':'T_PY','o':'T_UHV','P':'PY',
+ss={'1':"OS",'2':"TOA",'3':"Proc",
+'4':"T_OS",'5':"T_TOA",'6':"T_Proc",
+'7':"L_OS",'8':"L_TOA",'9':"L_Proc",
+'w':'Os','y':'os','m':'proc',
+'x':'T_Os','z':'T_os','n':'T_proc',
+
+'a':'Comm','c':'T_Com',
+'e':'KOE','f':'T_KOE',
+'s':'CSS',
 'q':'Quiz',' ':' ','-':'---'}
 arr=[[],
-["qa1P v4-","132m ---","2aP3 vx4","1a35 66-","qav- z--"],
-["qa1P v--","132z 66-","2aP3 v--","1a3x 44-","qav5 m--"],
-["q3a6 56-","2a1p v--","31a- ---","3v1p mx-","q2az v44"],
-["q3a5 z77","2a1p v--","31a- ---","3v1p -m6","q2ax v6-"],
-["q3a5 z77","2a1p v--","31a- ---","3v1p -m6","q2ax v6-","31a2 vp-"]]
+["q1e3 c599","23sa 4f88","12e3 ----","1s3a 6f77","q2ea ----"],
+["q1e3 88--","23sa 5f99","12e3 c6--","1s3a 4f--","q2e1 77--"],
+["qyea 995-","y23s af77","23ea ----","2ys3 -f--","q3ez c688"],
+["qyea 77z-","y23s af5-","23ea 9988","2ys3 cf--","q3e6 ----"],
+["q2e3 wa--","3wa2 cf--","3cew 2a77","88a6 xf--","q3e2 99--"]]
 q='<tbody><tr><td style="color:#fff;background-color:#343a40;">3'+c
-if(bqc!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:45</td><td>2:45</td><td>3:45</td></tr>`
-else q+=`</td><td>9:00<br>9:45</td><td>10:00<br>10:45</td><td>11:00<br>11:45</td><td>12:00<br>12:45</td><td></td><td>1:45<br>2:30</td><td>2:45<br>3:30</td><td>3:45<br>4:30</td></tr>`
+if(bqc!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:35</td><td>2:25</td><td>3:15</td><td>4:05</td></tr>`
+else q+=`</td><td>9:00<br>10:00</td><td>10:00<br>11:00</td><td>11:00<br>12:00</td><td>12:00<br>12:55</td><td></td><td>1:35<br>2:25</td><td>2:25<br>3:15</td><td>3:15<br>4:05</td><td>4:05<br>4:55</td></tr>`
 for (var i = 0; i < arr[c].length; i++) {
 	q+='<tr><td>'+day[i]+'</td>'
 	for (var j = 0; j < arr[c][i].length; j++){
@@ -142,45 +186,55 @@ if(btc=="true"){
 var myDate=new Date();
 var time=myDate.getHours()*60 + myDate.getMinutes();
 var d;var r=myDate.getDay()
-if(time<590)d=1
-else if(time<645)d=2
-else if(time<705)d=3
-else if(time<765)d=4
-else if(time<855)d=6
-else if(time<915)d=7
-else if(time<975)d=8
+if(time<595)d=1
+else if(time<655)d=2
+else if(time<715)d=3
+else if(time<775)d=4
+else if(time<860)d=6
+else if(time<910)d=7
+else if(time<960)d=8
+else if(time<1010)d=9
 else{d=1;r=r+1;}
 if(c==1){
-if(r==1&&(d==7||d==8)){r=2;d=1}
-if(r==2&&(d==6||d==7||d==8)){r=3;d=1}
-//if(r==3&&(d==7||d==8)){r=4;d=1}
+//if(r==1&&(d==7||d==8)){r=2;d=1}
+//if(r==2&&(d==6||d==7||d==8)){r=3;d=1}
+if(r==3&&(d==6||d==7||d==8||d==9)){r=4;d=1}
 //if(r==5&&d==1)d=2
-if(r==5&&(d==6||d==7||d==8)){r=6;d=1}
+if(r==5&&(d==6||d==7||d==8||d==9)){r=6;d=1}
 if(r>5||r==0){r=1;d=1}}
 else if(c==2){
-if(r==1&&(d==7||d==8)){r=2;d=1}
-if(r==2&&d==8){r=3;d=1}
-if(r==3&&(d==7||d==8)){r=4;d=1}
-if(r==4&&d==8){r=5;d=1}
+if(r==1&&(d==8||d==9)){r=2;d=1}
+//if(r==2&&d==8){r=3;d=1}
+if(r==3&&(d==8||d==9)){r=4;d=1}
+if(r==4&&(d==8||d==9)){r=5;d=1}
 //if(r==5&&d==1)d=2
-if(r==5&&(d==7||d==8)){r=6;d=1}
+if(r==5&&(d==8||d==9)){r=6;d=1}
 if(r>5||r==0){r=1;d=1}}
 else if(c==3){
-if(r==1&&(d==8)){r=2;d=1}
-if(r==2&&(d==7||d==8)){r=3;d=1}
-if(r==3&&(d==4||d==6||d==7||d==8)){r=4;d=1}
-if(r==4&&(d==8)){r=5;d=1}
+if(r==1&&(d==9)){r=2;d=1}
+//if(r==2&&(d==7||d==8)){r=3;d=1}
+if(r==3&&(d==6||d==7||d==8||d==9)){r=4;d=1}
+if(r==4&&(d==6)){d=7}
+if(r==4&&(d==8||d==9)){r=5;d=1}
 //if(r==5&&d==1)d=2
 if(r>5||r==0){r=1;d=1}}
-else if(c==4||c==5){
-if(r==2&&(d==7||d==8)){r=3;d=1}
-if(r==3&&(d==4||d==6||d==7||d==8)){r=4;d=1}
-if(r==4&&d==6)d=7
+else if(c==4){
+if(r==1&&(d==9)){r=2;d=1}
+if(r==2&&(d==9)){r=3;d=1}
+//if(r==3&&(d==6||d==7||d==8||d==9)){r=4;d=1}
+if(r==4&&(d==8||d==9)){r=5;d=1}
 //if(r==5&&d==1)d=2
-if(r==5&&d==8){r=6;d=1}
-if(r==6&&d==8)r=7
-if(c==4){if(r>5||r==0){r=1;d=1} }
-else{if(r>6||r==0){r=1;d=1} }}
+if(r==5&&(d==6||d==7||d==8||d==9)){r=6;d=1}
+if(r>5||r==0){r=1;d=1}}
+else if(c==5){
+if(r==1&&(d==8||d==9)){r=2;d=1}
+if(r==2&&(d==8||d==9)){r=3;d=1}
+//if(r==3&&(d==6||d==7||d==8||d==9)){r=4;d=1}
+if(r==4&&(d==8||d==9)){r=5;d=1}
+//if(r==5&&d==1)d=2
+if(r==5&&(d==8||d==9)){r=6;d=1}
+if(r>5||r==0){r=1;d=1}}
+
 
 // if(r==5){r=6}
 
