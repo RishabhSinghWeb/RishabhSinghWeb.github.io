@@ -1,0 +1,248 @@
+  <!doctype html>
+<html lang="en">
+<head>
+<title>murr.ga</title>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="200">
+<meta name="viewport" content="initial-scale=1">
+<style>
+#tools{display:flex;align-items:flex-start;flex-flow: row wrap;justify-content:space-around;max-width:100vw;}
+#tools a{margin-right:4px;margin-left:4px;}
+.switch{position:relative;display:inline-block;width:30px;height:15px;}
+.switch input{opacity:0;width:0;height:0;}
+.slider{position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;}
+.slider:before{position:absolute;content: "";height:13px;width:13px;left:2px;bottom:2px;background-color:white;transition:.4s;top:1px;}
+input:checked + .slider{background-color:#2196F3;}
+input:checked + .slider:before{transform:translateX(13px);}
+.slider.round{border-radius:17px;}
+.slider.round:before{border-radius:50%;}
+.bt {display:flex;justify-content:center;height:2rem;white-space:nowrap}
+.classNum {color:gray;align-items:center;display:flex;border-bottom:solid 0.125rem transparent;box-sizing:border-box;height:100%;padding-right: 1rem;padding-left: 1rem;position:relative;text-decoration:none;}
+.stage{color:blue}
+.stage:after{border-top-width:0.25rem;border-top-style:solid;border-radius:0.25rem 0.25rem 0 0;bottom:-0.125rem;content:"";height:0;left:0;position:absolute;right:0}
+.button{display:inline-block;padding:.25em .4em;font-size:75%;font-weight:700;line-height:1;text-align:center;border-radius:.25rem;text-decoration:none;color:#fff;background:linear-gradient(90deg,#5E31FF 0%,#007CFF 100%)}
+.center{display:table;margin:auto;}
+.fo{margin-bottom:15px;background:#EE7752;}
+.info{margin-bottom:15px;background:#EE7752;max-inline-size: 10px;}
+*{user-select: none;}
+table{border-collapse:collapse;margin:auto;text-align:center;font-weight:800;}
+td:nth-child(1){background-color: #dc3545;}
+td {border-color: black;}
+tr:nth-child(1){background-color:#ffc107}
+.MTC{color:#00cc00;}.HEM{color:#00ffff;}.SM{color:#ff00ff;}
+.T_MTC{color:#00cc00;}.T_HEM{color:#00ffff;}.T_SM{color:#ff00ff;}
+.L_MT{color:#00cc00;}.L_HHM{color:#00ffff;}.L_SM{color:#ff00ff;}.L_SML{color:#ff00ff;}
+.MTCP{color:#00cc00;}.HEAM{color:#00ffff;}.L_HML{color:#00ffff;}
+.T_MTCP{color:#00cc00;}.T_HEAM{color:#00ffff;}
+.Math{color:#ff0000;}.UHV{color:#ffaa22;}
+.T_Math{color:#ff0000;}.PY{color:#0000ff;}
+.showKOE{display: initial !important;}
+</style></head>
+<body class="center">
+<svg width="24" height="24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+<div class="center" style="font-size:170%;font-weight:800;color:#44f;">CE<br></div>
+<div class="bt">
+<div id="b1" onclick="javascript:c=1;build()" class="classNum">41</div>
+<div id="b2" onclick="javascript:c=2;build()" class="classNum">42</div>
+<div id="b3" onclick="javascript:c=3;build()" class="classNum">43</div>
+<div id="b4" onclick="javascript:c=4;build()" class="classNum">44</div>
+<div id="b5" style="display: none;" onclick="javascript:c=5;build()" class="classNum">45</div>
+</div>
+<table id="t" style="margin-bottom:15px;" border="1"></table>
+
+<div id='KOE' class="" onclick='hideKOE()' style="display: none;align-content: center;z-index:50;background: #00000047;;position:fixed;top: 0;bottom: 0;left: 0;right: 0;">
+	<div style="background:#fff;position: fixed;top: 25%;left: 25%; width:50%;height: 50%;border-radius: 10px;">
+		<h3 style="display:table;margin:auto;margin-top:10px;"><a href="javascript:KOET('alok')">Alok KOE</a></h3>
+		<h3 style="display:table;margin:auto;margin-top:10px;"><a href="javascript:KOET('sunil')">Sunil KOE</a></h3>
+	</div>
+</div>
+
+<div id="tool">
+<script>
+datelinks={"prutor":"https://prutor.ai/welcome/?type=allQuizzes"}
+timedata=[]
+innerdata=""
+for(i=0;i<timedata.length;i++)innerdata+='<a href="'+((timedata[i][1] == undefined)?'https://classroom.google.com/a/not-turned-in/all':datelinks[timedata[i][1]])+'" class="button center fo">'+timedata[i][0]+'</a>';
+document.getElementById('tool').innerHTML=innerdata//document.write(innerdata)
+</script>
+<div id="tools">
+<a class="button center info">Hide EndTime<label class="switch"><input id="bq" type="checkbox" onclick="build()"><span class="slider round"></span></label></a>
+<a class="button center info">Transpose Timetable<label class="switch"><input id="bt" type="checkbox" onclick="build()"><span class="slider round"></span></label></a>
+<a class="button center info">Zoom Buttons<label class="switch"><input id="bb" type="checkbox" checked onclick="build()"><span class="slider round"></span></label></a>
+</div>
+<div id="tools">
+<a href="https://www.paypal.me/dailylifes" style='display: table;display:none;padding: .25em .4em;text-align: center;color: #000;'>Get Regular Updates By<br><img src='img/paypal.png' style='width:200px' alt=' Support on PayPal'></a>
+<a href="#" style='display: none;padding: .25em .4em;font-size:75%;text-align: center;color: #000;'>Get Regular Updates By Supporting With Any UPI<br><img src='https://www.github.com/dailylifes/dailylifes.github.io/blob/master/img/upi.jpg?raw=true' style='width:90px' alt=' Here'></a>
+</div>
+
+<!--<h3 style="display:table;margin:auto;margin-top:10px;"><a href="https://dailylifes.github.io/Sunrise">use Sunrise here</a></h3>-->
+<script>
+var c=localStorage.getItem("c")
+var bqc=localStorage.getItem("bqc")
+var btc=localStorage.getItem("btc")
+var bbc=localStorage.getItem("bbc")
+</script><script>
+_Math="https://us04web.zoom.us/j/6831797537?pwd=S0xROWsrUUF4bi9kNmp3NFhiMWJLdz09"
+_SM="https://us04web.zoom.us/j/9922267209?pwd=TnIzNzdsVlVYdVR3ZVlzVmJQVkNTZz09"
+_HEM_Shubham="https://us05web.zoom.us/j/4027809720?pwd=S3phaXpPWmkvaHZzdTl5VDBDeTIzUT09"
+_MTC_Avneesh="https://us05web.zoom.us/j/4027809720?pwd=S3phaXpPWmkvaHZzdTl5VDBDeTIzUT09"
+
+
+_L_MT_Avneesh="https://us04web.zoom.us/j/7457245553?pwd=SmI2d2FIRFN3blY4Z1RYS015Y2Zwdz09"
+_MTCP_Akhil=""
+_HEAM_Kundan=""
+_L_SML_Shubham="https://us05web.zoom.us/j/4027809720?pwd=S3phaXpPWmkvaHZzdTl5VDBDeTIzUT09"
+_L_HML_Kundan=""
+_Quiz="https://classroom.google.com/a/not-turned-in/all"
+function Math(){window.open(_Math);}
+function T_Math(){window.open(_Math);}
+function HEM(){window.open(_HEM_Shubham);}
+function T_HEM(){window.open(_HEM_Shubham);}
+function MTC(){window.open(_MTC_Avneesh);}
+function T_MTC(){window.open(_MTC_Avneesh);}
+function SM(){window.open(_SM);}
+function T_SM(){window.open(_SM);}
+function MTCP(){window.open(_MTCP_Akhil);}
+function T_MTCP(){window.open(_MTCP_Akhil);}
+function HEAM(){window.open(_HEAM_Kundan);}
+function T_HEAM(){window.open(_HEAM_Kundan);}
+function L_MT(){window.open(_L_MT_Avneesh);}
+function L_SM(){window.open();}
+function L_SML(){window.open(_L_SML_Shubham);}
+function L_HHM(){window.open("https://us04web.zoom.us/j/5398443465?pwd=eHlmeG1GazN0cFBTVWdZNjJ4c2xMQT09");}
+function L_HML(){window.open(_L_HML_Kundan;}
+function PY(){window.open("https://zoom.us/j/2471794873?pwd=cnk1elBXYUI3ZzdweGJmMEpxQzU1UT09");}
+function UHV(){window.open("https://zoom.us/j/6286420688?pwd=g91OEr7f81hCUl-ChRzWyva7Q9d6kQ");}
+function Quiz(){window.open(_Quiz);}
+</script><script>
+bt=document.getElementById('bt');if(btc=="true")bt.checked=true;else bt.checked=false
+bq=document.getElementById('bq');if(bqc=="false")bq.checked=false;else bq.checked=true
+bb=document.getElementById('bb');if(bbc=="false")bb.checked=false;else bb.checked=true
+function build(){
+if(bt.checked)btc="true";else btc="false";
+if(bq.checked)bqc="true";else bqc="false";
+if(bb.checked)bbc="true";else bbc="false";
+b1=document.getElementById('b1');b1.classList.remove("stage")
+b2=document.getElementById('b2');b2.classList.remove("stage")
+b3=document.getElementById('b3');b3.classList.remove("stage")
+b4=document.getElementById('b4');b4.classList.remove("stage")
+b5=document.getElementById('b5');b5.classList.remove("stage")
+c=parseInt(c)
+     if(c==1)b1.classList.add("stage")
+else if(c==2)b2.classList.add("stage")
+else if(c==4)b4.classList.add("stage")
+else if(c==5)b5.classList.add("stage")
+else	{c=3;b3.classList.add("stage")}
+
+day=["MON","TUE","WED","THU","FRI","SAT"]
+ss={'1':"MTC",'2':"SM",'3':"HEM",
+'4':"T_MTC",'5':"T_SM",'6':"T_HEM",
+'7':"L_MT",'8':"L_SM",'9':"L_HHM",'p':'PY',
+'w':'L_SML','y':'L_HML','m':'proc',
+'x':'MTCP','z':'HEAM','n':'T_proc',
+'s':'T_MTCP','t':'T_HEAM',
+
+'a':'Math','c':'T_Math',
+'v':'UHV',
+'q':'Quiz',' ':' ','-':'---'}
+arr=[[],
+["qa2v p775","3a21 88--","1a3v p4--","2a13 99c-","q23v 6---"],
+["qa2v pc88","3a21 7746","1a3v p---","2a13 ----","q23v 995-"],
+["q21p 995-","a13v a---","a32p 188-","a23v 774-","qa23 v6--"],
+["q2xp a---","axzv 5---","azxp 2yys","a2zv wwt-","qa2z v77-"],
+[]]
+q='<tbody><tr><td style="color:#fff;background-color:#343a40;">3'+c
+if(bqc!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:35</td><td>2:25</td><td>3:15</td><td>4:05</td></tr>`
+else q+=`</td><td>9:00<br>10:00</td><td>10:00<br>11:00</td><td>11:00<br>12:00</td><td>12:00<br>12:55</td><td></td><td>1:35<br>2:25</td><td>2:25<br>3:15</td><td>3:15<br>4:05</td><td>4:05<br>4:55</td></tr>`
+for (var i = 0; i < arr[c].length; i++) {
+	q+='<tr><td>'+day[i]+'</td>'
+	for (var j = 0; j < arr[c][i].length; j++){
+		tt=ss[arr[c][i][j]]
+		if(tt==" ")q+='<td>'
+		else if (tt =='---')q+='<td>---'
+		else {q+= '<td onClick="'+tt+'()" class="'+tt+'">'+tt+'<br>';if(bbc!="false"){q+='<a class="button" onclick="'+tt+'()">Zoom</a>';bbc="true"}} // href="'+link["1"][0]+'" class="button"
+		q+='</td>'}
+	q+='</tr>'}
+document.getElementById("t").innerHTML=q+'</tbody>'
+if(btc=="true"){
+	const rows = Array.from(t.children[0].querySelectorAll("tr"))
+	const newTbody = document.createElement("tbody")
+	for (rx=0;rx<rows.length;rx++) {
+		const row=rows[rx]
+		const cells=Array.from(row.querySelectorAll("td"))
+		for (cx=0;cx<cells.length;cx++){
+			const cell=cells[cx]
+			const newRow=newTbody.children[cx]||document.createElement("tr")
+			if (!newTbody.children[cx]){newTbody.appendChild(newRow)}
+			newRow.appendChild(cell.cloneNode(true))}}
+	t.removeChild(t.children[0])
+	t.appendChild(newTbody)}
+
+var myDate=new Date();
+var time=myDate.getHours()*60 + myDate.getMinutes();
+var d;var r=myDate.getDay()
+if(time<595)d=1
+else if(time<655)d=2
+else if(time<715)d=3
+else if(time<775)d=4
+else if(time<860)d=6
+else if(time<910)d=7
+else if(time<960)d=8
+else if(time<1010)d=9
+else{d=1;r=r+1;}
+if(c==1){
+//if(r==1&&(d==7||d==8)){r=2;d=1}
+if(r==2&&(d==8||d==9)){r=3;d=1}
+if(r==3&&(d==8||d==9)){r=4;d=1}
+if(r==4&&(d==9)){r=5;d=1}
+//if(r==5&&d==1)d=2
+if(r==5&&(d==7||d==8||d==9)){r=6;d=1}
+if(r>5||r==0){r=1;d=1}}
+else if(c==2){
+//if(r==1&&(d==8||d==9)){r=2;d=1}
+//if(r==2&&(d==8||d==9)){r=3;d=1}
+if(r==3&&(d==7||d==8||d==9)){r=4;d=1}
+//if(r==4&&d==6)d=7
+if(r==4&&(d==6||d==7||d==8||d==9)){r=5;d=1}
+//if(r==5&&d==1)d=2
+if(r==5&&(d==9)){r=6;d=1}
+if(r>5||r==0){r=1;d=1}}
+else if(c==3){
+if(r==1&&(d==9)){r=2;d=1}
+if(r==2&&(d==9||d==7||d==8)){r=3;d=1}
+if(r==3&&(d==9)){r=4;d=1}
+//if(r==4&&(d==6)){d=7}
+if(r==4&&(d==9)){r=5;d=1}
+if(r==5&&(d==9||d==8))r=6
+if(r>5||r==0){r=1;d=1}}
+else if(c==4){
+if(r==1&&(d==7||d==8||d==9)){r=2;d=1}
+if(r==2&&(d==7||d==8||d==9)){r=3;d=1}
+//if(r==3&&(d==6||d==7||d==8||d==9)){r=4;d=1}
+if(r==4&&(d==9)){r=5;d=1}
+//if(r==5&&d==1)d=2
+if(r==5&&(d==9)){r=6;d=1}
+if(r>5||r==0){r=1;d=1}}
+else if(c==5){
+if(r==1&&(d==8||d==9)){r=2;d=1}
+if(r==2&&(d==8||d==9)){r=3;d=1}
+if(r==3&&(d==6)){r=3;d=7}
+if(r==4&&(d==9)){r=5;d=1}
+//if(r==5&&d==1)d=2
+if(r==5&&(d==8||d==9)){r=6;d=1}
+if(r>5||r==0){r=1;d=1}}
+
+
+// if(r==5){r=6}
+
+if(btc=="true")document.getElementById('t').children[0].children[d].children[r].style.background="#ff0";
+else document.getElementById('t').children[0].children[r].children[d].style.background="#ff0";
+localStorage.setItem("bqc",bqc)
+localStorage.setItem("btc",btc)
+localStorage.setItem("bbc",bbc)
+localStorage.setItem("c",c.toString());
+}
+setInterval(build(), 60*1000); 
+</script>
+</body>
+</html>
