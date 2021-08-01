@@ -66,21 +66,6 @@ tr:nth-child(1){background-color:#ffc107}
 <script>
 datelinks={"prutor":"https://prutor.ai/welcome/?type=allQuizzes","exam":"https://","result":"https://"}
 timedata=[
-//["Wed July 21 Eid Holiday"],
-//["Fri July 23 KCS401 OS Quiz"],
-//["Mon July 26 KCS402 TOA Quiz"],
-//["Wed July 28 KCS403 Proc Quiz"],
-//["Fri July 30 KNC401 CSS Quiz"],
-//["Mon Aug 2 KOE Energy Quiz"],
-	
-["Timing PES 10:00 to 12:00"],
-["Mon July 26 KOE043 Energy PES"],
-["Tue July 27 KCS401 OS PES"],
-["Wed July 28 KCS402 Micro PES"],
-["Thu July 29 KCS403 TALF PES"],
-["Fri July 30 KAS401 TC PES"],
-["Sat July 31 KNC401 CSS PES"],
-
 ["Timing Exams 3:00 PM to 5:00 PM","exam"],
 ["Fri Aug 6 KAS401 TC Exam","exam"],
 ["Tue Aug 10 KCS401 OS Exam","exam"],
@@ -89,7 +74,7 @@ timedata=[
 ["Mon Aug 16 KCS403 Micro Exam","exam"],
 ["Wed Aug 18 KOE043 Energy Exam","exam"],
 ["Thu Sept 9 Exam Result","result"],
-["CSS Prutor","prutor"],
+
 ]
 innerdata=""
 for(i=0;i<timedata.length;i++)innerdata+='<a href="'+((timedata[i][1] == undefined)?'https://classroom.google.com/a/not-turned-in/all':datelinks[timedata[i][1]])+'" class="button center fo">'+timedata[i][0]+'</a>';
