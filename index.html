@@ -16,7 +16,7 @@ input:checked + .slider{background-color:#2196F3;}
 input:checked + .slider:before{transform:translateX(13px);}
 .slider.round{border-radius:17px;}
 .slider.round:before{border-radius:50%;}
-.bt {display:flex;justify-content:center;height:2rem;white-space:nowrap}
+.button_transpose {display:flex;justify-content:center;height:2rem;white-space:nowrap}
 .classNum {color:gray;align-items:center;display:flex;border-bottom:solid 0.125rem transparent;box-sizing:border-box;height:100%;padding-right: 1rem;padding-left: 1rem;position:relative;text-decoration:none;}
 .stage{color:blue}
 .stage:after{border-top-width:0.25rem;border-top-style:solid;border-radius:0.25rem 0.25rem 0 0;bottom:-0.125rem;content:"";height:0;left:0;position:absolute;right:0}
@@ -41,7 +41,7 @@ tr:nth-child(1){background-color:#ffc107}
 <body class="center">
 <svg width="24" height="24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
 <div class="center" style="font-size:170%;font-weight:800;color:#44f;">CS<br></div>
-<div class="bt">
+<div class="button_transpose">
 <div id="b1" onclick="javascript:c=1;build()" class="classNum">41</div>
 <div id="b2" onclick="javascript:c=2;build()" class="classNum">42</div>
 <div id="b3" onclick="javascript:c=3;build()" class="classNum">43</div>
@@ -82,7 +82,7 @@ document.getElementById('tool').innerHTML=innerdata//document.write(innerdata)
 </script>
 <div id="tools">
 <a class="button center info">Hide EndTime<label class="switch"><input id="bq" type="checkbox" onclick="build()"><span class="slider round"></span></label></a>
-<a class="button center info">Transpose Timetable<label class="switch"><input id="bt" type="checkbox" onclick="build()"><span class="slider round"></span></label></a>
+<a class="button center info">Transpose Timetable<label class="switch"><input id="button_transpose" type="checkbox" onclick="build()"><span class="slider round"></span></label></a>
 <a class="button center info">Zoom Buttons<label class="switch"><input id="bb" type="checkbox" checked onclick="build()"><span class="slider round"></span></label></a>
 </div>
 <div id="tools">
@@ -93,11 +93,11 @@ document.getElementById('tool').innerHTML=innerdata//document.write(innerdata)
 <!--<h3 style="display:table;margin:auto;margin-top:10px;"><a href="https://dailylifes.github.io/Sunrise">use Sunrise here</a></h3>-->
 <script>
 var c=localStorage.getItem("c")
-var bqc=localStorage.getItem("bqc")
-var btc=localStorage.getItem("btc")
-var bbc=localStorage.getItem("bbc")
+var button_endtime_check=localStorage.getItem("button_endtime_check")
+var button_transpose_check=localStorage.getItem("button_transpose_check")
+var zoom_button=localStorage.getItem("zoom_button")
 </script><script>
-//avadh_DS="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbTBnSjlXZz09"
+//avadh_DS="https://us04web.zoom.us/j/9792983540?pwd=OWpwM1YrOHUySjlvaFMwbUtton_transposeBnSjlXZz09"
 //raj_DS="https://us04web.zoom.us/j/6197662772?pwd=YjJpWEJVaDhhOXA1WHZyTGFKKzZGdz09"
 //_L_Ds ="https://us02web.zoom.us/j/7111925460?pwd=MmZSNXZHYmFYaGdIVU9HK05qSHZnQT09"
 //raghvendra_L_DS ="https://us02web.zoom.us/j/9025097650?pwd=WGlLV09zZHFkMHJ3Tm5GK2JCNnNGUT09"
@@ -148,14 +148,15 @@ function L_OS(){window.open(_L_OS, "_top");}
 function L_proc(){window.open(_L_proc_sudha, "_top");}
 //function L_Py(){window.open(_L_Py, "_top");}
 function L_Py(){window.open("https://zoom.us/j/5913271434?pwd=SDlnVXdOVHVheGxnSEl2SW5QaWc4UT09", "_top");}
-</script><script>
-bt=document.getElementById('bt');if(btc=="true")bt.checked=true;else bt.checked=false
-bq=document.getElementById('bq');if(bqc=="false")bq.checked=false;else bq.checked=true
-bb=document.getElementById('bb');if(bbc=="false")bb.checked=false;else bb.checked=true
+
+// ===== generating table =====
+button_transpose=document.getElementById('button_transpose');if(button_transpose_check=="true")button_transpose.checked=true;else button_transpose.checked=false
+bq=document.getElementById('bq');if(button_endtime_check=="false")bq.checked=false;else bq.checked=true
+bb=document.getElementById('bb');if(zoom_button=="false")bb.checked=false;else bb.checked=true
 function build(){
-if(bt.checked)btc="true";else btc="false";
-if(bq.checked)bqc="true";else bqc="false";
-if(bb.checked)bbc="true";else bbc="false";
+if(button_transpose.checked)button_transpose_check="true";else button_transpose_check="false";
+if(bq.checked)button_endtime_check="true";else button_endtime_check="false";
+if(bb.checked)zoom_button="true";else zoom_button="false";
 b1=document.getElementById('b1');b1.classList.remove("stage")
 b2=document.getElementById('b2');b2.classList.remove("stage")
 b3=document.getElementById('b3');b3.classList.remove("stage")
@@ -180,14 +181,16 @@ ss={'1':"OS",'2':"TOA",'3':"Proc",
 'g':'OE','h':'T_OE',
 's':'CSS',
 'q':'Quiz',' ':' ','-':'---'}
+
+// time table
 arr=[[],
-["q1e3 c699","23sa 5f88","12e3 ----","1s3a 4f77","q2ea ----"],
-["q1e3 88--","23sa -f99","12e3 c6--","1s3a -f--","q2e1 5477"],
-["qyga 995-","y23s ah77","23ga ----","2ys3 -h--","q3gz c688"],
-["qyga 77z-","y23s ah5-","23ga 9988","2ys3 ch--","q3g6 ----"],
-["q2gm wa--","mwa2 ch--","mcgw -a77","88an xh5-","q3g2 00--"]]
+["q1e3 c699","23sa 5f88","12e3 ----","1s3a 4f77","q2ea ----"], // monday
+["q1e3 88--","23sa -f99","12e3 c6--","1s3a -f--","q2e1 5477"], // tuesday
+["qyga 995-","y23s ah77","23ga ----","2ys3 -h--","q3gz c688"], // wednesday
+["qyga 77z-","y23s ah5-","23ga 9988","2ys3 ch--","q3g6 ----"], // thursday
+["q2gm wa--","mwa2 ch--","mcgw -a77","88an xh5-","q3g2 00--"]] // friday
 q='<tbody><tr><td style="color:#fff;background-color:#343a40;">3'+c
-if(bqc!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:35</td><td>2:25</td><td>3:15</td><td>4:05</td></tr>`
+if(button_endtime_check!="false")q+=`</td><td>9:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td></td><td>1:35</td><td>2:25</td><td>3:15</td><td>4:05</td></tr>`
 else q+=`</td><td>9:00<br>10:00</td><td>10:00<br>11:00</td><td>11:00<br>12:00</td><td>12:00<br>12:55</td><td></td><td>1:35<br>2:25</td><td>2:25<br>3:15</td><td>3:15<br>4:05</td><td>4:05<br>4:55</td></tr>`
 for (var i = 0; i < arr[c].length; i++) {
 	q+='<tr><td>'+day[i]+'</td>'
@@ -195,11 +198,11 @@ for (var i = 0; i < arr[c].length; i++) {
 		tt=ss[arr[c][i][j]]
 		if(tt==" ")q+='<td>'
 		else if (tt =='---')q+='<td>---'
-		else {q+= '<td onClick="'+tt+'()" class="'+tt+'">'+tt+'<br>';if(bbc!="false"){q+='<a class="button" onclick="'+tt+'()">Zoom</a>';bbc="true"}} // href="'+link["1"][0]+'" class="button"
+		else {q+= '<td onClick="'+tt+'()" class="'+tt+'">'+tt+'<br>';if(zoom_button!="false"){q+='<a class="button" onclick="'+tt+'()">Zoom</a>';zoom_button="true"}} // href="'+link["1"][0]+'" class="button"
 		q+='</td>'}
 	q+='</tr>'}
 document.getElementById("t").innerHTML=q+'</tbody>'
-if(btc=="true"){
+if(button_transpose_check=="true"){
 	const rows = Array.from(t.children[0].querySelectorAll("tr"))
 	const newTbody = document.createElement("tbody")
 	for (rx=0;rx<rows.length;rx++) {
@@ -215,69 +218,110 @@ if(btc=="true"){
 
 var myDate=new Date();
 var time=myDate.getHours()*60 + myDate.getMinutes();
-var d;var r=myDate.getDay()
-if(time<595)d=1
-else if(time<655)d=2
-else if(time<715)d=3
-else if(time<775)d=4
-else if(time<860)d=6
-else if(time<910)d=7
-else if(time<960)d=8
-else if(time<1010)d=9
-else{d=1;r=r+1;}
-if(c==1){
-//if(r==1&&(d==7||d==8)){r=2;d=1}
-//if(r==2&&(d==6||d==7||d==8)){r=3;d=1}
-if(r==3&&(d==6||d==7||d==8||d==9)){r=4;d=1}
-//if(r==5&&d==1)d=2
-if(r==5&&(d==6||d==7||d==8||d==9)){r=6;d=1}
-if(r>5||r==0){r=1;d=1}}
-else if(c==2){
-if(r==1&&(d==8||d==9)){r=2;d=1}
-if(r==2&&d==6)d=7
-//if(r==2&&d==8){r=3;d=1}
-if(r==3&&(d==8||d==9)){r=4;d=1}
-if(r==4&&d==6)d=7
-if(r==4&&(d==8||d==9)){r=5;d=1}
-//if(r==5&&d==1)d=2
-//if(r==5&&(d==8||d==9)){r=6;d=1}
-if(r>5||r==0){r=1;d=1}}
-else if(c==3){
-if(r==1&&(d==9)){r=2;d=1}
-//if(r==2&&(d==7||d==8)){r=3;d=1}
-if(r==3&&(d==6||d==7||d==8||d==9)){r=4;d=1}
-if(r==4&&(d==6)){d=7}
-if(r==4&&(d==8||d==9)){r=5;d=1}
-//if(r==5&&d==1)d=2
-if(r>5||r==0){r=1;d=1}}
-else if(c==4){
-if(r==1&&(d==9)){r=2;d=1}
-if(r==2&&(d==9)){r=3;d=1}
-//if(r==3&&(d==6||d==7||d==8||d==9)){r=4;d=1}
-if(r==4&&(d==8||d==9)){r=5;d=1}
-//if(r==5&&d==1)d=2
-if(r==5&&(d==6||d==7||d==8||d==9)){r=6;d=1}
-if(r>5||r==0){r=1;d=1}}
-else if(c==5){
-if(r==1&&(d==8||d==9)){r=2;d=1}
-if(r==2&&(d==8||d==9)){r=3;d=1}
-if(r==3&&(d==6)){r=3;d=7}
-if(r==4&&(d==9)){r=5;d=1}
-//if(r==5&&d==1)d=2
-if(r==5&&(d==8||d==9)){r=6;d=1}
-if(r>5||r==0){r=1;d=1}}
+var column;var row=myDate.getDay()
+
+if(time<595)column=1
+else if(time<655)column=2
+else if(time<715)column=3
+else if(time<775)column=4
+else if(time<860)column=6
+else if(time<910)column=7
+else if(time<960)column=8
+else if(time<1010)column=9
+else{column=1;row=row+1;}
+
+if(day==1){
+	//if(row==1&&(column==7||column==8)){row=2;column=1}
+	//if(row==2&&(column==6||column==7||column==8)){row=3;column=1}
+	if(row==3&&(column==6||column==7||column==8||column==9)){row=4;column=1}
+	//if(row==5&&column==1)column=2
+	if(row==5&&(column==6||column==7||column==8||column==9)){row=6;column=1}
+	if(row>5||row==0){row=1;column=1}
+}
+else if(day==2){
+	if(row==1&&(column==8||column==9)){row=2;column=1}
+	if(row==2&&column==6)column=7
+	//if(row==2&&column==8){row=3;column=1}
+	if(row==3&&(column==8||column==9)){row=4;column=1}
+	if(row==4&&column==6)column=7
+	if(row==4&&(column==8||column==9)){row=5;column=1}
+	//if(row==5&&column==1)column=2
+	//if(row==5&&(column==8||column==9)){row=6;column=1}
+	if(row>5||row==0){row=1;column=1}
+}
+else if(day==3){
+	if(row==1&&(column==9)){
+		row=2;
+		column=1;
+	}
+	//if(row==2&&(column==7||column==8)){row=3;column=1}
+	if(row==3&&(column==6||column==7||column==8||column==9)){
+		row=4;
+		column=1;
+	}
+	if(row==4&&(column==6)){
+		column=7;
+	}
+	if(row==4&&(column==8||column==9)){
+		row=5;
+		column=1
+	}
+	//if(row==5&&column==1)column=2
+	if(row>5||row==0){
+		row=1;column=1}
+}
+else if(day==4){
+	if(row==1&&(column==9)){
+		row=2;column=1
+	}
+	if(row==2&&(column==9)){
+		row=3;column=1
+	}
+	//if(row==3&&(column==6||column==7||column==8||column==9)){row=4;column=1}
+	if(row==4&&(column==8||column==9)){
+		row=5;column=1
+	}
+	//if(row==5&&column==1)column=2
+	if(row==5&&(column==6||column==7||column==8||column==9)){
+		row=6;column=1
+	}
+	if(row>5||row==0){
+		row=1;column=1
+	}
+}
+else if(day==5){
+	if(row==1&&(column==8||column==9)){
+		row=2;column=1
+	}
+	if(row==2&&(column==8||column==9)){
+		row=3;column=1
+	}
+	if(row==3&&(column==6)){
+		row=3;column=7
+	}
+	if(row==4&&(column==9)){
+		row=5;column=1
+	}
+	//if(row==5&&column==1)column=2
+	if(row==5&&(column==8||column==9)){
+		row=6;column=1
+	}
+	if(row>5||row==0){
+		row=1;column=1
+	}
+}
 
 
-// if(r==5){r=6}
+// if(row==5){row=6}
 
-if(btc=="true")document.getElementById('t').children[0].children[d].children[r].style.background="#ff0";
-else document.getElementById('t').children[0].children[r].children[d].style.background="#ff0";
-localStorage.setItem("bqc",bqc)
-localStorage.setItem("btc",btc)
-localStorage.setItem("bbc",bbc)
+if(button_transpose_check=="true")document.getElementById('t').children[0].children[column].children[row].style.background="#ff0";
+else document.getElementById('t').children[0].children[row].children[column].style.background="#ff0";
+localStorage.setItem("button_endtime_check",button_endtime_check)
+localStorage.setItem("button_transpose_check",button_transpose_check)
+localStorage.setItem("zoom_button",zoom_button)
 localStorage.setItem("c",c.toString());
 }
-setInterval(build(), 60*1000); 
+setInterval(build(), 10*1000); 
 </script>
 </body>
 </html>
