@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta chfill-whiteet="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rishabh Singh</title>
+    <style type="text/css">
+    html {
+        --blue: #00427a;
+        --sky: #76bbe7;
+        --cloud: #eff4f9;
+    }
+
+    /* *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }*/
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        margin-bottom: 2px;
+        margin-top: 0px;
+    }
+
+    section {
+        padding: 1px;
+        padding-bottom: 6vh;
+        padding-left: 15vw;
+        padding-right: 15vw;
+        font-family: sans-serif;
+    }
+    .container {
+        display:table;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .center {
+        display:table;
+        margin:auto;
+    }
+    .box {
+        background: #EEEEEE;
+        border: 1px solid pink;
+        padding: 10px;
+    }
+
+    .heading {
+        font-size: 76px;
+        margin-bottom: 40px;
+    }
+
+    .fill-white {
+        opacity: 1;
+        fill: #ffffff;
+        fill-opacity: 1;
+        stroke-width: 1.0954
+    }
+
+    .clear {
+        font-family: none;
+        mix-blend-mode: normal;
+        fill: none;
+        fill-rule: nonzero;
+        stroke: none;
+        stroke-linejoin: miter;
+        stroke-miterlimit: 10;
+        stroke-dasharray: none;
+        stroke-dashoffset: 0
+    }
+
+    .flex-grid-thirds {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flex-grid-thirds .col {
+        width: 32%;
+    }
+
+    .flex-grid .col {
+        text-decoration-line: underline;
+        font-size: 68px;
+    }
+
+    .fixicon {
+        height: 30px;
+        width: 30px;
+        padding: 5px;
+        background: #d1d1d1;
+        background: white;
+        border-radius: 25%;
+        margin: 7px;
+    }
+
+    .icon {
+        height: 40px;
+        width: 40px;
+        padding: 5px;
+        background: #white;
+        border-radius: 25%;
+        margin: 5px;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        color: #2785ff;
+        color: #6aa9ff;
+        color: black;
+        text-decoration: none;
+        margin-right: 15px;
+        max-width: fit-content;
+        min-width: 135px !important;
+    }
+
+    .footer-links {
+        display: flex;
+        align-items: center;
+        color: #2785ff;
+        color: #6aa9ff;
+        text-decoration: none;
+        margin-right: 15px;
+    }
+
+    .footer-section {
+        flex: 1;
+        margin: 20px;
+    }
+
+    .footer-item {
+        color: #f4f4f4;
+        margin-bottom: 10px;
+    }
+
+    .rights {
+        text-align: center;
+        border-top: 1px solid #444;
+        padding: 20px 0;
+        margin-top: 20px;
+    }
+
+    @font-face {
+        font-family: 'Copyright House Industries';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Copyright House Industries'), url('CopyrightHouseIndustries.woff') format('woff');
+    }
+
+    @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700&subset=latin");
+
+
+    button {
+        font-family: "IBM Plex Sans";
+        border: 2px solid var(--blue);
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: none;
+        color: var(--blue);
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    dialog {
+        --t: 0.5s;
+        --w: 50%;
+        --bg: #fff;
+        --easeOutBack: cubic-bezier(0.615, 1.361, 0.661, 1);
+        --padding: 2rem;
+        --paddingTop: 2rem;
+
+        --bottomDrawerCornerRadius: 1.5rem;
+        --padBounce: 20vmax;
+
+        margin: 0;
+        width: calc(var(--w) + var(--padBounce));
+        height: 100dvh;
+
+        border: none;
+        padding: 0;
+        padding-right: var(--padBounce);
+
+        background: var(--bg);
+
+        inset: unset;
+        right: 0;
+        top: 0;
+
+        transition: all calc(var(--t) / 2) ease-in allow-discrete;
+
+        translate: 100% 0;
+
+        &:popover-open {
+            opacity: 1;
+            translate: calc(var(--padBounce)) 0;
+            box-shadow: 0px 1px 64px 0px rgba(0, 0, 0, 0.15);
+            transition: all var(--t) var(--easeOutBack) allow-discrete;
+        }
+
+        @starting-style {
+            &:popover-open {
+                opacity: 0;
+                translate: 100% 0;
+            }
+        }
+
+        &::backdrop {
+            background: #0000;
+            transition: all calc(var(--t) / 2) allow-discrete;
+        }
+
+        &:popover-open::backdrop {
+            background: #0003;
+        }
+
+        @starting-style {
+            &:popover-open::backdrop {
+                background: #0000;
+            }
+        }
+
+        button.close {
+            --buttonWidth: 2rem;
+            --buttonInset: 1rem;
+
+            width: var(--buttonWidth);
+            aspect-ratio: 1/1;
+            background: oklch(from var(--cloud) l c h / 0.8);
+            text-indent: -1000rem;
+            border-radius: 50%;
+            position: absolute;
+            border: none;
+            padding: 0;
+            top: var(--buttonInset);
+            right: calc(var(--padBounce) + var(--buttonInset));
+            transition: all var(--t) allow-discrete;
+
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0.75rem;
+                height: 0.125rem;
+                background: var(--blue);
+                translate: -50% -50%;
+                inset: 1rem;
+                rotate: 45deg;
+            }
+
+            &:after {
+                rotate: -45deg;
+            }
+
+            &:hover {
+                scale: 1.1;
+            }
+        }
+
+        div.scrollWrapper {
+            padding: var(--padding);
+            padding-top: var(--paddingTop);
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        @media (width < 600px) {
+            width: 100%;
+            height: calc(80dvh + var(--padBounce));
+
+            border-top-left-radius: var(--bottomDrawerCornerRadius);
+            border-top-right-radius: var(--bottomDrawerCornerRadius);
+
+            padding-right: 0;
+            padding-bottom: var(--padBounce);
+
+            top: unset;
+            bottom: 0;
+
+            translate: 0 100%;
+
+            &:popover-open {
+                translate: 0 var(--padBounce);
+            }
+
+            @starting-style {
+                &:popover-open {
+                    translate: 0 100%;
+                }
+            }
+
+            button.close {
+                right: var(--buttonInset);
+            }
+        }
+    }
+
+
+    .ball {
+        position: absolute;
+        left: -41px;
+        top: 0px;
+        width: 16px;
+        height: 16px;
+        background-color: #6aa9ff;
+        border-radius: 50%;
+        border: 2px solid #fff;
+    }
+
+    .ulist {
+        color\: #555;
+        margin: 10px 0;
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .extrainfo {
+        color: #777;
+        margin: 5px 0;
+    }
+
+    .subtitle {
+        color: #555;
+        margin: 5px 0;
+    }
+
+    .title {
+        color: #222;
+        margin: 0;
+    }
+
+    .itembox {
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .skillbox {
+        color: #333;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .skills {
+        font-weight: normal;
+        color: #6aa9ff;
+        color: #2072f1;
+    }
+
+    .timeline {
+        position: relative;
+        margin: 20px 0;
+        padding-left: 30px;
+        border-left: 2px solid #ddd;
+        margin-left: 25px;
+    }
+
+    .section-data {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+
+    @media screen and (max-width: 600px) {
+        section {
+            padding-left: 3vw;
+        }
+
+        .timeline {
+            margin-left: 15px;
+        }
+
+        #person {
+            max-height: 80vw !important;
+            left: -100px;
+            max-width: 345px !important;
+        }
+
+        .flex-grid {
+            top: unset !important;
+            bottom: 30vh;
+        }
+
+        .flex-grid .col {
+            text-decoration-line: underline;
+            font-size: 50px;
+        }
+    }
+    </style>
+    <style type="text/css">
+    .progress-icon-center .air3-progress-circle-icons {
+        align-items: center;
+        display: flex;
+    }
+
+
+    .air3-progress-circle-icons {
+        height: var(--badge-circle-size);
+        position: relative;
+        width: var(--badge-circle-size);
+    }
+
+    .air3-progress-circle-svg {
+        transform: rotate(-90deg);
+    }
+
+    .air3-progress-circle-icons .air3-icon {
+        color: var(--badge-circle-bar-color);
+        height: auto;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: var(--badge-circle-icon-width);
+    }
+
+    .air3-icon>svg {
+        display: block;
+        height: 100% !important;
+        -o-object-fit: contain;
+        object-fit: contain;
+        width: 100% !important;
+    }
+
+    .air3-progress-circle-svg circle {
+        fill: none;
+        stroke-width: var(--badge-circle-border-width);
+        stroke-linecap: round;
+    }
+
+    .air3-progress-circle-bg {
+        stroke: var(--badge-circle-color);
+    }
+
+    .air3-progress-circle-fg {
+        stroke: var(--badge-circle-bar-color);
+        stroke-width: var(--badge-circle-stroke-width);
+        stroke-linecap: round;
+        animation: badge-progress 1s ease-out forwards;
+        animation: var(--reduced-motion, badge-progress 1s ease-out forwards);
+    }
+
+    .air3-progress-circle {
+        --badge-circle-size: 40px;
+        align-items: center;
+        display: inline-flex;
+    }
+
+    @keyframes badge-progress {
+        0% {
+            stroke-dasharray: 0 119;
+            stroke-dasharray: 0 var(--badge-circle-dash, 119)
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div style="height: 90vh;background-color: #FFcccc;">
+
+        <div class="flex-grid" style="z-index:2;text-underline-position:from-font;position:absolute;left:15vw;top:20%;">
+            <div class="col">Building</div>
+            <div class="col">High-Quality</div>
+            <div class="col">Scalable</div>
+            <div class="col">Websites.</div>
+            <span style="
+                color: #343434;
+                margin: 0px 5px;
+                font-size: 1.5em;
+                display: block;
+                padding-top: 8px;
+            "></span>
+
+            <!-- JSS BOX -->
+            <div style="position: absolute;height:200px; width: 300px; background: white; border-radius: 30px;/*top: calc(66vh - 100px);left: calc(50vw - 150px);*/transform: translate(-7px, 13px);">
+                <div style="  margin: 0;position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);width: max-content;">
+                    <!-- Top-Rated -->
+                    <div class="container">
+                        <div class="air3-progress-circle" data-test="up-c-icon">
+                            <svg width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 28 28" role="img">
+                                <path fill="#1F57C3" d="M12 1.155a4 4 0 014 0l8.124 4.69a4 4 0 012 3.464v9.382a4 4 0 01-2 3.464L16 26.845a4 4 0 01-4 0l-8.124-4.69a4 4 0 01-2-3.464V9.309a4 4 0 012-3.464L12 1.155z"></path>
+                                <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.761 7.542l1.188 3.201 3.285.184a.78.78 0 01.448.173c.13.104.226.247.277.41a.9.9 0 01.01.504.858.858 0 01-.261.422L17.15 14.6l.854 3.328a.907.907 0 01-.025.507.857.857 0 01-.291.404.785.785 0 01-.919.02L14 16.984l-2.764 1.862a.784.784 0 01-.916-.012.855.855 0 01-.294-.4.906.906 0 01-.031-.505l.847-3.314-2.55-2.18a.858.858 0 01-.26-.421.9.9 0 01.01-.504.853.853 0 01.276-.41.782.782 0 01.448-.173l3.285-.184 1.188-3.201a.86.86 0 01.302-.394.79.79 0 01.918 0 .86.86 0 01.302.394z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span style="margin-left: 3px;">
+                                <span style="font-weight: 600;color: #555555;"></span>
+                                <span>Top-Rated</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- /Top-Rated -->
+                    <!-- JSS -->
+                    <div class="container">
+                        <div id="" class="air3-progress-circle">
+                            <div class="air3-progress-circle-icons" style="--badge-circle-dash: 119.38052083641213;">
+                                <svg aria-hidden="true" viewBox="0 0 40 40" class="air3-progress-circle-svg">
+                                    <circle cx="20" cy="20" r="19" class="air3-progress-circle-bg"></circle>
+                                    <circle style="stroke:#086add" cx="20" cy="20" r="19" stroke-dasharray="119.38052083641213 119.38052083641213" class="air3-progress-circle-fg air3-progress-circle-100"></circle>
+                                </svg>
+                                <div class="air3-icon md">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" viewBox="0 0 24 24" role="img">
+                                        <path fill="#086add" fill-rule="evenodd" d="M18.37 19.002H5.63v-1.867h12.74v1.867zm.02-3.736H5.608L3 8.314l4.992 1.664L12 5l4.008 4.978L21 8.314l-2.61 6.952z" clip-rule="evenodd"></path>
+                                    </svg></div>
+                            </div>
+                            <span style="margin-left: 3px;">
+                                <span style="font-weight: 600;color: #555555;">100%</span>
+                                <span>Job Success</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- /JSS -->
+                    <!-- Star -->
+                    <div class="container" style="margin-bottom: 2px;">
+                        <div>
+                            <svg height="21px" width="21px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.94 47.94" xml:space="preserve">
+                                <path style="fill:#ED8A19;" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757    c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042    c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685    c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528    c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956 C22.602,0.567,25.338,0.567,26.285,2.486z" />
+                            </svg>
+                            <svg height="25px" width="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.94 47.94" xml:space="preserve">
+                                <path style="fill:#ED8A19;" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757    c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042    c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685    c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528    c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956 C22.602,0.567,25.338,0.567,26.285,2.486z" />
+                            </svg>
+                            <svg height="29px" width="29px" style="margin-left: 2px;margin-right: 2px;"version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.94 47.94" xml:space="preserve">
+                                <path style="fill:#ED8A19;" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757    c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042    c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685    c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528    c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956 C22.602,0.567,25.338,0.567,26.285,2.486z" />
+                            </svg>
+                            <svg height="25px" width="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.94 47.94" xml:space="preserve">
+                                <path style="fill:#ED8A19;" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757    c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042    c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685    c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528    c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956 C22.602,0.567,25.338,0.567,26.285,2.486z" />
+                            </svg>
+                            <svg height="21px" width="21px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.94 47.94" xml:space="preserve">
+                                <path style="fill:#ED8A19;" d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757    c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042    c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685    c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528    c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956 C22.602,0.567,25.338,0.567,26.285,2.486z" />
+                            </svg>
+                        </div>
+                        <div><!-- #ffc107--></div>
+                    </div>
+                    <!-- /Star -->
+                    <span class="center" style="font-size: 20px;font-weight: 600;color: #555555;">Perfect Rating</span>
+                    <span class="center" style="font-size: 20px;font-weight: 600;color: #555555;">(20+ Reviews)</span>
+                </div>
+            </div>
+            <!-- /JSS BOX -->
+        </div>
+        <!-- 
+        <div class="flex-grid" style="font-size:75px;text-underline-position:from-font;position:absolute;left:15vw;top:30%;">
+            <div class="col"><span style="text-decoration-line: underline;">W E B.</span>&nbsp<span style="text-decoration-line: underline;">D E V.</span></div>
+            <div class="col" style="text-decoration-line: underline;">L E S S E R</div>
+            <div class="col" style="text-decoration-line: underline;">check out -></div>
+        </div> -->
+    </div>
+    <!-- right side person and name -->
+    <svg id="person" version="1.1" width="647" height="866" style="max-width: 100vw;position: absolute;top: -9px;right: -130px;max-height: 100vh;" viewBox="118.36332 46.39999 646.99995 865.99999" id="svg34" sodipodi:docname="person2.svg" inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)" xml:space="preserve" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <sodipodi:namedview id="namedview34" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:zoom="0.91290996" inkscape:cx="499.50162" inkscape:cy="461.71038" inkscape:window-width="1920" inkscape:window-height="1057" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg34" />
+        <defs id="defs3">
+            <linearGradient id="swatch25" inkscape:swatch="solid">
+                <stop style="stop-color:#000000;stop-opacity:1;" offset="0" id="stop25" />
+            </linearGradient>
+            <clipPath id="clipPath1">
+                <rect x="418" y="46.39999" width="700" height="700" id="clip-1" fill="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" />
+            </clipPath>
+            <clipPath id="clipPath2">
+                <rect x="91.841621" y="273.4057" transform="matrix(1.0249352,-0.08862879,0.08862879,1.0249352,0,0)" width="1008.4454" height="700" id="clip-2" fill="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" />
+            </clipPath>
+            <clipPath id="clipPath3">
+                <rect x="1013.5358" y="546.73627" transform="matrix(0.63244264,0.02242247,-0.02381386,0.67168799,0,0)" width="700" height="700" id="clip-3" fill="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-dasharray="none" />
+            </clipPath>
+        </defs>
+        <g id="layer1 1" stroke-dasharray="none" transform="matrix(1.0431754,0,0,0.97047828,-455.12069,74.069499)" class="clear" inkscape:label="person layer">
+            <g clip-path="url(#clip-1)" id="g19" inkscape:label="person outline group">
+                <g id="g18" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" inkscape:label="person outline group">
+                    <g id="g17" style="display:inline" inkscape:label="person outline group">
+                        <g id="g16" style="mix-blend-mode:normal" inkscape:label="Person">
+                            <path d="m 818.97172,223.79993 c -1.37053,4.43124 -3.10106,8.72659 -6.52312,11.97566 -8.09927,7.68982 -17.06999,13.94223 -28.94733,11.85608 -4.98781,-0.87605 -10.05411,-3.01132 -12.52956,-8.33174" id="Path 1" stroke-width="2" inkscape:label="mouth smile" />
+                            <path d="m 755.99153,309.54636 c 0,0 -72.3862,-1.15295 -89.50741,19.68038 -13.48485,24.46969 -20.98485,40.83332 -13.40909,81.66666 0.30303,39.92424 -7.42423,104.01514 -4.62121,134.39394 10.98485,28.5606 16.89393,35.60606 31.81818,32.27273 l -1.74242,94.46969" id="path3" stroke-width="1" inkscape:label="right hand outside" />
+                            <path d="m 937.85024,562.17078 c 0,0 2.59446,34.94818 -2.02676,49.19061 0.83333,14.24242 -0.63217,17.17158 1.0345,29.82309 7.12122,10.83333 -99.68958,8.09235 -122.94716,13.09235 -19.62122,-1.36364 -98.71952,9.48341 -133.34074,17.43796" id="path4" stroke-width="1" inkscape:label="bottom" />
+                            <path d="m 679.81252,577.73652 c 0,0 33.48246,4.05663 46.58852,2.01118 14.01515,-0.22727 26.76901,-7.90388 48.05689,-8.05539 24.01515,-17.42424 47.3243,-25.01639 63.00612,-35.24366 17.5,-17.5 36.43939,-29.24243 58.10605,-43.4091" id="path5" stroke-width="1" inkscape:label="right hand down" />
+                            <path d="m 721.32767,419.5139 c 0,0 2.12122,-5.30303 1.28788,38.03031 -0.83333,43.33333 -23.33333,56.28787 -6.66667,64.62121 16.66667,8.33333 47.65152,-2.42423 56.81819,-10.90908 16.4394,-6.66667 59.47064,-31.42587 71.81913,-38.54707 10.53031,-7.12121 26.74148,-20.01354 37.4233,-26.37717" id="path6" stroke-width="1" inkscape:label="right hand inside" />
+                            <path d="m 867.76707,394.59002 c 0,0 13.33333,34.16667 12.5,37.5 -0.83333,3.33333 10.83333,45 13.33333,52.5 2.5,7.5 3.75624,17.87183 0.42291,32.03849 -14.24242,13.25757 -30.49867,3.94636 -60.2714,-12.87182 0,0 -34.62121,-17.04545 -50.30303,-23.63636 -7.5,-7.5 -59.59148,-13.83728 -59.59148,-13.83728" id="path7" stroke-width="1" sodipodi:nodetypes="csscccc" inkscape:label="left hand inside" />
+                            <path d="m 714.47531,498.2867 c 0,0 31.54933,8.95484 34.88266,17.28817 0,0 61.74241,36.36363 77.04545,42.12121 12.57576,6.66667 68.28727,20.19737 80.0297,10.19737 0.83333,0 45.87939,-4.13676 42.77334,-38.07616 6.89394,-31.21212 0.53031,-84.77274 -1.96969,-105.60607 -2.5,-20.83333 -12.38916,-100.85982 -29.43461,-120.178 -12.5,-17.5 -76.24722,-10.12503 -76.24722,-10.12503" id="path8" stroke-width="1" sodipodi:nodetypes="cccccscc" inkscape:label="left hand" />
+                            <path d="m 809.20256,194.99336 c 2.85714,-7.07792 4.87013,-15.29221 0.91992,-21.11472 -5.24891,-4.52381 -9.45262,-2.06382 -11.86147,3.5606 -3.22511,5.16234 -2.14819,13.63176 1.85614,19.44345 4.1342,1.3961 6.0984,2.20157 9.08541,-1.88933 z" id="path10" stroke-width="1" inkscape:label="right eye" />
+                            <path d="M 727.62254,163.30958 C 708.45587,71.64292 852.55023,34.39064 853.38356,151.89064 c 0.29412,37.5 3.00957,45.74737 -2.31436,107.80708 -12.5,90.83333 -112.58607,82.1687 -120.08607,-5.3313 -1.61835,-28.60431 -8.73938,-56.58715 -3.36059,-91.05684 z" id="path11" stroke-width="1" inkscape:label="face" />
+                            <path d="m 770.84704,239.96881 c 7.7381,11.54762 21.0382,10.8828 33.30011,2.90661 11.19047,-5.83333 14.69297,-18.42147 14.69297,-18.42147" id="path12" stroke-width="1" inkscape:label="mouth" />
+                            <path d="m 771.09939,205.43529 c 5.17316,1.52597 9.47502,-1.82439 11.03346,-8.12309 -0.38961,-7.20779 1.72862,-11.5721 -2.09173,-17.65436 -2.91126,-2.96537 -10.42991,-8.30885 -14.43424,5.16517 0,0 -1.2391,17.26812 5.49251,20.61228 z" id="path13" stroke-width="1" inkscape:label="left eye" />
+                            <path d="m 797.09714,163.16299 c 0,0 14.54546,-7.27273 14.54546,-1.81818 0,5.45455 0,15.45455 0,15.45455" id="path15" stroke-width="1" inkscape:label="right eyebrow" />
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g inkscape:groupmode="layer" id="layer1" inkscape:label="person white color" transform="matrix(0.95861156,0,0,1.0304198,-62.441448,12.293424)" class="clear">
+                <path class="fill-white" d="m 664.35907,502.19311 c -4.81975,-0.51393 -10.349,-0.66179 -12.28721,-0.32856 -5.34603,0.91912 -12.20752,-2.92007 -16.41854,-9.1866 -1.93138,-2.87414 -5.38188,-9.16914 -7.66779,-13.98889 l -4.1562,-8.76319 0.17615,-19.16947 c 0.0969,-10.54321 1.20492,-34.69674 2.46231,-53.67451 2.54217,-38.36915 2.86355,-57.02606 1.13429,-65.84824 -1.8354,-9.36362 -1.55531,-28.96993 0.53027,-37.11921 1.91178,-7.47014 11.19044,-27.39216 15.03317,-32.27739 1.23567,-1.5709 5.1154,-4.30431 8.62163,-6.07425 13.02055,-6.57275 31.93346,-10.17211 63.36764,-12.05964 l 18.83174,-1.13079 3.52521,2.64515 c 17.85563,13.39797 43.59955,15.40814 63.29862,4.94256 6.29721,-3.34553 12.59117,-8.82486 20.19067,-17.57739 l 4.38159,-5.04639 16.6317,-0.78876 c 24.42041,-1.15814 45.65624,1.19814 55.34495,6.14095 10.48847,5.35082 19.23233,25.95491 27.07375,63.79683 10.99028,53.03805 17.04591,120.85046 13.22049,148.04639 -0.7627,5.42222 -1.55956,11.8303 -1.7708,14.24018 -0.21124,2.40988 -0.64786,5.36745 -0.97027,6.57239 -0.32241,1.20494 -7.08752,7.04472 -15.03357,12.97731 -12.31743,9.19628 -15.34182,10.95177 -20.51446,11.90745 -3.3369,0.61652 -7.79235,1.7657 -9.90099,2.55374 -5.99607,2.24083 -12.76484,2.6511 -24.8966,1.50903 -20.85411,-1.96318 -45.29683,-7.96491 -60.22198,-14.78708 l -8.53797,-3.90263 12.04938,-5.75526 c 7.89984,-3.77327 14.69,-8.0019 19.71717,-12.27903 4.21728,-3.58808 9.44479,-7.83637 11.61668,-9.44066 l 3.94887,-2.91689 6.82885,2.12536 c 9.51578,2.96165 19.23382,2.81042 25.2927,-0.39359 5.78595,-3.05968 6.64439,-5.41295 6.87309,-18.84129 0.14664,-8.61036 -0.34144,-11.45354 -3.85485,-22.45567 -5.95798,-18.65719 -10.62399,-35.78966 -11.86785,-43.57587 -1.17947,-7.38325 -12.78011,-38.579 -14.3462,-38.579 -1.51078,0 -1.172,1.25885 3.28967,12.22427 5.82228,14.30932 7.95232,20.99711 9.5386,29.94856 1.18061,6.66226 1.14038,7.81144 -0.30686,8.76319 -0.91612,0.60247 -9.86522,6.55258 -19.88688,13.22248 -10.02167,6.66989 -26.01472,16.2069 -35.5401,21.19335 l -17.31888,9.06627 -15.54307,-6.79966 c -20.61047,-9.0165 -28.55941,-11.30929 -51.23974,-14.77952 -10.49028,-1.60508 -20.10222,-3.11248 -21.35987,-3.34978 -2.21023,-0.41704 -2.26957,-0.90371 -1.7762,-14.56683 0.64833,-17.95442 -0.44717,-30.82357 -2.62389,-30.82357 -1.18724,0 -1.36492,0.73513 -0.72809,3.01235 0.46333,1.65679 0.79919,12.378 0.74635,23.82491 -0.11094,24.03659 -1.3644,31.66346 -8.14847,49.58067 -6.97375,18.4182 -6.24363,22.46303 4.71157,26.10177 6.69268,2.22294 26.65467,1.59727 35.11707,-1.10069 l 5.29454,-1.68799 18.25652,9.72802 c 10.04109,5.3504 22.1892,11.68635 26.9958,14.07987 l 8.73927,4.35187 -11.18739,5.6141 c -6.15307,3.08775 -14.27868,7.50617 -18.05691,9.8187 -5.74355,3.51544 -8.21559,4.32658 -15.08202,4.9488 -4.51688,0.40931 -13.63303,2.04157 -20.25812,3.62725 -10.39553,2.48811 -14.82163,2.92112 -32.31048,3.16099 -11.14568,0.15287 -24.20831,-0.14254 -29.02806,-0.65647 z" id="path83" transform="translate(118.36332,46.39999)" />
+                <path class="fill-white" d="m 733.36916,443.37912 c -1.8074,-0.93544 -4.51851,-2.9375 -6.02469,-4.449 -3.23016,-3.2416 -12.40895,-7.54473 -24.79655,-11.62493 l -8.91328,-2.93583 2.04044,-5.37 c 1.12225,-2.9535 2.86056,-9.54396 3.86292,-14.64548 l 1.82247,-9.27547 3.95496,0.54744 c 16.11522,2.23065 38.08671,6.11318 44.48471,7.86079 4.21728,1.15195 14.7719,5.20661 23.45471,9.01034 l 15.78693,6.91587 -14.69153,7.24123 c -8.08034,3.98267 -16.66324,8.09316 -19.07312,9.13442 -2.40988,1.04125 -5.86194,2.8376 -7.67126,3.99187 -1.80931,1.15428 -5.01335,2.81889 -7.12009,3.69913 -3.39267,1.41753 -4.20598,1.40606 -7.11662,-0.10038 z" id="path84" transform="translate(118.36332,46.39999)" />
+                <path class="fill-white" d="m 765.72069,460.6543 c -13.53505,-7.12823 -24.7437,-13.38044 -24.90811,-13.8938 -0.16441,-0.51337 1.54406,-1.7726 3.79661,-2.79831 2.25255,-1.02571 5.8208,-2.86667 7.92944,-4.09103 2.10865,-1.22437 11.83732,-6.00395 21.61929,-10.6213 l 17.78538,-8.39518 10.69497,4.69158 c 10.30587,4.52089 36.40929,17.25195 37.53022,18.3041 0.30014,0.28172 -0.92933,1.58113 -2.73215,2.88758 -1.80281,1.30645 -6.7312,5.27508 -10.95198,8.81918 -7.94154,6.66836 -29.593,18.26426 -33.85192,18.13012 -1.26641,-0.0399 -13.3767,-5.90471 -26.91175,-13.03294 z" id="path85" transform="translate(118.36332,46.39999)" />
+                <path class="fill-white" d="m 829.21652,435.88429 c -6.32593,-3.33404 -16.56607,-8.33948 -22.75588,-11.12319 -6.1898,-2.78371 -10.87263,-5.42437 -10.40628,-5.86812 0.46635,-0.44376 7.99538,-4.57413 16.73118,-9.1786 8.7358,-4.60447 24.39065,-14.09107 34.78855,-21.08133 10.39789,-6.99026 19.0685,-12.50852 19.26801,-12.2628 0.43968,0.54151 11.72317,37.81053 12.45952,41.15339 0.37216,1.68953 -0.21565,2.75402 -2.05227,3.71652 -1.41559,0.74185 -9.56495,5.71478 -18.10968,11.05094 -8.54472,5.33616 -16.18513,9.69154 -16.97867,9.67861 -0.79354,-0.0129 -6.61856,-2.75137 -12.94448,-6.08542 z" id="path86" transform="translate(118.36332,46.39999)" />
+                <path class="fill-white" d="m 859.33997,447.85335 c -1.20494,-0.27758 -4.78989,-1.28775 -7.96656,-2.24481 l -5.77577,-1.74011 5.3013,-3.5701 c 8.16068,-5.49572 28.59478,-18.02228 29.39906,-18.02228 0.74427,0 -0.28735,13.88497 -1.34459,18.09738 -1.11168,4.42929 -13.066,8.98827 -19.61344,7.47992 z" id="path87" transform="translate(118.36332,46.39999)" />
+                <path class="fill-white" d="m 702.04401,449.64694 c -6.2941,-1.06467 -11.51461,-3.71095 -13.07585,-6.62816 -0.93048,-1.73862 -0.67351,-3.81318 1.15176,-9.29812 2.68783,-8.07692 1.82037,-7.9163 15.86429,-2.9374 9.52945,3.37841 16.15411,6.88083 22.20384,11.73903 l 4.67746,3.75622 -4.67746,1.27193 c -4.49084,1.22119 -17.73859,3.23438 -20.01305,3.04128 -0.60247,-0.0512 -3.36141,-0.4763 -6.13099,-0.94478 z" id="path88" transform="translate(118.36332,46.39999)" />
+                <path class="fill-white" d="m 656.64028,545.23451 c 0.44201,-22.74321 0.88077,-41.42162 0.97502,-41.50758 0.0943,-0.086 5.34714,0.32897 11.67306,0.92206 18.65655,1.74917 43.36193,0.50783 56.96072,-2.86203 6.32592,-1.5676 15.37591,-3.17001 20.11109,-3.56092 7.92715,-0.65442 9.40287,-1.18968 18.62177,-6.75434 5.5068,-3.32398 14.05297,-7.91341 18.99149,-10.19874 l 8.97913,-4.15514 8.13034,3.70512 c 18.61733,8.48419 45.60282,14.71465 68.42266,15.79756 l 14.54719,0.69033 -27.14427,8.58662 c -15.36231,4.8596 -40.69478,14.08461 -58.36312,21.25337 l -31.21885,12.66676 -24.14114,16.68811 -24.14115,16.68811 -30.08107,6.70133 c -16.54459,3.68574 -30.7663,6.69893 -31.60379,6.696 -1.28729,-0.005 -1.39847,-6.39881 -0.71908,-41.35662 z" id="path89" transform="translate(118.36332,46.39999)" />
+                <path class="fill-white" style="/*fill: #fdfdea;*/" d="m 758.7729,253.03615 c -17.27219,-4.74824 -31.62574,-17.28249 -40.13957,-35.05189 -4.99014,-10.41503 -7.29689,-19.83665 -8.85035,-36.14814 -0.63115,-6.62716 -1.85177,-17.96453 -2.71248,-25.19416 -1.71427,-14.39909 -1.99463,-24.281 -1.69372,-59.69921 0.1862,-21.917321 0.39005,-24.118077 2.93857,-31.724781 9.15308,-27.319776 36.85963,-46.412548 67.22665,-46.326358 11.3646,0.03226 18.0707,1.524554 27.38434,6.093795 13.92401,6.831073 25.21552,21.688536 30.12833,39.643094 2.8449,10.397126 4.57384,66.25393 2.9335,94.77324 -2.13909,37.19096 -3.75848,46.33525 -10.77413,60.83906 -8.04597,16.63388 -20.75217,27.69084 -37.54763,32.67405 -7.12715,2.11462 -21.42431,2.17465 -28.89351,0.1213 z m 23.88919,-72.8726 c 3.61481,-1.71865 8.60672,-4.86628 11.09312,-6.99472 6.27282,-5.36974 11.04249,-15.97917 7.18374,-15.97917 -0.41982,0 -1.83847,2.34141 -3.15255,5.20314 -3.49545,7.61217 -15.65915,16.35225 -25.29492,18.17534 -5.68461,1.07553 -14.05683,-1.22001 -17.68607,-4.84926 -1.75651,-1.75651 -3.7245,-3.19365 -4.37331,-3.19365 -2.25068,0 -1.15979,2.49855 2.66644,6.10716 6.88335,6.49183 17.92685,7.06379 29.56355,1.53116 z m -21.85566,-41.20792 c 2.40806,-2.59835 2.68619,-3.85108 2.68619,-12.09917 0,-8.26604 -0.26862,-9.46934 -2.64416,-11.84488 -5.88905,-5.88905 -12.94097,-3.94796 -15.71048,4.32442 -1.62318,4.84835 -0.2799,15.73437 2.45697,19.91135 2.50665,3.82563 9.53956,3.67034 13.21148,-0.29172 z m 28.62456,-5.30389 c 4.36424,-3.05683 5.87024,-10.38858 5.09509,-24.80471 -0.43845,-8.15429 -1.1466,-13.042942 -1.89989,-13.11575 -5.51788,-0.533318 -14.89339,2.262813 -14.89339,4.44177 0,1.45445 -0.44641,1.52803 6.31029,-1.040056 3.16942,-1.204634 6.25023,-2.190244 6.84624,-2.190244 0.596,0 1.08364,2.668293 1.08364,5.92954 v 5.92954 l -3.17563,-1.19867 c -4.0814,-1.54055 -8.38269,1.04155 -10.60834,6.36828 -4.92564,11.78873 2.91425,25.51328 11.24199,19.6803 z" id="path90" transform="translate(118.36332,46.39999)" />
+                <path d="m 751.69404,140.02554 c -4.0488,-1.62903 -6.87749,-15.77416 -4.19269,-20.96598 2.67135,-5.16583 4.50881,-6.17053 8.36435,-4.57351 1.83098,0.75842 3.80314,2.26479 4.38259,3.34749 1.50105,2.80475 1.24228,16.56387 -0.35055,18.63847 -1.19966,1.56251 -5.59502,4.41786 -6.46554,4.20019 -0.19023,-0.0476 -0.9724,-0.33856 -1.73816,-0.64666 z" id="path91" transform="translate(118.36332,46.39999)" />
+                <path d="m 782.92077,131.72165 c -5.90126,-4.48124 -4.96926,-18.23374 1.46921,-21.6795 2.94259,-1.57483 7.25693,1.10332 8.26819,5.13253 0.91573,3.64854 -1.29506,13.37331 -3.6257,15.94863 -2.09815,2.31843 -3.64687,2.47005 -6.1117,0.59834 z" id="path92" transform="translate(118.36332,46.39999)" />
+            </g>
+        </g>
+        <g id="Layer2 1" stroke-dasharray="none" opacity="0.8" transform="translate(-373.47469,103.52677)" style="font-family:none;opacity:1;mix-blend-mode:normal;fill:#008000;fill-rule:nonzero;stroke:none;stroke-miterlimit:10;stroke-dashoffset:0" inkscape:label="tree layer">
+            <g clip-path="url(#clip-2)" id="g27" style="fill:#008000" inkscape:label="Tree group">
+                <g id="g26" fill="none" stroke="#000000" stroke-width="1" style="fill:#008000" inkscape:label="Tree group">
+                    <g id="g25" style="fill:#008000" inkscape:label="Tree group">
+                        <g id="g24" style="fill:#00ff00" inkscape:label="Tree">
+                            <path d="m 1134.7431,411.71897 -8.0323,-25.99096 -101.6183,42.86288 -39.31339,23.01886 -53.48514,26.30952 -57.19175,43.15158 -75.36324,24.07099 -60.83693,24.88006 -47.74008,33.04091 -84.09447,18.63043 -76.29954,25.18456 -27.54593,15.80572 21.03042,4.37702 -28.17949,27.36731" id="path22" stroke-linecap="butt" stroke-linejoin="miter" style="fill:#00ff00" sodipodi:nodetypes="cccccccccccccc" inkscape:label="top" />
+                            <path d="m 496.04051,694.05258 c 9.58415,-2.21099 57.26026,-20.26515 66.2156,-19.64079 1.51116,16.94155 7.93397,16.63608 -6.23443,16.60069 25.54149,4.52578 65.0439,-20.35569 89.84735,-16.38367 4.15386,15.9462 -7.23096,12.634 -14.58507,26.80088 -7.25082,4.68276 90.95886,-31.17873 116.17003,-33.74534 0.31906,27.26838 -39.76377,16.5573 -12.57932,13.05522 30.47932,-0.14963 204.75544,-46.08033 228.58088,-47.65052 -3.36665,20.68582 -61.72739,39.71164 -14.3232,20.25538 -15.85006,9.64979 160.73715,-71.05005 138.44825,-61.09416 8.449,36.06811 -43.7636,56.53406 10.0211,28.37303 21.2571,-12.89247 21.5684,-30.46053 27.724,-24.39868 6.1555,6.06186 8.6808,-188.03369 8.6808,-188.03369" id="path24" stroke-linecap="butt" stroke-linejoin="miter" style="fill:#00ff00" sodipodi:nodetypes="cccccccccccsc" inkscape:label="bottom" />
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g clip-path="url(#clip-3)" id="g32" transform="matrix(0.71261588,0,0,0.74857987,-278.87374,461.56952)" class="clear" style="opacity:0.6" inkscape:label="Rishabh Singh Layer">
+            <g id="g31" fill="#cfcfcf" stroke-opacity="0" stroke="#000000" stroke-width="0" stroke-linecap="square" stroke-dasharray="none" font-family="'Copyright House Industries'" font-weight="normal" font-size="40px" text-anchor="middle" inkscape:label="Rishabh Singh group">
+                <g id="g30" inkscape:label="Rishabh Singh group">
+                    <g id="g29">
+                        <text x="1000" y="685" transform="matrix(0.90074972,-0.38749572,0.36106942,0.95485696,0,0)" id="PointText 1" style="font-size:76.0873px;white-space:pre;inline-size:679.463;display:inline;fill:#df00ff;fill-opacity:1;stroke-width:0" inkscape:label="Rishabh Singh" xml:space="preserve"><tspan x="788" y="685" id="tspan10">Rishabh Singh</tspan></text>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <path opacity="1" stroke="none" d="m 681.11853,269.62737 c -2.6067,-2.21048 -3.4435,-5.7244 -4.5506,-9.02168 -1.1388,-3.39155 -2.6538,-6.47108 -5.1038,-9.20803 -2.0646,-0.429 -1.2546,2.80121 -4.1441,2.27788 -2.3772,-4.58315 -4.8002,-9.63716 -6.2878,-15.26005 -1.4251,-5.38638 -3.9353,-10.49862 -4.8943,-15.78198 -4.4092,-0.63184 -3.9443,3.24422 -6.5402,5.05686 -3.1143,-4.44804 -5.2098,-9.09657 -6.4508,-14.26135 -1.2335,-5.13318 -2.9203,-10.16482 -4.3968,-15.2441 -1.266,-4.35568 -1.0151,-9.3298 -5.3664,-12.41409 -2.1257,0.019 -3.3376,1.35767 -4.0672,2.83365 -3.1979,6.46979 -8.9436,11.59588 -10.6291,18.86444 -0.3214,1.38611 -1.3982,2.35577 -2.9489,2.47458 -2.3444,0.17961 -3.4679,-1.45149 -4.1883,-3.16762 -2.6171,-6.23592 -3.9041,-12.82778 -4.7813,-19.4442 -0.5803,-4.37822 -2.3771,-7.9215 -5.4013,-11.25983 -5.4695,1.90998 -5.9262,7.10498 -9.0164,12.51326 -4.4256,-10.87906 -5.014,-21.93761 -12.3881,-30.69124 -2.7616,3.43404 -5.4285,6.7502 -8.7821,10.92043 -4.2292,-9.00346 -5.5025,-18.29156 -9.9649,-26.68189 -2.8448,1.44467 -3.3165,3.71881 -3.9813,5.913 -0.4754,1.56927 -1.515,2.68559 -3.3524,2.63123 -2.1092,-0.0624 -1.9458,-1.69116 -2.5054,-3.13008 -2.5904,-6.65989 -3.0063,-13.65551 -3.8874,-20.58685 -0.1961,-1.54339 -0.5359,-2.98903 -2.5793,-3.72446 -2.4738,2.15798 -4.8973,4.41967 -5.6567,7.90011 -0.2791,1.27873 -0.4004,2.85901 -2.1124,3.13145 -1.9569,0.31143 -2.6065,-1.28183 -3.3688,-2.58554 -2.0432,-3.49427 -4.0188,-7.02716 -6.1466,-10.4727 -1.0297,-1.66736 -1.5411,-4.10891 -3.9326,-4.3424 -2.8624,-0.27948 -2.2197,2.99422 -4.0161,4.35678 -3.2585,0.0216 -3.6173,-2.24654 -3.4891,-4.69936 0.2603,-4.97802 -1.772,-9.48901 -3.0616,-14.12991 -0.9022,-3.2476 -2.8916,-4.83514 -6.5864,-2.66137 -2.8,1.6473 -6.0862,1.68052 -5.9216,-2.32197 0.3257,-7.913662 -3.8877,-14.789318 -4.6362,-22.411464 -0.5354,-5.452343 -1.167,-10.884515 -3.0997,-16.160383 -0.8197,-2.237552 -1.2717,-5.235074 1.9325,-7.80056 4.0458,14.919736 5.5857,29.864195 10.0588,44.140857 9.1479,-0.69955 10.1582,-0.11062 12.6791,8.9726 1.1968,4.31221 2.0102,8.217 7.8552,9.09928 3.2137,0.48513 4.0765,4.34 5.6208,6.88692 1.3967,2.30348 2.4529,4.77711 4.9277,6.64114 2.4452,-1.45321 4.0744,-3.50312 5.1002,-6.03723 0.6868,-1.69679 1.7887,-2.83638 3.7805,-2.97427 2.1797,-0.15089 2.7469,1.31192 3.6497,2.86874 2.9722,5.12456 3.4727,10.7815 4.1512,16.39087 0.2401,1.98504 -0.073,4.01109 1.7739,5.5701 2.3383,-0.44415 2.5803,-2.50265 3.2585,-4.07512 0.63,-1.46046 1.1111,-2.99311 3.0535,-2.87973 1.8078,0.10551 2.5315,1.5479 3.0757,3.02655 2.4737,6.72145 6.1609,13.0076 7.7288,20.05856 0.1327,0.59642 0.6302,1.11741 0.9428,1.64749 0.5054,-0.13167 0.9917,-0.11669 1.1099,-0.31049 1.7169,-2.81484 2.9213,-7.12521 7.1787,-5.93547 5.0743,1.41806 6.3324,6.80524 7.7174,10.9242 1.3651,4.06002 3.0179,8.02774 3.9538,12.17681 2.3659,-0.15588 3.2687,-1.7573 4.5057,-2.82607 4.1038,-3.54561 5.7138,-3.50514 8.5732,0.85772 2.2181,3.38435 3.7325,6.99949 4.3991,11.11625 0.9424,5.81909 2.776,11.50398 4.5659,18.57889 3.9011,-5.80104 6.9621,-10.35146 10.0192,-14.90425 0.094,-0.13911 0.1461,-0.30343 0.2198,-0.45507 1.9693,-4.05071 5.3336,-8.99678 9.2339,-8.24023 4.3276,0.83945 6.2647,6.60969 7.5149,11.12212 2.1744,7.84875 3.9892,15.78961 6.0499,23.66874 0.3244,1.24059 0.8323,2.61499 2.4769,2.93833 6.055,-4.1934 8.7574,-3.49404 9.9112,4.17438 0.9678,6.43235 5.3407,11.5415 5.9449,17.98819 0.1942,2.07133 1.306,4.6129 4.8488,3.95507 2.0362,-0.37808 2.93,1.39257 3.7513,2.916 2.0543,3.8103 4.7132,7.31953 6.3982,11.68192 0.2744,3.27751 0.2744,6.32338 0.2744,9.82564 z" id="path1" style="font-family:none;opacity:1;mix-blend-mode:normal;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.9;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </svg>
+    <section style="background-color:white;">
+        <div class="section-data">
+        <h1 class="heading" style="z-index: 3;position: relative;">Skills</h1>
+        <div style="margin: 10px 0;margin-left: 25px;">
+            <!-- <div style="z-index:10;position:absolute;width:550px;height:460px;max-width:min(100%, 80vw);max-height:min(100%, 80vw);-webkit-touch-callout:none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"></div> -->
+            <!-- <img src="svg/skills.svg" style="max-width:100%;-drag:none;pointer-events:none;-webkit-touch-callout:none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;"> -->
+            <div style="display: flex;flex-wrap: wrap;">
+                
+                <div class="links">
+                    <!-- Python -->
+                    <svg class="icon" height="512px" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="_x32_67-python">
+                            <g>
+                                <path d="M194.005,240.252h105.054c29.216,0,52.529-24.101,52.529-53.414V86.603    c0-28.525-24.002-49.871-52.529-54.691c-35.214-5.804-73.478-5.509-105.054,0.097c-44.462,7.87-52.527,24.298-52.527,54.693    v21.453H246.63v31.959H102.033c-30.591,0-57.349,18.394-65.709,53.315c-9.64,40.035-10.033,65.02,0,106.826    c7.476,31.085,25.28,53.314,55.872,53.314h36.101v-48.001C128.296,270.845,158.298,240.252,194.005,240.252L194.005,240.252z" style="fill:#347AB4;" />
+                                <path d="M474.975,209.372c-7.575-30.395-21.935-53.315-52.527-53.315h-39.443v46.626    c0,36.199-30.692,66.691-65.71,66.691H212.24c-28.724,0-52.528,24.594-52.528,53.414v100.138    c0,28.524,24.788,45.246,52.528,53.413c33.247,9.737,65.215,11.509,105.054,0c26.462-7.675,52.529-23.116,52.529-53.413v-20.997    H264.867v-32.417h157.58c30.593,0,41.904-21.346,52.527-53.314C485.992,283.244,485.501,251.57,474.975,209.372L474.975,209.372z" style="fill:#FFCA1D;" />
+                                <path d="M187.415,89.594c-10.479,0-18.975-8.591-18.975-19.164c0.094-10.668,8.496-19.259,18.975-19.259    c10.385,0,18.976,8.685,18.976,19.259C206.39,81.003,197.894,89.594,187.415,89.594z" style="fill:#FFFFFF;" />
+                                <path d="M314.908,460.076c-10.479,0-18.976-8.591-18.976-19.164c0.095-10.668,8.496-19.259,18.976-19.259    c10.385,0,18.976,8.685,18.976,19.259C333.884,451.485,325.388,460.076,314.908,460.076z" style="fill:#FFFFFF;" />
+                            </g>
+                        </g>
+                        <g id="Layer_1" />
+                    </svg> Python</div>
+                <div class="links">
+                    <!-- Django -->
+                    <svg class="icon" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.533 12.249c-.011 1.985 1.445 3.168 3.768 2.63V9.618c-2.352-.716-3.758.733-3.768 2.631m3.839-10.238h3.199v15.143c-3.066.501-6.004.819-8.104-.355-2.705-1.513-2.923-6.319-.782-8.46 1.085-1.085 3.271-1.85 5.616-1.351V2.225c-.006-.101-.012-.202.071-.214m8.389 3.342h-3.199V2.011h3.199v3.342z" />
+                        <path d="M19.761 7.044c-.003 2.356-.003 4.048-.003 6.911-.136 2.813-.104 5.052-1.135 6.398-.203.266-.634.652-.995.924-.303.228-.881.691-1.208.711-.331.021-1.18-.459-1.564-.64-.505-.237-.971-.553-1.493-.71 1.218-.754 2.372-1.32 2.844-2.844.41-1.326.355-3.247.355-5.119 0-1.849.009-3.998.009-5.63l3.19-.001z" /></svg> Django</div>
+                <div class="links">
+                    <!-- JavaScript -->
+                    <svg class="icon" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
+                        <title />
+                        <path d="M32,32V480H480V32ZM272,380c0,43.61-25.76,64.87-63.05,64.87-33.68,0-53.23-17.44-63.15-38.49h0l34.28-20.75c6.61,11.73,11.63,21.65,26.06,21.65,12,0,21.86-5.41,21.86-26.46V240h44Zm99.35,63.87c-39.09,0-64.35-17.64-76.68-42h0L329,382c9,14.74,20.75,24.56,41.5,24.56,17.44,0,27.57-7.72,27.57-19.75,0-14.43-10.43-19.54-29.68-28l-10.52-4.52c-30.38-12.92-50.52-29.16-50.52-63.45,0-31.57,24.05-54.63,61.64-54.63,26.77,0,46,8.32,59.85,32.68L396,290c-7.22-12.93-15-18-27.06-18-12.33,0-20.15,7.82-20.15,18,0,12.63,7.82,17.74,25.86,25.56l10.52,4.51c35.79,15.34,55.94,31,55.94,66.16C441.12,424.13,411.35,443.87,371.35,443.87Z" /></svg>
+                    JavaScript</div>
+                <div class="links">
+                    <!-- React -->
+                    <svg class="icon" height="250" viewBox="175.7 78 490.6 436.9" width="224" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="#61dafb">
+                            <path d="m666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9v-22.3c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6v-22.3c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zm-101.4 106.7c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24s9.5 15.8 14.4 23.4zm73.9-208.1c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6s22.9-35.6 58.3-50.6c8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zm53.8 142.9c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6z" />
+                            <circle cx="420.9" cy="296.5" r="45.7" />
+                        </g>
+                    </svg> React</div>
+
+                <div class="links">
+                    <!-- MySQL -->
+                    <svg class="icon" id="Layer_1" style="enable-background:new 0 0 180.6 95.3;" version="1.1" viewBox="0 0 180.6 95.3" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <style type="text/css">
+                        .st0 {
+                            fill: #00678F;
+                        }
+
+                        .st1 {
+                            fill: #E38D1A;
+                        }
+                        </style>
+                        <path class="st0" d="M1.7,85.3h5.8v-23l9.1,20c1,2.4,2.5,3.3,5.4,3.3c2.9,0,4.2-0.9,5.3-3.3l9-20v23h5.8v-23c0-2.2-0.9-3.3-2.8-3.9  c-4.4-1.3-7.4-0.2-8.7,2.8L21.8,81l-8.6-19.8c-1.3-3-4.3-4.1-8.7-2.8C2.6,59,1.7,60,1.7,62.3L1.7,85.3L1.7,85.3z" />
+                        <path class="st0" d="M46.9,66.6h5.8v12.6c0,0.7,0.2,2.3,3.4,2.4c1.7,0,12.6,0,12.7,0V66.5h5.8c0,0,0,20.6,0,20.7  c0,5.1-6.3,6.2-9.2,6.2H47.1v-3.9c0,0,18.4,0,18.4,0c3.7-0.4,3.3-2.3,3.3-2.9v-1.5H56.4c-5.8,0-9.5-2.6-9.5-5.5  C46.9,79.3,47.1,66.7,46.9,66.6L46.9,66.6z" />
+                        <path class="st0" d="M172.3,51.9c-3.6-0.1-6.3,0.3-8.7,1.2c-0.7,0.3-1.7,0.3-1.8,1.1c0.4,0.4,0.4,0.9,0.7,1.4  c0.5,0.9,1.5,2.1,2.3,2.7c0.9,0.7,1.9,1.4,2.9,2.1c1.7,1.1,3.7,1.7,5.4,2.8c1,0.6,2,1.4,2.9,2.1c0.5,0.4,0.8,0.9,1.4,1.2  c0,0,0-0.1,0-0.1c-0.3-0.4-0.4-1-0.7-1.4c-0.4-0.4-0.9-0.8-1.3-1.3c-1.3-1.7-2.9-3.3-4.6-4.5c-1.4-1-4.6-2.3-5.1-4c0,0,0,0-0.1-0.1  c1-0.1,2.1-0.4,3.1-0.7c1.5-0.4,2.9-0.3,4.5-0.7c0.7-0.2,1.4-0.4,2.1-0.6c0-0.1,0-0.3,0-0.4c-0.8-0.8-1.4-1.9-2.2-2.6  c-2.3-2-4.8-3.9-7.4-5.5c-1.4-0.9-3.2-1.5-4.6-2.2c-0.5-0.3-1.4-0.4-1.7-0.8c-0.8-1-1.3-2.3-1.8-3.4c-1.3-2.5-2.5-5.2-3.7-7.8  c-0.8-1.7-1.3-3.5-2.3-5.1c-4.6-7.6-9.6-12.2-17.3-16.7c-1.7-0.9-3.6-1.3-5.7-1.8c-1.1,0-2.2-0.1-3.3-0.2c-0.7-0.3-1.4-1.2-2.1-1.6  c-2.5-1.6-9.1-5.1-11-0.5c-1.2,2.9,1.8,5.8,2.8,7.2c0.8,1,1.7,2.2,2.3,3.3c0.3,0.8,0.4,1.6,0.7,2.4c0.7,2,1.4,4.1,2.3,6  c0.5,0.9,1,1.9,1.7,2.8c0.4,0.5,1,0.7,1.1,1.5c-0.6,0.9-0.7,2.2-1,3.3c-1.6,5-1,11.3,1.3,15c0.7,1.1,2.4,3.6,4.7,2.6  c2-0.8,1.6-3.3,2.1-5.6c0.1-0.5,0-0.9,0.3-1.2c0,0,0,0.1,0,0.1c0.6,1.2,1.2,2.5,1.8,3.7c1.4,2.2,3.8,4.5,5.8,6  c1.1,0.8,1.9,2.2,3.3,2.7c0,0,0-0.1,0-0.1c0,0,0,0-0.1,0c-0.3-0.4-0.7-0.6-1-0.9c-0.8-0.8-1.7-1.8-2.3-2.7c-1.9-2.5-3.5-5.3-5-8.1  c-0.7-1.4-1.3-2.9-1.9-4.3c-0.3-0.5-0.3-1.3-0.7-1.6c-0.7,1-1.7,1.8-2.1,3c-0.8,1.9-0.9,4.3-1.2,6.7c-0.2,0-0.1,0-0.2,0.1  c-1.4-0.4-1.9-1.8-2.5-3.1c-1.3-3.2-1.6-8.3-0.4-11.9c0.3-0.9,1.7-3.9,1.1-4.8c-0.3-0.8-1.2-1.3-1.7-2c-0.6-0.8-1.2-1.9-1.6-2.9  c-1.1-2.5-1.6-5.3-2.8-7.8c-0.5-1.2-1.5-2.4-2.2-3.4c-0.8-1.2-1.8-2.1-2.5-3.5c-0.2-0.5-0.5-1.3-0.2-1.8c0.1-0.4,0.3-0.5,0.6-0.6  c0.6-0.5,2.2,0.1,2.8,0.4c1.7,0.7,3,1.3,4.4,2.2c0.6,0.4,1.3,1.3,2.1,1.5c0.3,0,0.6,0,0.9,0c1.4,0.3,3,0.1,4.4,0.5  c2.4,0.8,4.5,1.9,6.4,3.1c5.8,3.7,10.7,9,13.9,15.3c0.5,1,0.8,2,1.2,3c0.9,2.2,2.1,4.4,3,6.6c0.9,2.1,1.8,4.2,3.2,6  c0.7,0.9,3.3,1.4,4.6,1.9c0.9,0.4,2.3,0.8,3.1,1.2c1.5,0.9,3,2,4.5,3C169.9,49.9,172.2,51,172.3,51.9L172.3,51.9z" />
+                        <path class="st0" d="M126.8,13.2c-0.8,0-1.3,0.1-1.8,0.2c0,0,0,0,0,0.1c0,0,0,0,0.1,0c0.4,0.7,1,1.2,1.4,1.8c0.4,0.7,0.7,1.4,1,2.1  c0,0,0.1-0.1,0.1-0.1c0.6-0.4,0.9-1.2,0.9-2.2c-0.3-0.3-0.3-0.6-0.5-0.9C127.7,13.7,127.1,13.5,126.8,13.2L126.8,13.2z" />
+                        <path class="st1" d="M79.1,85.3h16.8c2,0,3.8-0.4,5.4-1.1c2.5-1.2,3.7-2.7,3.7-4.8v-4.3c0-1.7-1.4-3.2-4.1-4.3  c-1.4-0.5-3.2-0.8-5-0.8h-7c-2.4,0-3.5-0.7-3.8-2.3c0-0.2,0-0.4,0-0.5v-2.6c0-0.1,0-0.3,0-0.5c0.3-1.2,0.9-1.5,3-1.7  c0.2,0,0.4,0,0.5,0h16.6v-3.9H88.9c-2.4,0-3.6,0.1-4.7,0.5c-3.4,1.1-5,2.8-5,5.8V68c0,2.6,2.9,4.9,7.9,5.4c0.5,0,1.1,0,1.7,0h6  c0.2,0,0.4,0,0.6,0c1.8,0.2,2.6,0.5,3.2,1.2c0.4,0.4,0.4,0.7,0.4,1.1v3.4c0,0.4-0.3,0.9-0.8,1.4s-1.4,0.8-2.5,0.8  c-0.2,0-0.4,0-0.6,0H79.1L79.1,85.3L79.1,85.3z" />
+                        <path class="st1" d="M141.3,78.5c0,4,3,6.2,9,6.6c0.6,0,1.1,0.1,1.7,0.1h15.2v-3.9h-15.3c-3.4,0-4.7-0.8-4.7-2.9V58.4h-5.8  L141.3,78.5L141.3,78.5z" />
+                        <path class="st1" d="M108.7,78.7V64.9c0-3.5,2.5-5.7,7.4-6.3c0.5,0,1.1-0.1,1.6-0.1h11.1c0.6,0,1.1,0,1.7,0.1  c4.9,0.7,7.3,2.8,7.3,6.3v13.8c0,2.9-1,4.4-3.4,5.4l5.7,5.2h-6.7l-4.6-4.2l-4.7,0.3h-6.2c-1,0-2.2-0.1-3.4-0.4  C110.5,83.9,108.7,81.9,108.7,78.7L108.7,78.7z M115,78.4c0,0.2,0.1,0.4,0.1,0.6c0.3,1.6,1.8,2.5,4.1,2.5h5.3l-4.8-4.4h6.7l4.2,3.8  c0.8-0.4,1.3-1.1,1.5-1.9c0-0.2,0-0.4,0-0.6V65.2c0-0.2,0-0.4,0-0.5c-0.3-1.5-1.8-2.4-4.1-2.4h-8.8c-2.6,0-4.3,1.1-4.3,2.9L115,78.4  L115,78.4z" />
+                        <path class="st1" d="M169.8,85.3h0.8V82h1.1v-0.7h-3.1V82h1.2L169.8,85.3L169.8,85.3z M176.3,85.3h0.8v-3.9h-1.2l-1,2.7l-1.1-2.7  h-1.2v3.9h0.8v-3h0l1.1,3h0.6l1.1-3l0,0L176.3,85.3L176.3,85.3z" />
+                    </svg>
+                    MySQL</div>
+                <div class="links">
+                    <!-- Solidity -->
+                    <svg class="icon" width="800px" height="800px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <title>file_type_solidity</title>
+                        <path d="M20.477,2l-4.5,8h-9l4.5-8h9" style="fill:#c1c1c1;opacity:0.45;isolation:isolate" />
+                        <path d="M11.52,30l4.5-8h9l-4.5,8h-9" style="fill:#c1c1c1;opacity:0.45;isolation:isolate" />
+                        <path d="M15.975,10h9l-4.5-8h-9Z" style="fill:#c1c1c1;opacity:0.6;isolation:isolate" />
+                        <path d="M16.022,22h-9l4.5,8h9Z" style="fill:#c1c1c1;opacity:0.6;isolation:isolate" />
+                        <path d="M11.477,18l4.5-8-4.5-8-4.5,8Z" style="fill:#c1c1c1;opacity:0.8;isolation:isolate" />
+                        <path d="M20.52,14l-4.5,8,4.5,8,4.5-8Z" style="fill:#c1c1c1;opacity:0.8;isolation:isolate" />
+                    </svg> Solidity</div>
+                <div class="links">
+                    <!-- html -->
+                    <svg class="icon" fill="none" height="250" width="218" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 141.53199999999998">
+                        <path d="M10.383 126.894L0 0l124 .255-10.979 126.639-50.553 14.638z" fill="#e34f26" />
+                        <path d="M62.468 129.277V12.085l51.064.17-9.106 104.851z" fill="#ef652a" />
+                        <path d="M99.49 41.362l1.446-15.49H22.383l4.34 47.49h54.213L78.81 93.617l-17.362 4.68-17.617-5.106-.936-12.085H27.319l2.128 24.681 32 8.936 32.255-8.936 4.34-48.17H41.107L39.49 41.362z" fill="#fff" />
+                    </svg> HTML5</div>
+                <div class="links">
+                    <!-- node -->
+                    <svg class="icon" width="227" height="250" viewBox="0 0 256 282" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+                        <g fill="#8CC84B">
+                            <path d="M116.504 3.58c6.962-3.985 16.03-4.003 22.986 0 34.995 19.774 70.001 39.517 104.99 59.303 6.581 3.707 10.983 11.031 10.916 18.614v118.968c.049 7.897-4.788 15.396-11.731 19.019-34.88 19.665-69.742 39.354-104.616 59.019-7.106 4.063-16.356 3.75-23.24-.646-10.457-6.062-20.932-12.094-31.39-18.15-2.137-1.274-4.546-2.288-6.055-4.36 1.334-1.798 3.719-2.022 5.657-2.807 4.365-1.388 8.374-3.616 12.384-5.778 1.014-.694 2.252-.428 3.224.193 8.942 5.127 17.805 10.403 26.777 15.481 1.914 1.105 3.852-.362 5.488-1.274 34.228-19.345 68.498-38.617 102.72-57.968 1.268-.61 1.969-1.956 1.866-3.345.024-39.245.006-78.497.012-117.742.145-1.576-.767-3.025-2.192-3.67-34.759-19.575-69.5-39.18-104.253-58.76a3.621 3.621 0 0 0-4.094-.006C91.2 39.257 56.465 58.88 21.712 78.454c-1.42.646-2.373 2.071-2.204 3.653.006 39.245 0 78.497 0 117.748a3.329 3.329 0 0 0 1.89 3.303c9.274 5.259 18.56 10.481 27.84 15.722 5.228 2.814 11.647 4.486 17.407 2.33 5.083-1.823 8.646-7.01 8.549-12.407.048-39.016-.024-78.038.036-117.048-.127-1.732 1.516-3.163 3.2-3 4.456-.03 8.918-.06 13.374.012 1.86-.042 3.14 1.823 2.91 3.568-.018 39.263.048 78.527-.03 117.79.012 10.464-4.287 21.85-13.966 26.97-11.924 6.177-26.662 4.867-38.442-1.056-10.198-5.09-19.93-11.097-29.947-16.55C5.368 215.886.555 208.357.604 200.466V81.497c-.073-7.74 4.504-15.197 11.29-18.85C46.768 42.966 81.636 23.27 116.504 3.58z" />
+                            <path d="M146.928 85.99c15.21-.979 31.493-.58 45.18 6.913 10.597 5.742 16.472 17.793 16.659 29.566-.296 1.588-1.956 2.464-3.472 2.355-4.413-.006-8.827.06-13.24-.03-1.872.072-2.96-1.654-3.195-3.309-1.268-5.633-4.34-11.212-9.642-13.929-8.139-4.075-17.576-3.87-26.451-3.785-6.479.344-13.446.905-18.935 4.715-4.214 2.886-5.494 8.712-3.99 13.404 1.418 3.369 5.307 4.456 8.489 5.458 18.33 4.794 37.754 4.317 55.734 10.626 7.444 2.572 14.726 7.572 17.274 15.366 3.333 10.446 1.872 22.932-5.56 31.318-6.027 6.901-14.805 10.657-23.56 12.697-11.647 2.597-23.734 2.663-35.562 1.51-11.122-1.268-22.696-4.19-31.282-11.768-7.342-6.375-10.928-16.308-10.572-25.895.085-1.619 1.697-2.748 3.248-2.615 4.444-.036 8.888-.048 13.332.006 1.775-.127 3.091 1.407 3.182 3.08.82 5.367 2.837 11 7.517 14.182 9.032 5.827 20.365 5.428 30.707 5.591 8.568-.38 18.186-.495 25.178-6.158 3.689-3.23 4.782-8.634 3.785-13.283-1.08-3.925-5.186-5.754-8.712-6.95-18.095-5.724-37.736-3.647-55.656-10.12-7.275-2.571-14.31-7.432-17.105-14.906-3.9-10.578-2.113-23.662 6.098-31.765 8.006-8.06 19.563-11.164 30.551-12.275z" />
+                        </g>
+                    </svg> Node.js</div>
+                <div class="links">
+                    <!-- docker -->
+                    <svg class="icon" height="250" viewBox="-.557 117.607 598.543 423.631" width="227" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="#0091e2">
+                            <path d="m592.162 277.804c-1.664-1.37-16.642-12.597-48.815-12.597-8.321 0-16.92.822-25.24 2.191-6.102-41.898-41.327-62.162-42.714-63.257l-8.598-4.93-5.547 7.942c-6.934 10.68-12.204 22.729-15.255 35.052-5.824 23.824-2.219 46.279 9.985 65.447-14.7 8.216-38.553 10.133-43.545 10.406h-393.853c-10.262 0-18.583 8.216-18.583 18.348-.554 33.956 5.27 67.912 17.197 99.951 13.59 35.052 33.838 61.067 59.91 76.95 29.4 17.799 77.383 27.931 131.468 27.931 24.408 0 48.815-2.19 72.946-6.572 33.56-6.025 65.734-17.526 95.412-34.23a260.485 260.485 0 0 0 64.902-52.577c31.342-34.778 49.925-73.663 63.515-108.167h5.547c34.116 0 55.195-13.418 66.844-24.92 7.766-7.12 13.59-15.882 17.751-25.74l2.497-7.12z" />
+                            <path d="m55.193 306.83h52.698c2.497 0 4.716-1.916 4.716-4.654v-46.553c0-2.465-1.942-4.655-4.716-4.655h-52.698c-2.496 0-4.715 1.916-4.715 4.655v46.553c.277 2.738 2.219 4.655 4.715 4.655zm72.668 0h52.699c2.496 0 4.715-1.916 4.715-4.654v-46.553c0-2.465-1.942-4.655-4.715-4.655h-52.7c-2.496 0-4.715 1.916-4.715 4.655v46.553c.278 2.738 2.22 4.655 4.715 4.655m74.055 0h52.699c2.496 0 4.715-1.917 4.715-4.655v-46.553c0-2.465-1.942-4.655-4.715-4.655h-52.699c-2.496 0-4.715 1.916-4.715 4.655v46.553c0 2.738 1.942 4.655 4.715 4.655zm72.946 0h52.699c2.496 0 4.715-1.917 4.715-4.655v-46.553c0-2.465-1.942-4.655-4.715-4.655h-52.699c-2.496 0-4.715 1.916-4.715 4.655v46.553c0 2.738 2.219 4.655 4.715 4.655zm-147-66.543h52.698c2.496 0 4.715-2.19 4.715-4.655v-46.553c0-2.465-1.942-4.656-4.715-4.656h-52.699c-2.496 0-4.715 1.917-4.715 4.656v46.553c.278 2.464 2.22 4.655 4.715 4.655m74.055 0h52.699c2.496 0 4.715-2.19 4.715-4.655v-46.553c0-2.465-1.942-4.656-4.715-4.656h-52.699c-2.496 0-4.715 1.917-4.715 4.656v46.553c0 2.464 1.942 4.655 4.715 4.655m72.946 0h52.699c2.496 0 4.715-2.19 4.715-4.655v-46.553c0-2.465-2.22-4.656-4.715-4.656h-52.699c-2.496 0-4.715 1.917-4.715 4.656v46.553c0 2.464 2.219 4.655 4.715 4.655m0-66.817h52.699c2.496 0 4.715-1.917 4.715-4.655v-46.553c0-2.465-2.22-4.656-4.715-4.656h-52.699c-2.496 0-4.715 1.917-4.715 4.656v46.553c0 2.464 2.219 4.655 4.715 4.655m73.5 133.36h52.699c2.496 0 4.715-1.917 4.715-4.655v-46.553c0-2.465-1.941-4.655-4.715-4.655h-52.698c-2.497 0-4.716 1.916-4.716 4.655v46.553c.278 2.738 2.22 4.655 4.716 4.655" />
+                        </g>
+                    </svg> Docker</div>
+                <div class="links">
+                    <!-- CSS -->
+                    <svg class="icon" enable-background="new 0 0 32 32" height="32px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <polygon fill="#1F62AE" points="27.377,28.889 16.001,32 4.625,28.889 2,0 30.002,0  " />
+                            <polygon fill="#347DC6" points="16,2 16,29.75 25.232,27.008 27.688,2  " />
+                            <polygon fill="#FFFFFF" points="24.363,6 7.607,6 8,10 16,10 8.25,12.99 8.619,17 19.502,17 19.158,21 16,21.99 12.861,20.984    12.533,19 8.803,19 9.262,23.987 16,25.99 22.728,23.986 23.719,12.99 16.026,12.99 24,10  " />
+                        </g>
+                        <g />
+                        <g />
+                        <g />
+                        <g />
+                        <g />
+                        <g />
+                    </svg>
+                    CSS</div>
+                <div class="links">
+                    <!-- Flask -->
+                    <svg class="icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title />
+                        <path d="M7.172 20.655c-.914-.72-1.89-1.41-2.556-2.38-1.402-1.712-2.482-3.694-3.22-5.777C.95 11.143.796 9.69.222 8.388-.38 7.444.325 6.41 1.36 6.109c.46-.088 1.272-.523.293-.212-.878.644-.963-.585-.063-.662.615-.082.84-.585.63-1.037-.659-.43 1.6-.903.463-1.544C1.501 1.376 4.34 1.13 3.64 2.58c-.167 1.115 1.984-.204 1.485 1.083.507.619 1.9.141 1.865 1.009.74.05.993.672 1.687.72.72.325 2.023.58 2.267 1.391-.713.565-2.365-1.166-2.444.397.215 2.31.16 4.689 1.005 6.888.4 1.332 1.369 2.38 2.244 3.418.837 1.016 1.971 1.73 3.127 2.333 1.014.478 2.107.795 3.213.994.448-.343 1.24-1.617 1.938-1.08.033.604-1.388 1.263-.067 1.196.776-.234 1.314.6 1.953-.152.588.697 2.446-.446 2.027.98-.566.364-1.392.144-1.959.646-.935-.467-1.68.418-2.715.306-1.15.206-2.319.29-3.484.291-1.912-.151-3.865-.215-5.684-.88-1.025-.298-2.024-.882-2.925-1.465zm1.615.7c1 .432 1.979.888 3.075 1.026 1.74.241 3.537.614 5.283.274-.79-.357-1.608.14-2.395-.255-.944.203-1.957-.052-2.917-.177-1.092-.486-2.27-.82-3.292-1.452-1.277-.466.66.598 1.006.685.798.453-.878-.233-1.115-.421-.668-.375-.754-.297-.066.084.139.081.276.166.42.235zm-1.904-1.346c.97.359-.004-.682-.449-.622-.197-.341-.752-.557-.36-.74-.705.244-.738-.93-1.07-.763-.745-.235-.29-1.069-1.177-1.58-.081-.54-.882-1.008-1.138-1.822-.113-.416-.905-1.613-.418-.5.414 1.072 1.143 1.99 1.75 2.907.47.873 1.027 1.786 1.885 2.33.29.278.568.703.977.79zM4.09 16.942c.033-.146.177.317 0 0zm3.954 3.497c.215-.096-.309-.12 0 0zm.526.192c-.054-.265-.24.148 0 0zm.66.275c.313-.299-.484-.188 0 0zm1.128.63c.191-.282-.61-.107 0 0zM8.19 20.023c.487-.315-.63-.004 0 0zm.494.246c-.014-.166-.176.075 0 0zm2.47 1.542c.398.25 2.32.55 1.116.103-.201.042-2.231-.574-1.116-.103zm-3.921-3.054c-.039-.167-.616-.185 0 0zm1.15.67c.3-.209-.621-.16 0 0zm.967.593c.43-.162-.697-.163 0 0zm-2.585-1.773c.466.358 1.88.046.714-.213-.53-.283-1.727-.476-.912.17l.198.043zm3.24 1.978c.194-.33-.814-.189 0 0zm-.984-.783c1.14.323-.958-.72-.281-.118l.15.068.13.05zm1.974 1.141c1.079.01-.975-.148 0 0zm-4.645-2.96c-.042-.201-.266.017 0 0zm6.47 3.984c.029-.363-.352.27 0 0zm-4.629-2.856c-.065-.191-.337-.008 0 0zm-1.739-1.254c.62-.037-.848-.273 0 0zm-2.06-1.332c-.077-.297-.674-.534 0 0zM9.8 19.6c-.114-.13-.054.028 0 0zm3.366 2.065c-.01-.197-.183.075 0 0zm-3.664-2.373c.06-.255-.529-.077 0 0zM6.995 17.7c.46-.049-.739-.311 0 0zm4.242 2.637c.718-.285-.7-.14 0 0zM9.03 18.84c.828.106-.985-.563-.181-.06zm2.877 1.768c.773-.462.518 1.082 1.311.13.782-.57-.675.707.289.103.697-.467 1.727.22 2.377.445.468-.023.923.405 1.403.145.923-.25-1.806-.37-1.09-.81-.845.245-1.47-.294-1.885-.835-.948-.219-2.044-.703-2.517-1.542-.192-.315.279.044-.166-.47-.571-.508-.856-1.085-1.24-1.702-.457-.244-.51-.963-.557-.024.004-.593-.553-.992-.689-.826-.002-.571.596-.285.177-.707-.09-.592-.387-1.209-.476-1.877-.138-.322-.02-1.011-.473-.282-.165.77-.055-.947.202-.38.337-.579-.12-.51-.14-.43.22-.488.14-1.18-.057-.916.117-.517.185-1.902-.175-1.656.218-.54.414-2.473-.534-1.736-.384.005-1.048.14-1.363.296.986.543-.099.196-.5.11-.052.502-.45.285-.946.29.793.098-.386.81-.841.534-.59.282.51.987.012 1.205.061.328-.905-.119-.83.64-.573-.241-.078.9.209.514.975.264.686.866.711 1.437-.159.333-.785-.783-.14-.731-.508-.827-.562-.299-.985.085-.099.028 1.079.547.34.803.65.1.668.67.8 1.03.391.407.311-.45.779.04-.296-.436-1.567-1.228-.544-.974-.005-.439-.185-.793.129-.784.31-.562-.325 1.387.375.672.193-.085.241-.563.59.045.505.498.182.858-.531.403.127.433.954.587.799 1.265.165.595.395.376.596.342.158.578.247.153.255-.123.721.155.552.581.778.88.497.224-.712-1.522.142-.526.898.811.337 1.15-.47 1.02.51-.041.675.69 1.313.664.582.277.976 1.34-.027.897-.348-.313-1.579-.7-.573-.104.929.43 1.666.688 2.562 1.227.64.458.918.982 1.16 1.086-.538.257-1.623-.206-.817-.348-.503-.091-1.068-.345-.587.28.41.343 1.45.306 1.637.345-.159.348-.43.376.006.403-.486.26.156.3.201.448zm-.994-2.808c-.296-.31-.373-.89-.053-.385.164.066.525.947.053.385zm3.238 2.057c.185-.011.006.14 0 0zm-3.706-2.816c-.011-.468.107.361 0 0zm-.322-.433c-.372-.719.47.204 0 0zm-3.9-2.692c.218-.059.107.374 0 0zm3.104 1.682c.134-.504.158.424 0 0zm-2.193-1.525c-.155-.278.323.261 0 0zm1.882.604c-.352-.79.25-.432.078.13zM5.77 12.512c-.158-.26-.418-1.02-.334-1.252.076.378.804 1.627.357.518-.494-.93.59.302.702.534.051.23-.305-.063-.064.478-.44-.617-.26.34-.661-.278zm-1.003-.691c.041-.603.23.413 0 0zm.451.155c.215-.455.365.634 0 0zm-1.085-.84c-.374-.37-.644-.713.017-.23.255.01-.566-.778.061-.25.66.12.326 1.082-.078.48zm.57-.015c.217-.215.115.212 0 0zm.35.113c-.328-.617.4.258 0 0zm-.697-.667c-1.086-.966 1.365.506.177.18l-.177-.18zm3.111 1.808c-.47-.282-.124-1.984.036-.82.457-.148-.025.601.315.594-.053.473-.206.643-.35.226zm1.15.68c.047-.513.098.35 0 0zm-.2-.198c.053-.219.006.258 0 0zM4.57 10.25c-.697-.963 2.027.973.447.244-.165-.043-.364-.059-.447-.244zm2.216 1.175c-.066-.81.147.134 0 0zm1.682 1.079c.13-.462.01.305 0 0zM4.676 9.882c.415-.088 1.718.729.521.234-.133-.148-.417-.08-.521-.234zm3.56 1.775c.044-.829.248-.495.002.118l-.002-.118zM4.985 9.594c.169-.248-.449-1.12.089-.313.232.185.672.31.283.387.611.539-.149.146-.372-.074zm3.075 1.804c.117-.944.103.553 0 0zM4.632 8.722c.129-.055.068.172 0 0zm.802.478c.206-.434.38.483 0 0zm2.263 1.259c-.002-.167.043.242 0 0zm-.131-.29c-.314-.776.292.41 0 0zm-.193-.509c-.053-.32.18.403 0 0zm.314-.51c-.216-.38.272-1.674.326-.871-.227.625-.065.975.093.136.293-.66-.063 1.303-.42.735zm.322-1.924c.094-.115.021.139 0 0zm-.538 10.613c-.128-.111.016.071 0 0zm1.11.561c.616.159.613-.096.055-.171-.3-.28-1.246-.575-.399-.035.056.142.234.139.343.206zm-2.192-1.455c.34.253 1.28.719.484.096.269-.312-.514-.478-.254-.686-.66-.404-.52-.368-.058-.356-.794-.354.114-.328.071-.51-.306-.06-1.52-.539-.805.04-.726-.37-.173.138-.392.084-.743-.202.66.565-.118.375.425.337 1.146.864.18.357-.128.183.691.46.892.6zm1.16.667c1.411.454-.691-.556 0 0zm5.94 3.598c.02-.28-.192.24 0 0zm.612.257c.325-.315.013.503.539-.077.006-.415-.016-.66-.605-.156-.162.09-.234.473.066.233zM4.408 15.38c-.1-.393-.7-.39 0 0zm.652.428c-.242-.402-.864-.364 0 0zm3.71 2.237c.362.321 1.663.236.44.04-.182-.269-1.151-.204-.44-.04zm5.098 3.149c.558-.468-.54.208 0 0zm1.16.796c.003-.15-.24.066 0 0zm.001-.21c.617-.654-.598.039 0 0zM2.805 14.038c-.526-.75-.327-1.088-.835-1.7-.096-.47-.87-1.533-.4-.406.43.659.558 1.679 1.235 2.106zm12.03 7.534c1.136-.734-.465-.32 0 0zm.867.34c.57-.488-.36-.102 0 0zM4.215 14.55c.163-.242-.42-.031 0 0zm11.306 7.129c.551-.355-.126-.3-.1.032zM8.05 16.97c-.02-.24-.291.02 0 0zm.461.266c-.146-.297-.225.047 0 0zm7.894 4.684c.705-.51-.428-.098-.148.096zm-.27-.13c.574-.482-.607.213 0 0zm1.38.918c.386-.258-.469-.083 0 0zM4.569 14.376c.517.116 2.066 1.274 1.152.08-.468-.138-.187-1.283-.665-1.08.32.535.264.763-.409.426-.846-.413-.475.204-.31.374-.225.052.298.196.232.2zm-2.356-1.86c.092-.383-.853-2.107-.446-.864.146.26.131.754.446.864zm4.324 2.666c-.266-.223-.013-.032 0 0zm.656.152c0-.405-.725-.164 0 0zm5.682 3.583c-.108-.278-.428-.006 0 0zm.273.199c-.04-.155-.157.03 0 0zm2.253 1.419c.216-.16-.27-.02 0 0zM3.39 12.816c.62-.24-.664-.171 0 0zm8.985 5.661c-.007-.401-.395.1 0 0zm-9.23-6.231c.398-.135-.368-.089 0 0zm1.155.56c-.007-.133-.122.05 0 0zm14.09 8.64c.513-.104 1.679.26 1.867-.136-.621-.015-2.15-.438-2.222.101l.136.022.22.013zM4.668 12.898c.009-.407-.317-.015 0 0zM1.63 10.79c-.138-.775-.525-.118 0 0zm.724.182c.009-.249-.663-.224 0 0zm.414.203c-.12-.097-.094.122 0 0zm2.605 1.67c.122-.112-.29-.083 0 0zm-2.88-2.128c-.07-.585-.84-.088 0 0zm-1.486-.964c-.02-.27-.144.102 0 0zm.221-.167c-.036-.32-.19.04 0 0zm1.22.729c.517-.203-.94-.42-.105-.039zm16.334 10.089c.33-.303-.42-.094 0 0zm1.974 1.023c.132-.392-.334.051 0 0zM2.573 9.676c.055-.379-.409.075 0 0zM.837 8.513c-.093-.535-.08-1.474.812-1.156-1.191.236.824 1.48.57.498.5.024.98-.296.716.19.987-.109 1.671-.964 2.624-.845.742-.098 1.554-.172 2.354-.471.658-.048 1.291-.756.93-1.175-.896-.076-1.835.036-2.827.233-1.098.228-2.096.662-3.205.849-1.08.145.217.4-.092.456-.564.196.672.328-.073.534-.46-.088-.94-.246-.743-.73-1.035.133-1.945.563-1.127 1.616h.061zm2.494-1.27c.243-.894 1.3.735.398.118-.108-.08-.285-.146-.398-.119zm.047-.434c.35-.26.186.146 0 0zm.445.008c.032-.411 1.018.218.163.148zm.608-.245c.222-.26.064.231 0 0zm.156-.104c.37-.444 2.095-.283.832-.043-.338-.255-.598.15-.832.043zm2.251-.347c-.056-1.214 1.118.432 0 0zm.639-.004c.233-.612.906-.245.108-.123.017.065-.024.316-.108.123zM2.322 9.362c.697-.427-.741-.37 0 0zm.515.144c.245-.26-.531-.106 0 0zm-1.52-1.08c.399-.305-.471-.116 0 0zm20.603 12.89c.012-.355-.304.16 0 0zm-2.093-1.429c.06-.409-.27.036 0 0zm2.67 1.567c.557 0 1.688-.173.475-.173-.19.03-1.109.024-.476.173zM3.29 9.254c.451-.03.706-.497-.087-.47-1.23-.127 1.084.42-.158.264-.167.11.236.237.245.207zm.398.202c-.048-.29-.14.154 0 0zm.47-1.257c.197-.243-.27-.065 0 0zm-1.5-2.508c.806-.274 1.907-.581 2.287.135-.387-.466-.156-.924.21-.243.516.689.775-.313.438-.545.383.476.819.701.257.03.61-.734-1.223.097-1.64.088-.2.09-2.071.477-1.551.535zm.472-.903c.46-.347 1.588.206.864-.345-.07-.062-1.586.418-.864.345zm1.674.069c.538.013-.231-.722.409-.389-.105-.344-.746-.408-1.059-.545-.177.314.36.938.65.934zm-1.38-1.52c.186-.252-.326.128 0 0zm.684.164c.866-.115-.22-.373-.174-.01zm-1.277-1c-.61-.796 1.146.134.527-.7-.522-.415-1.023.468-.527.7zm7.825 4.215c.28-.496-1.155-.668-.188-.175.089.03.069.21.188.175z" /></svg>
+                    Flask</div>
+                <div class="links">
+                    <!-- GitHub -->
+                    <svg class="icon" enable-background="new 0 0 128 128" id="Social_Icons" version="1.1" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="_x31__stroke">
+                            <g id="Github_1_">
+                                <rect clip-rule="evenodd" fill="none" fill-rule="evenodd" height="128" width="128" />
+                                <path clip-rule="evenodd" d="M63.996,1.333C28.656,1.333,0,30.099,0,65.591    c0,28.384,18.336,52.467,43.772,60.965c3.2,0.59,4.368-1.394,4.368-3.096c0-1.526-0.056-5.566-0.088-10.927    c-17.804,3.883-21.56-8.614-21.56-8.614c-2.908-7.421-7.104-9.397-7.104-9.397c-5.812-3.988,0.44-3.907,0.44-3.907    c6.42,0.454,9.8,6.622,9.8,6.622c5.712,9.819,14.98,6.984,18.628,5.337c0.58-4.152,2.236-6.984,4.064-8.59    c-14.212-1.622-29.152-7.132-29.152-31.753c0-7.016,2.492-12.75,6.588-17.244c-0.66-1.626-2.856-8.156,0.624-17.003    c0,0,5.376-1.727,17.6,6.586c5.108-1.426,10.58-2.136,16.024-2.165c5.436,0.028,10.912,0.739,16.024,2.165    c12.216-8.313,17.58-6.586,17.58-6.586c3.492,8.847,1.296,15.377,0.636,17.003c4.104,4.494,6.58,10.228,6.58,17.244    c0,24.681-14.964,30.115-29.22,31.705c2.296,1.984,4.344,5.903,4.344,11.899c0,8.59-0.08,15.517-0.08,17.626    c0,1.719,1.152,3.719,4.4,3.088C109.68,118.034,128,93.967,128,65.591C128,30.099,99.344,1.333,63.996,1.333" fill="#3E75C3" fill-rule="evenodd" id="Github" />
+                            </g>
+                        </g>
+                    </svg>
+                    GitHub</div>
+                <div class="links">
+                    <!-- AWS -->
+                    <svg class="icon" class="icon" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M180.41 203.01c-.72 22.65 10.6 32.68 10.88 39.05a8.164 8.164 0 0 1-4.1 6.27l-12.8 8.96a10.66 10.66 0 0 1-5.63 1.92c-.43-.02-8.19 1.83-20.48-25.61a78.608 78.608 0 0 1-62.61 29.45c-16.28.89-60.4-9.24-58.13-56.21-1.59-38.28 34.06-62.06 70.93-60.05 7.1.02 21.6.37 46.99 6.27v-15.62c2.69-26.46-14.7-46.99-44.81-43.91-2.4.01-19.4-.5-45.84 10.11-7.36 3.38-8.3 2.82-10.75 2.82-7.41 0-4.36-21.48-2.94-24.2 5.21-6.4 35.86-18.35 65.94-18.18a76.857 76.857 0 0 1 55.69 17.28 70.285 70.285 0 0 1 17.67 52.36l-.01 69.29zM93.99 235.4c32.43-.47 46.16-19.97 49.29-30.47 2.46-10.05 2.05-16.41 2.05-27.4-9.67-2.32-23.59-4.85-39.56-4.87-15.15-1.14-42.82 5.63-41.74 32.26-1.24 16.79 11.12 31.4 29.96 30.48zm170.92 23.05c-7.86.72-11.52-4.86-12.68-10.37l-49.8-164.65c-.97-2.78-1.61-5.65-1.92-8.58a4.61 4.61 0 0 1 3.86-5.25c.24-.04-2.13 0 22.25 0 8.78-.88 11.64 6.03 12.55 10.37l35.72 140.83 33.16-140.83c.53-3.22 2.94-11.07 12.8-10.24h17.16c2.17-.18 11.11-.5 12.68 10.37l33.42 142.63L420.98 80.1c.48-2.18 2.72-11.37 12.68-10.37h19.72c.85-.13 6.15-.81 5.25 8.58-.43 1.85 3.41-10.66-52.75 169.9-1.15 5.51-4.82 11.09-12.68 10.37h-18.69c-10.94 1.15-12.51-9.66-12.68-10.75L328.67 110.7l-32.78 136.99c-.16 1.09-1.73 11.9-12.68 10.75h-18.3zm273.48 5.63c-5.88.01-33.92-.3-57.36-12.29a12.802 12.802 0 0 1-7.81-11.91v-10.75c0-8.45 6.2-6.9 8.83-5.89 10.04 4.06 16.48 7.14 28.81 9.6 36.65 7.53 52.77-2.3 56.72-4.48 13.15-7.81 14.19-25.68 5.25-34.95-10.48-8.79-15.48-9.12-53.13-21-4.64-1.29-43.7-13.61-43.79-52.36-.61-28.24 25.05-56.18 69.52-55.95 12.67-.01 46.43 4.13 55.57 15.62 1.35 2.09 2.02 4.55 1.92 7.04v10.11c0 4.44-1.62 6.66-4.87 6.66-7.71-.86-21.39-11.17-49.16-10.75-6.89-.36-39.89.91-38.41 24.97-.43 18.96 26.61 26.07 29.7 26.89 36.46 10.97 48.65 12.79 63.12 29.58 17.14 22.25 7.9 48.3 4.35 55.44-19.08 37.49-68.42 34.44-69.26 34.42zm40.2 104.86c-70.03 51.72-171.69 79.25-258.49 79.25A469.127 469.127 0 0 1 2.83 327.46c-6.53-5.89-.77-13.96 7.17-9.47a637.37 637.37 0 0 0 316.88 84.12 630.22 630.22 0 0 0 241.59-49.55c11.78-5 21.77 7.8 10.12 16.38zm29.19-33.29c-8.96-11.52-59.28-5.38-81.81-2.69-6.79.77-7.94-5.12-1.79-9.47 40.07-28.17 105.88-20.1 113.44-10.63 7.55 9.47-2.05 75.41-39.56 106.91-5.76 4.87-11.27 2.3-8.71-4.1 8.44-21.25 27.39-68.49 18.43-80.02z" /></svg>
+                    AWS</div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <section style="background: #d1fffb; font-family: Arial, sans-serif;">
+        <div class="section-data">
+            <h1 class="heading" style="color: #222;margin-bottom: calc(40px - 18px - 5px);">Experience</h2>
+                <p class="extrainfo" style="margin-bottom: 5px;margin-left: 7px;">Freelancer: April 2021 - Oct 2024</p>
+                <div class="timeline">
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Quality Reviewer / Coding AI Dataset</h3>
+                        <h4 class="subtitle">Upwork / ScaleAI</h4>
+                        <p class="extrainfo">June 2023 - Mar 2024</p>
+                        <ul class="ulist">
+                            <li>I created a very high-quality coding dataset for large language models.</li>
+                            <li>Wrote thousands of algorithms and solved complex programming tasks teaching AI problem solving and programming skills.</li>
+                            <li>Joined to teach AI to solve competitive coding problems.</li>
+                            <li>For producing very high-quality dataset, I was quickly promoted to Quality Reviewer.</li>
+                        </ul>
+                        <p class="skillbox">Skills: <span class="skills">Python, Problem Solving, AI Dataset Quality Reviewer</span></p>
+                    </div>
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Full-Stack Developer / Online Collaborative Tools for Immigration Physicals</h3>
+                        <h4 class="subtitle">Upwork / Contract</h4>
+                        <p class="extrainfo">June 2021 - July 2021</p>
+                        <ul class="ulist">
+                            <li>Created and hosted a web app for Medical Examination and Vaccination Record management for Citizenship and Immigration Services in the USA that is used to keep track of all the medical tests required for immigration.</li>
+                            <li>It allows the generation of PDF reports of the patients. This report is compatible with the US Department of Homeland Security.</li>
+                            <li>It features a paid subscription model for monitoring hospitals and clinics.</li>
+                        </ul>
+                        <p class="skillbox">Skills: <span class="skills">Python, Django, AWS, PDF automation, Stripe Payment, MongoDB</span></p>
+                    </div>
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Full-Stack Developer / Mental Healthcare Consultancy</h3>
+                        <h4 class="subtitle">Upwork / Contract</h4>
+                        <p class="extrainfo">June 2021 - November 2021</p>
+                        <ul class="ulist">
+                            <li>Developed feeds for the social interaction of patients and healthcare workers.</li>
+                            <li>It hosts a consultancy portal through which patients can book an appointment with certified and verified healthcare experts at the available time and after payment confirmation.</li>
+                            <li>I also added emojis with chat so that patient can convey their feelings to the healthcare expert.</li>
+                        </ul>
+                        <p class="skillbox">Skills: <span class="skills">Python, Django, AWS, Nginx, SSL, PostgresSQL</span></p>
+                    </div>
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Blockchain Developer / Blockchain from scratch</h3>
+                        <h4 class="subtitle">Upwork / Contract</h4>
+                        <p class="extrainfo">June 2022 - June 2022</p>
+                        <ul class="ulist">
+                            <li>Created Blockchain peer that helps students of my client understand concepts of blockchain such as flooding, building chain, consensus, and mining and other concepts such as UDP and hash.</li>
+                        </ul>
+                        <p class="skillbox">Skills: <span class="skills">Python, Blockchain, UDP</span></p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <section style="background: #fff3fe;background: #ffedd5; font-family: Arial, sans-serif;">
+        <div class="section-data">
+            <h1 class="heading" style="color: #222;">Education</h2>
+                <div class="timeline">
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Dr. APJ Abdul Kalam Technical University</h3>
+                        <h4 class="subtitle">B.Tech in Computer Science and Engineering</h4>
+                        <p class="extrainfo">2019 - 2023</p>
+                        <ul class="ulist">
+                            <li>Shri Ramswaroop Memorial College of Engineering and Management, Lucknow</li>
+                        </ul>
+                        <p class="skillbox">Skills: <span class="skills">Python, Web Development, Data Structures and Algorithms</span></p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <section style="background: #eafffe;background: #d7fffd;font-family: Arial, sans-serif;">
+        <div class="section-data">
+            <h1 class="heading" style="color: #222;">Projects</h2>
+                <div class="timeline">
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Face Generator</h3>
+                        <h4 class="subtitle">WEB APPLICATION</h4>
+                        <p class="extrainfo">Github.com/RishabhSinghWeb/facegenerator</p>
+                        <ul class="ulist">
+                            <li>Flask application built on Stylegan2 that generates unique human faces and hostson the website.</li>
+                        </ul>
+                        <p class="skillbox">Skills: <span class="skills">Flask, Stylegan2, AI</span></p>
+                    </div>
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Time Table for Zoom</h3>
+                        <h4 class="subtitle">JAVASCRIPT</h4>
+                        <p class="extrainfo">RishabhSinghWeb.github.io</p>
+                        <ul class="ulist">
+                            <li>Javascript application that provides convenience for managing zoom links for scheduled classes for two departments of my college during the Covid-19 pandemic.</li>
+                            <li>It has served more than 10k times.</li>
+                        </ul>
+                        <p class="skillbox">Skills: <span class="skills">HTML, CSS, Javascript</span></p>
+                    </div>
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Distributed Database</h3>
+                        <h4 class="subtitle">PYTHON</h4>
+                        <p class="extrainfo">Github.com/RishabhSinghWeb/Distributed-Database</p>
+                        <ul class="ulist">
+                            <li>Group Chat Web application powered by a distributed database system where databases are synchronized by a coordinator through a two-phase commit protocol.</li>
+                        </ul>
+                        <p class="skillbox">Skills: <span class="skills">Python</span></p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <section style="background: #ffffff; font-family: Arial, sans-serif;">
+        <div class="section-data">
+            <h1 class="heading" style="color: #222;">Achievements</h2>
+                <div class="timeline">
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Top-Rated Freelancer</h3>
+                        <h4 class="subtitle">Upwork</h4>
+                        <p class="extrainfo">Nov 2022 - Oct 2024</p>
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7065791480174395392" height="1152" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                        <p class="skillbox">Skills: <span class="skills">User Experience, Project Management, Quality Management, Client Satisfaction</span></p>
+                    </div>
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">100% Job Success Score</h3>
+                        <h4 class="subtitle">Upwork</h4>
+                        <p class="extrainfo">June 2022</p>
+                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6937434505146159105" height="652" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                        <p class="skillbox">Skills: <span class="skills">Planning, Project Integration Management, Quality Management, Effective Communication</span></p>
+                    </div>
+                    <div class="itembox">
+                        <div class="ball"></div>
+                        <h3 class="title">Co-Lead - D’Coders Club</h3>
+                        <h4 class="subtitle">College’s Technical Club</h4>
+                        <p class="extrainfo">September 2021</p>
+                        <ul class="ulist">
+                            <li>Got appointed as the Co-Lead for the College’s Technical Club - D’Coders Club.</li>
+                        </ul>
+                        <p class="skillbox">Skills: <span class="skills">Leadership, Management, Planning</span></p>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <button popovertarget="Resume" style="position:fixed;top:20px;right:30px;font-weight:100;font-size: large;background: aliceblue;color: black;border: 1px solid black;">Resume</button>
+    <dialog popover id="Resume">
+        <button class='close' popovertarget="Resume" style="color: green;background: #e3e3e3;">Close</button>
+        <div class="scrollWrapper" style="padding: 0px;">
+            <h3 style="padding-left: 15px;">Resume</h3>
+            <iframe id="iframeResume" src="https://docs.google.com/document/d/e/2PACX-1vSjG01TTK6e072RdcaIEqRHfItN4IDapMcdoeC4FkI9QiImS2e9Y7KcxMGK9YLv4w/pub?embedded=true" style="width: calc(100% + 26px);height: 90vh;margin-left: -26px;"></iframe>
+        </div>
+    </dialog>
+    <!-- footer -->
+    <div style="background-color: #222; color: #ddd; padding: 40px 20px; font-family: Arial, sans-serif;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; max-width: 1200px; margin: auto;">
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h3 class="footer-item">Contact</h3>
+                <p><a class="footer-links" href="mailto:RishabhSinghWebd@gmail.com">
+                        <svg height="250" width="250" class="fixicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 49.4 512 399.4200000000001">
+                            <g fill="none" fill-rule="evenodd">
+                                <g fill-rule="nonzero">
+                                    <path d="M34.91 448.818h81.454V251L0 163.727V413.91c0 19.287 15.622 34.91 34.91 34.91z" fill="#4285f4" />
+                                    <path d="M395.636 448.818h81.455c19.287 0 34.909-15.622 34.909-34.909V163.727L395.636 251z" fill="#34a853" />
+                                    <path d="M395.636 99.727V251L512 163.727v-46.545c0-43.142-49.25-67.782-83.782-41.891z" fill="#fbbc04" />
+                                </g>
+                                <path d="M116.364 251V99.727L256 204.455 395.636 99.727V251L256 355.727z" fill="#ea4335" />
+                                <path d="M0 117.182v46.545L116.364 251V99.727L83.782 75.291C49.25 49.4 0 74.04 0 117.18z" fill="#c5221f" fill-rule="nonzero" />
+                            </g>Email:
+                        </svg>RishabhSinghWebd@gmail.com</a></p>
+                <p><a class="footer-links" href="tel:+917394996979">
+                        <svg class="fixicon" width="80px" height="80px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.25366 13.9999L16.2419 14.0011C16.3459 14.1727 16.4732 14.3321 16.6227 14.474L17.3413 15.1561C17.2557 15.4887 17.1162 15.8222 16.9207 16.1585C16.723 16.4985 16.4946 16.7956 16.2343 17.0521L15.44 16.7872C14.5057 16.4756 13.4912 16.8326 12.9326 17.6533L12.2111 18.7132C11.5824 19.637 11.6943 20.899 12.4808 21.6886L12.7083 21.9167C12.1668 21.973 11.5973 22.0011 11.0001 22.0011C8.11062 22.0011 5.87181 21.3445 4.30894 20.0008C3.48032 19.2884 3.00366 18.25 3.00366 17.1572V16.2499C3.00366 15.0073 4.01102 13.9999 5.25366 13.9999ZM17.0106 12.245L17.5139 11.0581C17.75 10.5015 18.3154 10.1987 18.8699 10.3143L18.9884 10.3455L19.6187 10.5469C20.2436 10.7466 20.7222 11.2819 20.8768 11.9542C21.2441 13.5518 20.8034 15.4969 19.5548 17.7896C18.3079 20.0789 16.9414 21.4553 15.455 21.9189C14.8779 22.099 14.258 21.9682 13.7916 21.5767L13.6684 21.4635L13.1897 20.9829C12.7749 20.5664 12.6894 19.9076 12.9676 19.3921L13.0382 19.2759L13.7597 18.2159C14.0436 17.7989 14.5292 17.6015 14.9971 17.7012L15.1241 17.7358L16.456 18.18C16.9876 17.7778 17.4307 17.2715 17.7856 16.6612C18.0897 16.138 18.2887 15.6078 18.3824 15.0705L18.4205 14.8013L17.3115 13.7487C16.9462 13.4019 16.8135 12.862 16.9628 12.376L17.0106 12.245L17.5139 11.0581L17.0106 12.245ZM11.0001 2.00462C13.7615 2.00462 16.0001 4.2432 16.0001 7.00462C16.0001 9.76605 13.7615 12.0046 11.0001 12.0046C8.2387 12.0046 6.00012 9.76605 6.00012 7.00462C6.00012 4.2432 8.2387 2.00462 11.0001 2.00462Z" fill="#212121" />
+                            Phone: </svg>+91 7394 996979</a></p>
+                <p class="footer-links" style="color:white;"><svg class="fixicon" height="200" width="200" xmlns="http://www.w3.org/2000/svg" viewBox="85.333 0 341.33400000000006 512">
+                        <path d="M256 0C161.896 0 85.333 76.563 85.333 170.667c0 28.25 7.063 56.26 20.49 81.104L246.667 506.5c1.875 3.396 5.448 5.5 9.333 5.5s7.458-2.104 9.333-5.5l140.896-254.813c13.375-24.76 20.438-52.771 20.438-81.021C426.667 76.563 350.104 0 256 0zm0 256c-47.052 0-85.333-38.281-85.333-85.333S208.948 85.334 256 85.334s85.333 38.281 85.333 85.333S303.052 256 256 256z" fill="#1a1b1f" />Location: </svg>Lucknow, Uttar Pradesh, India</p>
+            </div>
+            <!-- About Me Section -->
+            <div class="footer-section">
+                <h3 class="footer-item">About Me</h3>
+                <p style="min-width:154px;">
+                    I’m a passionate full-stack developer with 2 years of experience in creating modern, responsive, and functional websites.
+                    <!-- <a href="#about">Learn more</a>. -->
+                </p>
+            </div>
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h3 class="footer-item">Connect</h3>
+                <div>
+                    <!-- Linkedin -->
+                    <a class="footer-links" href="https://www.linkedin.com/in/RishabhSinghWeb" target="_blank" rel="noopener noreferrer">
+                        <svg class="fixicon" enable-background="new 0 0 32 32" height="32px" id="Layer_1" version="1.0" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <path d="M32,30c0,1.104-0.896,2-2,2H2c-1.104,0-2-0.896-2-2V2c0-1.104,0.896-2,2-2h28c1.104,0,2,0.896,2,2V30z" fill="#007BB5" />
+                                <g>
+                                    <rect fill="#FFFFFF" height="14" width="4" x="7" y="11" />
+                                    <path d="M20.499,11c-2.791,0-3.271,1.018-3.499,2v-2h-4v14h4v-8c0-1.297,0.703-2,2-2c1.266,0,2,0.688,2,2v8h4v-7   C25,14,24.479,11,20.499,11z" fill="#FFFFFF" />
+                                    <circle cx="9" cy="8" fill="#FFFFFF" r="2" />
+                                </g>
+                            </g>
+                        </svg>
+                        LinkedIn</a>
+                    <!-- Upwork -->
+                    <a class="footer-links" href="https://www.upwork.com/freelancers/~01ffd97ed66f4efb9a" target="_blank" rel="noopener noreferrer">
+                        <svg class="fixicon" height="250" viewBox=".26 -.21 500 500" width="249" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m92.38-.21c-50.88 0-92.12 41.44-92.12 92.56v314.88c0 51.12 41.25 92.56 92.13 92.56h315.74c50.88 0 92.13-41.44 92.13-92.56v-314.88c0-51.12-41.25-92.56-92.13-92.56h-315.75z" fill="#14a800" />
+                            <path d="m359.92 303.51c-31.11 0-51.69-24.01-57.45-33.35 7.36-59.01 28.93-77.61 57.45-77.61 28.18 0 50.13 22.53 50.13 55.48s-21.95 55.48-50.13 55.48m0-147.18c-50.71 0-79.13 33.07-87.25 67.12-9.24-17.34-16.04-40.54-21.4-62.1h-70.09v87.24c0 31.7-14.38 55.07-42.59 55.07s-44.37-23.37-44.37-55.06l.3-87.25h-40.4v87.24c0 25.47 8.26 48.56 23.26 65.04 15.48 16.98 36.64 25.95 61.19 25.95 48.78 0 82.81-37.41 82.81-90.96v-58.62c5.14 19.29 17.2 56.39 40.41 88.92l-21.68 123.44h41.08l14.31-87.52c4.7 3.89 9.68 7.41 14.9 10.55a90.604 90.604 0 0 0 45.69 14.09h.08c1.21 0 2.44.07 3.69.07 50.29 0 90.34-38.94 90.34-91.43.01-52.52-40-91.79-90.28-91.79" fill="#fff" /></svg>Upwork</a>
+                    <!-- Github -->
+                    <a class="footer-links" href="https://github.com/RishabhSinghWeb" target="_blank" rel="noopener noreferrer">
+                        <svg class="fixicon" style="border-radius: 60%;" width="250" height="243" viewBox="0 0 256 249" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+                            <g fill="#161614">
+                                <path d="M127.505 0C57.095 0 0 57.085 0 127.505c0 56.336 36.534 104.13 87.196 120.99 6.372 1.18 8.712-2.766 8.712-6.134 0-3.04-.119-13.085-.173-23.739-35.473 7.713-42.958-15.044-42.958-15.044-5.8-14.738-14.157-18.656-14.157-18.656-11.568-7.914.872-7.752.872-7.752 12.804.9 19.546 13.14 19.546 13.14 11.372 19.493 29.828 13.857 37.104 10.6 1.144-8.242 4.449-13.866 8.095-17.05-28.32-3.225-58.092-14.158-58.092-63.014 0-13.92 4.981-25.295 13.138-34.224-1.324-3.212-5.688-16.18 1.235-33.743 0 0 10.707-3.427 35.073 13.07 10.17-2.826 21.078-4.242 31.914-4.29 10.836.048 21.752 1.464 31.942 4.29 24.337-16.497 35.029-13.07 35.029-13.07 6.94 17.563 2.574 30.531 1.25 33.743 8.175 8.929 13.122 20.303 13.122 34.224 0 48.972-29.828 59.756-58.22 62.912 4.573 3.957 8.648 11.717 8.648 23.612 0 17.06-.148 30.791-.148 34.991 0 3.393 2.295 7.369 8.759 6.117 50.634-16.879 87.122-64.656 87.122-120.973C255.009 57.085 197.922 0 127.505 0" />
+                                <path d="M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398" />
+                            </g>
+                        </svg>
+                        GitHub</a>
+                    <!-- Twitter -->
+                    <a class="footer-links" href="https://twitter.com/RishabhSinghWeb" target="_blank" rel="noopener noreferrer">
+                        <svg class="fixicon" clip-rule="evenodd" fill-rule="evenodd" height="168" stroke-linejoin="round" stroke-miterlimit="2" viewBox="-89.00934757 -46.8841404 643.93723344 446.8841404" width="250" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m154.729 400c185.669 0 287.205-153.876 287.205-287.312 0-4.37-.089-8.72-.286-13.052a205.304 205.304 0 0 0 50.352-52.29c-18.087 8.044-37.55 13.458-57.968 15.899 20.841-12.501 36.84-32.278 44.389-55.852a202.42 202.42 0 0 1 -64.098 24.511c-18.42-19.628-44.644-31.904-73.682-31.904-55.744 0-100.948 45.222-100.948 100.965 0 7.925.887 15.631 2.619 23.025-83.895-4.223-158.287-44.405-208.074-105.504a100.739 100.739 0 0 0 -13.668 50.754c0 35.034 17.82 65.961 44.92 84.055a100.172 100.172 0 0 1 -45.716-12.63c-.015.424-.015.837-.015 1.29 0 48.903 34.794 89.734 80.982 98.986a101.036 101.036 0 0 1 -26.617 3.553c-6.493 0-12.821-.639-18.971-1.82 12.851 40.122 50.115 69.319 94.296 70.135-34.549 27.089-78.07 43.224-125.371 43.224a204.9 204.9 0 0 1 -24.078-1.399c44.674 28.645 97.72 45.359 154.734 45.359" fill="#1da1f2" fill-rule="nonzero" /></svg>
+                        Twitter</a>
+                    <!-- <a class="footer-links" href="https://www.hackerrank.com/profile/RishabhSinghWeb">HackerRank</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="rights">
+            <p style="margin: 0;">&copy; Rishabh Singh. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
